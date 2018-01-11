@@ -915,16 +915,6 @@ $config["header_SecurityOptions"] = array(
         "overrideable" => false,
         "dataType" => "complex",
         "default" => array(
-                        "login.salesforce.com" => array(
-                            "label" => "Production",
-                            "key" => "",    
-                            "secret" => ""
-                        ),
-                        "test.salesforce.com" => array(
-                            "label" => "Sandbox",
-                            "key" => "",
-                            "secret" => ""
-                        ),
                         "ampfs--dev1a.cs72.my.salesforce.com" => array(
                             "label" => "AMP-DEV1A",
                             "key" => "",
