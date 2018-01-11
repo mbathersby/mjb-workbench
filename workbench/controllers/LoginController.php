@@ -47,7 +47,7 @@ class LoginController {
                               ? $_REQUEST['startUrl']
                               : "select.php";
 
-        $this->oauthEnabled = false;
+        $this->oauthEnabled = true;
         foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
             if (!empty($hostInfo["label"]) && !empty($hostInfo["key"]) && !empty($hostInfo["secret"])) {
                 $this->oauthEnabled = true;
