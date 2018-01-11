@@ -914,7 +914,13 @@ $config["header_SecurityOptions"] = array(
         "description" => "OAuth 2.0 Consumer Key",
         "overrideable" => false,
         "dataType" => "complex",
-        "default" => array()
+        "default" => array(
+            "ampfs--dev1a.cs72.my.salesforce.com" => array(
+                                                "label" => "AMP-DEV1A",
+                                                "key" => "",
+                                                "secret" => ""
+                                            )
+            )
     );
 
 $config["header_proxyOptions"] = array(
