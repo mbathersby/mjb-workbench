@@ -16,19 +16,26 @@
 // Uncomment and populate with keys and secrets to enable OAuth.
 // Note, Production and Sandbox can have the same key and secret, but it is not required
 // If connecting to other Salesforce environments, add a new entry to the array:
-//
-//$config["oauthConfigs"]["default"] = array(
-//                                            "login.salesforce.com" => array(
-//                                                "label" => "Production",
-//                                                "key" => "",
-//                                                "secret" => ""
-//                                            ),
-//                                            "test.salesforce.com" => array(
-//                                                "label" => "Sandbox",
-//                                                "key" => "",
-//                                                "secret" => ""
-//                                            )
-//                                        );
+
+$config["oauthRequired"]["default"] = true;
+$config["fuzzyServerUrlLookup"]["default"] = false;
+$config["oauthConfigs"]["default"] = array(
+                                            "login.salesforce.com" => array(
+                                                "label" => "Production",
+                                                "key" => "",	
+                                                "secret" => ""
+                                            ),
+                                            "test.salesforce.com" => array(
+                                                "label" => "Sandbox",
+                                                "key" => "",
+                                                "secret" => ""
+                                            ),
+                                            "ampfs--dev1a.cs72.my.salesforce.com" => array(
+                                                "label" => "AMP-DEV1A",
+                                                "key" => "3MVG910YPh8zrcR2KCLmge6ET81PekM06A0NZvmsg8Mr6IcPNPuJ04ds46zcchJKsUWPiParYo4F4KuYhJw_E",
+                                                "secret" => "1823222631276159215"
+                                            )
+                                        );
 
 
 // CSRF SECURITY SETTINGS
