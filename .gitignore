@@ -1,0 +1,11 @@
+/dist
+build.credentials.properties
+forceworkbench.log
+dump.rdb
+.vagrant
+forceworkbench.box
+Vagrantfile
+.env
+.idea
+/vendor
+composer.phar

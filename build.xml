@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<project name="Workbench" default="stage">
+	<target name="stage">
+        <fail message="${line.separator}${line.separator}PHING BUILDS ARE DEPRECATED!${line.separator}${line.separator}Upgrade to cedar-14 and use the official PHP buildpack:${line.separator}  1. heroku buildpacks:clear${line.separator}  2. heroku stack:set cedar-14${line.separator}  3. git push heroku master${line.separator}"/>
+	</target>
+</project>
