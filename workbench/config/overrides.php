@@ -32,8 +32,8 @@ $config["oauthConfigs"]["default"] = array(
                                             ),
                                             "ampfs--dev1a.cs72.my.salesforce.com" => array(
                                                 "label" => "AMP-DEV1A",
-                                                "key" => "123456789",
-                                                "secret" => "123456789"
+                                                "key" => "3MVG910YPh8zrcR2KCLmge6ET81PekM06A0NZvmsg8Mr6IcPNPuJ04ds46zcchJKsUWPiParYo4F4KuYhJw_E",
+                                                "secret" => "1823222631276159215"
                                             )
                                         );
 
