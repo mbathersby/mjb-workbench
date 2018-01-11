@@ -806,7 +806,7 @@ $config["header_SecurityOptions"] = array(
     $config["invalidateSessionOnLogout"] = array(
         "label" => "Invalidate Session on Logout",
         "description" => "Invalidates the current API session when logging out of Workbench.",
-        "default" => true,
+        "default" => false,
         "overrideable" => true,
         "dataType" => "boolean",
         "minApiVersion" => 13.0
@@ -903,7 +903,7 @@ $config["header_SecurityOptions"] = array(
     $config["oauthRequired"] = array(
         "label" => "Require OAuth Login",
         "description" => "Require OAuth Login",
-        "default" => false,
+        "default" => true,
         "overrideable" => false,
         "dataType" => "boolean"
     );
@@ -914,7 +914,23 @@ $config["header_SecurityOptions"] = array(
         "description" => "OAuth 2.0 Consumer Key",
         "overrideable" => false,
         "dataType" => "complex",
-        "default" => array()
+        "default" => array(
+                        "login.salesforce.com" => array(
+                            "label" => "Production",
+                            "key" => "",    
+                            "secret" => ""
+                        ),
+                        "test.salesforce.com" => array(
+                            "label" => "Sandbox",
+                            "key" => "",
+                            "secret" => ""
+                        ),
+                        "ampfs--dev1a.cs72.my.salesforce.com" => array(
+                            "label" => "AMP-DEV1A",
+                            "key" => "",
+                            "secret" => ""
+                        )
+                    );
     );
 
 $config["header_proxyOptions"] = array(
