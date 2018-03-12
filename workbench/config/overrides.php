@@ -20,20 +20,10 @@
 $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = false;
 $config["oauthConfigs"]["default"] = array(
-                                            "login.salesforce.com" => array(
-                                                "label" => "Production",
-                                                "key" => "",	
-                                                "secret" => ""
-                                            ),
-                                            "test.salesforce.com" => array(
-                                                "label" => "Sandbox",
-                                                "key" => "",
-                                                "secret" => ""
-                                            ),
-                                            "ampfs--dev1a.cs72.my.salesforce.com" => array(
-                                                "label" => "AMP-DEV1A",
-                                                "key" => "3MVG910YPh8zrcR2KCLmge6ET81PekM06A0NZvmsg8Mr6IcPNPuJ04ds46zcchJKsUWPiParYo4F4KuYhJw_E",
-                                                "secret" => "1823222631276159215"
+                                            "ampfs--dev.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-DEV",
+                                                "key" => "3MVG9mQWF42jKQUruaxHka2mu2aZLv.K3uwhkqVa945l2wH0ffJtMtRWq36eelXyrMn9pA7bPqJwmie3w_0CU",
+                                                "secret" => "7403621950379494209"
                                             )
                                         );
 
