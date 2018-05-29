@@ -20,13 +20,13 @@
 $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = false;
 $config["oauthConfigs"]["default"] = array(
-                                            "ampfs--dev.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-DEV",
-                                                "key" => "3MVG9mQWF42jKQUruaxHka2mu2aZLv.K3uwhkqVa945l2wH0ffJtMtRWq36eelXyrMn9pA7bPqJwmie3w_0CU",
-                                                "secret" => "7403621950379494209"
-                                            ),
-                                            "ampfs--accdev25.cs116.my.salesforce.com" => array(
+                                          "ampfs--accdev25.cs116.my.salesforce.com" => array(
                                                 "label" => "AMP-ACCDEV25",
+                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
+                                                "secret" => "31749963175304988"
+                                            ),
+                                            "ampfs--sidsummer4.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-SIDSUMMER4",
                                                 "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
                                                 "secret" => "31749963175304988"
                                             )
