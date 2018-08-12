@@ -20,12 +20,12 @@
 $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = false;
 $config["oauthConfigs"]["default"] = array(
-                                            "ampfs--crmnovdev.cs115.my.salesforce.com" => array(
+                                            "ampfs--crmnovdev.lightning.force.com" => array(
                                                 "label" => "AMP-CRMNOVDEV",
                                                 "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
                                                 "secret" => "31749963175304988"
                                             ),
-                                              "ampfs--crmnovqa.cs115.my.salesforce.com" => array(
+                                              "ampfs--crmnovqa.lightning.force.com" => array(
                                                 "label" => "AMP-CRMNOVQA",
                                                 "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
                                                 "secret" => "31749963175304988"
