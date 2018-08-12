@@ -20,28 +20,33 @@
 $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = false;
 $config["oauthConfigs"]["default"] = array(
-                                          "ampfs--cvdev.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-CVDEV",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
-                                            ),
-                                           "ampfs--r3juldev.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-R3JULDEV",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
-                                            ),
-                                          "ampfs--accdev25.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-ACCDEV25",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
-                                            ),
-                                            "ampfs--sidsummer4.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-SIDSUMMER4",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
-                                            ),
                                             "ampfs--yodr3dev1.cs115.my.salesforce.com" => array(
                                                 "label" => "AMP-YODR3DEV1",
+                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
+                                                "secret" => "31749963175304988"
+                                            ),
+                                              "ampfs--yodr3qa2.cs115.my.salesforce.com" => array(
+                                                "label" => "AMP-YODR3QA2",
+                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
+                                                "secret" => "31749963175304988"
+                                            ),
+                                            "ampfs--remoctdev.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-REMOCTDEV",
+                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
+                                                "secret" => "31749963175304988"
+                                            ),
+                                              "ampfs--remoctqa.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-REMOCTQA",
+                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
+                                                "secret" => "31749963175304988"
+                                            ),
+                                              "ampfs--crmnovdev.cs115.my.salesforce.com" => array(
+                                                "label" => "AMP-CRMNOVDEV",
+                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
+                                                "secret" => "31749963175304988"
+                                            ),
+                                              "ampfs--crmnovqa.cs115.my.salesforce.com" => array(
+                                                "label" => "AMP-CRMNOVQA",
                                                 "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
                                                 "secret" => "31749963175304988"
                                             )
