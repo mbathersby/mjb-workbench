@@ -22,53 +22,53 @@ $config["fuzzyServerUrlLookup"]["default"] = false;
 $config["oauthConfigs"]["default"] = array(
                                            "ampfs--sepdev2.lightning.force.com" => array(
                                                 "label" => "AMP-SEPDEV2",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--sepqa2.lightning.force.com" => array(
                                                 "label" => "AMP-SEPQA2",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--crmnovdev.lightning.force.com" => array(
                                                 "label" => "AMP-CRMNOVDEV",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--crmnovqa.lightning.force.com" => array(
                                                 "label" => "AMP-CRMNOVQA",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--yodr3dev1.lightning.force.com" => array(
                                                 "label" => "AMP-YODR3DEV1",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--yodr3qa2.lightning.force.com" => array(
                                                 "label" => "AMP-YODR3QA2",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--remoctdev.lightning.force.com" => array(
                                                 "label" => "AMP-REMOCTDEV",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--remoctqa.lightning.force.com" => array(
                                                 "label" => "AMP-REMOCTQA",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--uat1.lightning.force.com" => array(
                                                 "label" => "AMP-UAT1",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             ),
                                             "ampfs--uat2.lightning.force.com" => array(
                                                 "label" => "AMP-UAT2",
-                                                "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
-                                                "secret" => "31749963175304988"
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             )
                                         );
 
