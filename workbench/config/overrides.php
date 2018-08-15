@@ -21,12 +21,12 @@ $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = false;
 $config["oauthConfigs"]["default"] = array(
                                            "ampfs--sepdev2.lightning.force.com" => array(
-                                                "label" => "AMP-CRMNOVDEV",
+                                                "label" => "AMP-SEPDEV2",
                                                 "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
                                                 "secret" => "31749963175304988"
                                             ),
                                             "ampfs--sepqa2.lightning.force.com" => array(
-                                                "label" => "AMP-CRMNOVDEV",
+                                                "label" => "AMP-SEPQA2",
                                                 "key" => "3MVG9mQWF42jKQUr8aiN7eUeU5_3SRn2AVIUVP6l7cOYX9q9vuEV4oqs76pz8hWnp.kxLTuPd5QszKl0HAE1R",
                                                 "secret" => "31749963175304988"
                                             ),
