@@ -18,9 +18,9 @@
 // If connecting to other Salesforce environments, add a new entry to the array:
 
 $config["oauthRequired"]["default"] = true;
-$config["fuzzyServerUrlLookup"]["default"] = false;
+$config["fuzzyServerUrlLookup"]["default"] = true;
 $config["oauthConfigs"]["default"] = array(
-                                           "ampfs--sepdev2.cs116.my.salesforce.com" => array(
+                                           "ampfs--sepdev2.lightning.force.com" => array(
                                                 "label" => "AMP-SEPDEV2",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
