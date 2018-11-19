@@ -30,7 +30,7 @@ $config["oauthConfigs"]["default"] = array(
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
                                             ),
-                                            "ampfs--uat1.lightning.force.com" => array(
+                                            "ampfs--uat1.cs116.my.salesforce.com" => array(
                                                 "label" => "AMP-UAT1",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
