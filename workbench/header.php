@@ -10,7 +10,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/pro_dropdown.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/simpletree.css'); ?>" />
 		
-		<link rel="stylesheet" type="text/css" href="../assets/styles/salesforce-lightning-design-system.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/slds/assets/styles/salesforce-lightning-design-system.min.css'); ?>" />
+
 		
         <?php
 			$myPage = getMyPage();
@@ -74,7 +75,7 @@
 										<a href="javascript:void(0);" role="menuitem" tabindex="-1">
 											<span class="slds-truncate" title="Main action">
 												<svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/icons/utility-sprite/svg/symbols.svg#add" />
+													<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="..	/assets/icons/utility-sprite/svg/symbols.svg#add" />
 												</svg>Main action</span>
 										</a>
 									</li>
