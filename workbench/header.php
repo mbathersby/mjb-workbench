@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <head>
         <meta http-equiv="Content-Language" content="UTF-8" />
         <meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
@@ -136,7 +136,8 @@
 								if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
 									continue;
 								}
-								$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
+								//$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
+								
 								print "<li class=\"slds-context-bar__item slds-is-active\">
 											<a href=\"javascript:void(0);\" class=\"slds-context-bar__label-action\" title=\"Home\">
 												<span class=\"slds-assistive-text\">Current Page:</span>
@@ -151,7 +152,8 @@
 												</button>
 											</div>
 										</li>";
-								foreach ($pages as $href => $page) {
+										
+								/*foreach ($pages as $href => $page) {
 									if (!$page->onNavBar || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
 										continue;
 									}
@@ -159,7 +161,7 @@
 								}
 								print "</ul></li>";
 								
-								if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
+								if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases*/
 							}
 						?>
 						
