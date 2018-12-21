@@ -138,7 +138,7 @@
 								}
 								//$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
 								
-								print "<li class=\"slds-context-bar__item slds-is-active\">
+								print "<li class=\"slds-context-bar__item\">
 											<a href=\"javascript:void(0);\" class=\"slds-context-bar__label-action\" title=\"Home\">
 												<span class=\"slds-assistive-text\">Current Page:</span>
 												<span class=\"slds-truncate\" title=\"Home\">Menu</span>
