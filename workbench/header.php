@@ -144,7 +144,7 @@
 												<span class=\"slds-truncate\" title=\"Home\">Menu</span>
 											</a>
 											<div class=\"slds-context-bar__icon-action slds-p-left_none\">
-												<button class=\"slds-button slds-button_icon slds-button_icon slds-context-bar__button\" aria-haspopup=\"true\" title=]\"Open menu item submenu\">
+												<button class=\"slds-button slds-button_icon slds-button_icon slds-context-bar__button\" aria-haspopup=\"true\" title=\"Open menu item submenu\">
 													<svg class=\"slds-button__icon\" aria-hidden=\"true\">
 														<use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"" . getPathToStaticResource('/slds/assets/icons/utility-sprite/svg/symbols.svg#chevrondown') . "\" />
 													</svg>
@@ -159,9 +159,9 @@
 									}
 									print "<li><a href='$href' onmouseover=\"Tip('$page->desc')\" target=\"" . $page->window . "\">$page->title</a></li>\n";
 								}
-								print "</ul></li>";
+								print "</ul></li>";*/
 								
-								if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases*/
+								if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
 							}
 						?>
 						
