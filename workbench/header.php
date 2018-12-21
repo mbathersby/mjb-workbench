@@ -136,7 +136,7 @@
 								if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
 									continue;
 								}
-								//$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
+								$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
 								print "<li class=\"slds-context-bar__item slds-is-active\">
 											<a href=\"javascript:void(0);\" class=\"slds-context-bar__label-action\" title=\"Home\">
 												<span class=\"slds-assistive-text\">Current Page:</span>
@@ -145,7 +145,7 @@
 											<div class=\"slds-context-bar__icon-action slds-p-left_none\">
 												<button class=\"slds-button slds-button_icon slds-button_icon slds-context-bar__button\" aria-haspopup=\"true\" title=]\"Open menu item submenu\">
 													<svg class=\"slds-button__icon\" aria-hidden=\"true\">
-														<use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\""<?php echo getPathToStaticResource('/slds/assets/icons/utility-sprite/svg/symbols.svg#chevrondown'); ?>"\" />
+														<use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"" . getPathToStaticResource('/slds/assets/icons/utility-sprite/svg/symbols.svg#chevrondown') . "\" />
 													</svg>
 													<span class=\"slds-assistive-text\">Open menu item submenu</span>
 												</button>
