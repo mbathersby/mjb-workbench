@@ -20,7 +20,17 @@
 $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = true;
 $config["oauthConfigs"]["default"] = array(
-                                           "ampfs--bendev.cs116.my.salesforce.com" => array(
+                                            "ampfs--maydev.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-MAYDEV",
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
+                                            ),
+                                            "ampfs--mayqa.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-MAYQA",
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
+                                            ),
+                                            "ampfs--bendev.cs116.my.salesforce.com" => array(
                                                 "label" => "AMP-BENDEV",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
