@@ -25,16 +25,20 @@
         <style>
             body {   
                 margin: 0px; 
-                font-family: "Salesforce Sans", Arial, sans-serif;   
+                font-family: "Salesforce Sans", Arial, sans-serif;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
             }
 
             #navMenu, #nav {   
                 height:  3.125rem; 
                 background: #16325c; 
+                flex-grow: 0;
             }
 
             #mainBlock {
-                min-height: calc(100vh - 3.125rem);
+                flex-grow: 1;
             }
         </style>
     </head>
