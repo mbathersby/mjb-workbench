@@ -59,6 +59,11 @@ $config["oauthConfigs"]["default"] = array(
                                                 "label" => "AMP-CCF ORG",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
+                                            ),
+                                            "ado-dev--adodev.cs27.my.salesforce.com" => array(
+                                                "label" => "ADO-DEV",
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
                                             )
                                         );
 
