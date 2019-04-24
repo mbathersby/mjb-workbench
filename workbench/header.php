@@ -125,7 +125,7 @@
 							</button>
 						</div-->
 						<span class="slds-context-bar__label-action slds-context-bar__app-name">
-							<span class="slds-truncate" title="App Name">Workbench</span>
+							<span class="slds-truncate" title="Workbench">Workbench</span>
 						</span>
 					</div>
 				</div>
@@ -136,7 +136,7 @@
 								if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
 									continue;
 								}
-								//$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
+								$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
 								
 								print "<li class=\"slds-context-bar__item\">
 											<a href=\"javascript:void(0);\" class=\"slds-context-bar__label-action\" title=\"Home\">
