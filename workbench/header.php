@@ -38,7 +38,9 @@
 
             #mainBlock {
                 display: flex;
-               flex-wrap: wrap;
+                flex-direction: row;
+                flex-wrap: wrap;
+                flex: 1;
             }
         </style>
     </head>
