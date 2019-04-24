@@ -19,6 +19,14 @@
         ?>
         
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
+
+        <style>
+            body 
+            {   margin: 0px;    }
+
+            #navMenu 
+            {   height:  50px;  }
+        </style>
     </head>
 <body>
 
