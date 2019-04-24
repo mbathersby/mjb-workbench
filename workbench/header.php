@@ -32,6 +32,10 @@
                 height:  3.125rem; 
                 background: #16325c; 
             }
+
+            #mainBlock {
+                min-height: calc(100vh - 3.125rem);
+            }
         </style>
     </head>
 <body>
