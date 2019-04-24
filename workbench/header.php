@@ -23,13 +23,16 @@
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
 
         <style>
-            body 
-            {   margin: 0px; font-family: "Salesforce Sans", Arial, sans-serif;   }
+            body {   
+                margin: 0px; 
+                font-family: "Salesforce Sans", Arial, sans-serif;   
+            }
 
-            #navMenu 
-            {   height:  3.125rem;  background: #16325c;    }
-
-
+            #navMenu {   
+                height:  3.125rem; 
+                background: #16325c; 
+                background-image: none;    
+            }
         </style>
     </head>
 <body>
