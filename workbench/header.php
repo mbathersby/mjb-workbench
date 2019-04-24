@@ -103,8 +103,6 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-<div id='mainBlock'>
-
 <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
     <span class="preload2"></span>
@@ -130,6 +128,8 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
     ?>
     </ul>
 </div>
+
+<div id='mainBlock'>
 
 <?php
 if (!termsOk() && $myPage->requiresSfdcSession) {
