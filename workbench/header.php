@@ -28,10 +28,9 @@
                 font-family: "Salesforce Sans", Arial, sans-serif;   
             }
 
-            #navMenu {   
+            #navMenu, #nav {   
                 height:  3.125rem; 
                 background: #16325c; 
-                background-image: none;    
             }
         </style>
     </head>
