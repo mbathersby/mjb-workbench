@@ -9,6 +9,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/master.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/pro_dropdown.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/simpletree.css'); ?>" />
+        <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/slds/assets/styles/salesforce-lightning-design-system.min.css'); ?>" />
+
 
         <?php
         $myPage = getMyPage();
@@ -22,10 +24,12 @@
 
         <style>
             body 
-            {   margin: 0px;    }
+            {   margin: 0px; font-family: "Salesforce Sans", Arial, sans-serif;   }
 
             #navMenu 
-            {   height:  50px;  }
+            {   height:  3.125rem;  background: #16325c;    }
+
+
         </style>
     </head>
 <body>
