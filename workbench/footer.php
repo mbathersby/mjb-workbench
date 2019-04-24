@@ -2,6 +2,7 @@
 include_once 'shared.php';
 ?>
 </div>
+</div>
 
 <div id='disclaimer'><br />
 
