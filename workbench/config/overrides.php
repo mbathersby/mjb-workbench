@@ -20,33 +20,13 @@
 $config["oauthRequired"]["default"] = true;
 $config["fuzzyServerUrlLookup"]["default"] = true;
 $config["oauthConfigs"]["default"] = array(
-                                            "ampfs--maydev.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-MAYDEV",
+                                            "ampfs--augdev.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-AUGDEV",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
                                             ),
-                                            "ampfs--mayqa.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-MAYQA",
-                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
-                                                "secret" => "3163979385997040958"
-                                            ),
-                                            "ampfs--bendev.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-BENDEV",
-                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
-                                                "secret" => "3163979385997040958"
-                                            ),
-                                            "ampfs--benqa.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-BENQA",
-                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
-                                                "secret" => "3163979385997040958"
-                                            ),
-                                            "ampfs--febdev.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-FEBDEV",
-                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
-                                                "secret" => "3163979385997040958"
-                                            ),
-                                            "ampfs--febqa.cs116.my.salesforce.com" => array(
-                                                "label" => "AMP-FEBQA",
+                                            "ampfs--augqa.cs116.my.salesforce.com" => array(
+                                                "label" => "AMP-AUGQA",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
                                             ),
