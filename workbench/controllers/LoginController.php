@@ -510,7 +510,7 @@ class LoginController {
                 continue;
             }
 
-            $hosts[$hostLabel] = $host;
+            $hosts[$host] = $hostLabel;
         }
 
         if (array_key_exists("login.salesforce.com", $hosts)) {
