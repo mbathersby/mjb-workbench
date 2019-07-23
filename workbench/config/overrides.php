@@ -35,6 +35,11 @@ $config["oauthConfigs"]["default"] = array(
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
                                             ),
+                                            "amp--datauat.cs154.my.salesforce.com" => array(
+                                                "label" => "ADO-DATAUAT",
+                                                "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
+                                                "secret" => "3163979385997040958"
+                                            ),
                                             "ampfs--s1val1.cs116.my.salesforce.com" => array(
                                                 "label" => "AMP-CCF ORG",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
