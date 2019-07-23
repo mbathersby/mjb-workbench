@@ -495,12 +495,15 @@ class LoginController {
 
     public function getOauthHostSelectOptions() {
         $hosts = array();
-        foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
-            if (empty($hostInfo["label"]) || empty($hostInfo["key"]) || empty($hostInfo["secret"])) {
+		$oauthAppKey = WorkbenchConfig::get()->value("oauthAppKey");
+		$oauthAppSecret = WorkbenchConfig::get()->value("oauthAppSecret");
+		
+        foreach (WorkbenchConfig::get()-> value('oauthConfigs') as $host) {
+            if (empty($host) || empty($oauthAppKey) || empty($oauthAppSecret)) {
                 continue;
             }
 
-            $hosts[$host] = $hostInfo["label"];
+            $hosts[$host] = $host;
         }
 
         if (array_key_exists("login.salesforce.com", $hosts)) {
