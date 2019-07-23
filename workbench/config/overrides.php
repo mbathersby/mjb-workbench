@@ -35,7 +35,7 @@ $config["oauthConfigs"]["default"] = array(
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
                                             ),
-                                            "amp--datauat.cs154.my.salesforce.com" => array(
+                                            "ampfs--datauat.cs152.my.salesforce.com" => array(
                                                 "label" => "ADO-DATAUAT",
                                                 "key" => "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==",
                                                 "secret" => "3163979385997040958"
