@@ -48,8 +48,11 @@ class LoginController {
                               : "select.php";
 
         $this->oauthEnabled = true;
-        foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
-            if (!empty($hostInfo["label"]) && !empty($hostInfo["key"]) && !empty($hostInfo["secret"])) {
+		$oauthAppKey = WorkbenchConfig::get()->value('oauthAppKey');
+		$oauthAppSecret = WorkbenchConfig::get()->value('oauthAppSecret');
+		
+        foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostLabel) {
+            if (!empty($hostLabel) && !empty($oauthAppKey) && !empty($oauthAppSecret)) {
                 $this->oauthEnabled = true;
                 break;
             }
@@ -149,8 +152,8 @@ class LoginController {
         $req = json_decode(base64_decode($encodedEnv));
 
         $clientId = $req->client->clientId;
-        $oauthConfig = $this->findOAuthConfigByClientId($clientId);
-        $secret = $oauthConfig['secret'];
+        //$oauthConfig = $this->findOAuthConfigByClientId($clientId);
+        $secret = WorkbenchConfig::get()->value("oauthAppSecret");
 
         $calcedSig = base64_encode(hash_hmac("sha256", $encodedEnv, $secret, true));
         if ($calcedSig != $encodedSig) {
@@ -160,7 +163,7 @@ class LoginController {
         $this->processLogin(null, null, $req->client->instanceUrl . $req->context->links->partnerUrl, $req->client->oauthToken, "select.php");
     }
 
-    private function findOAuthConfigByClientId($clientId) {
+    /*private function findOAuthConfigByClientId($clientId) {
         foreach (WorkbenchConfig::get()->value("oauthConfigs") as $oauthConfig) {
             if (isset($oauthConfig['key']) && $oauthConfig['key'] == $clientId) {
                 return $oauthConfig;
@@ -168,7 +171,7 @@ class LoginController {
         }
 
         throw new Exception("Unknown OAuth Client ID");
-    }
+    }*/
 
     public function processRememberUserCookie() {
         if (isset($_POST['rememberUser']) && $_POST['rememberUser'] == 'on') {
@@ -348,9 +351,11 @@ class LoginController {
         }
 
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
+		$oauthAppKey = WorkbenchConfig::get()->value('oauthAppKey');
+		
         $authUrl = "https://" . $hostName .
                     "/services/oauth2/authorize?response_type=code&display=popup".
-                    "&client_id=" . urlencode($oauthConfigs[$hostName]["key"]) .
+                    "&client_id=" . urlencode($oauthAppKey) .
                     "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl()) .
                     "&state=" . urlencode($state);
 
@@ -369,17 +374,19 @@ class LoginController {
         }
 
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
+		$oauthAppKey = WorkbenchConfig::get()->value("oauthAppKey");
+		$oauthAppSecret = WorkbenchConfig::get()->value("oauthAppSecret");
 
         $tokenUrl =  "https://" . $hostName . "/services/oauth2/token";
 
-        if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
+        if (!isset($oauthConfigs[$hostName])) {
             throw new Exception("Misconfigured OAuth Host");
         }
 
         $params = "code=" . $code
                   . "&grant_type=authorization_code"
-                  . "&client_id=" . $oauthConfigs[$hostName]['key']
-                  . "&client_secret=" . $oauthConfigs[$hostName]['secret']
+                  . "&client_id=" . urlencode($oauthAppKey)
+                  . "&client_secret=" . urlencode($oauthAppSecret)
                   . "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl());
 
         $curl = curl_init($tokenUrl);
@@ -498,8 +505,8 @@ class LoginController {
 		$oauthAppKey = WorkbenchConfig::get()->value("oauthAppKey");
 		$oauthAppSecret = WorkbenchConfig::get()->value("oauthAppSecret");
 		
-        foreach (WorkbenchConfig::get()-> value('oauthConfigs') as $host) {
-            if (empty($host) || empty($oauthAppKey) || empty($oauthAppSecret)) {
+        foreach (WorkbenchConfig::get()-> value('oauthConfigs') as $host => $hostLabel) {
+            if (empty($hostLabel) || empty($oauthAppKey) || empty($oauthAppSecret)) {
                 continue;
             }
 
