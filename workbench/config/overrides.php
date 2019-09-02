@@ -22,7 +22,7 @@ $config["fuzzyServerUrlLookup"]["default"] = true;
 $config["oauthAppKey"]["default"] = "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==";
 $config["oauthAppSecret"]["default"] = "3163979385997040958";
 
-$config["oauthConfigs"]["default"] = array( "ampfs--sepdev.cs151.my.salesforce.com" => "AMP-SEPDEV",
+$config["oauthConfigs"]["default"] = array( "ampfs--sepdev1.cs152.my.salesforce.com" => "AMP-SEPDEV1",
                                             "ampfs--augdev.cs116.my.salesforce.com" => "AMP-AUGDEV",
                                             "ampfs--augqa.cs116.my.salesforce.com" => "AMP-AUGQA",
                                             "ampfs--uat1.cs116.my.salesforce.com" => "AMP-UAT1",
