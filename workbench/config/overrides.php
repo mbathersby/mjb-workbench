@@ -23,11 +23,11 @@ $config["oauthAppKey"]["default"] = "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9
 $config["oauthAppSecret"]["default"] = "3163979385997040958";
 
 $config["oauthConfigs"]["default"] = array( "ampfs--novdev2.my.salesforce.com" => "AMP-NOVDEV2",
-                                            "ampfs--sepdev1.cs152.my.salesforce.com" => "AMP-SEPDEV1",
-                                            "ampfs--uat1.cs116.my.salesforce.com" => "AMP-UAT1",
-                                            "ampfs--datauat.cs152.my.salesforce.com" => "ADO-DATAUAT",
-                                            "ampfs--s1val1.cs116.my.salesforce.com" => "AMP-CCF ORG",
-                                            "ado-tso--dev.cs42.my.salesforce.com" => "ADO-DEV",
+                                            "ampfs--sepdev1.my.salesforce.com" => "AMP-SEPDEV1",
+                                            "ampfs--uat1.my.salesforce.com" => "AMP-UAT1",
+                                            "ampfs--datauat.my.salesforce.com" => "ADO-DATAUAT",
+                                            "ampfs--s1val1.my.salesforce.com" => "AMP-CCF ORG",
+                                            "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
                                           );
 
 
