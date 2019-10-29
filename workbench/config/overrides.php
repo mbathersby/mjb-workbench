@@ -28,7 +28,7 @@ $config["oauthConfigs"]["default"] = array( "ampfs--novdev2.my.salesforce.com" =
                                             "ampfs--datauat.my.salesforce.com" => "ADO-DATAUAT",
                                             "ampfs--s1val1.my.salesforce.com" => "AMP-CCF ORG",
                                             "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
-                                            "my-packages-dev-ed.my.salesforce.com", "Packaging Org",
+                                            "my-packages-dev-ed.my.salesforce.com" => "Packaging Org",
                                           );
 
 
