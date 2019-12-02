@@ -32,7 +32,7 @@ $config["oauthConfigs"]["default"] = array( "ampfs--jandev.my.salesforce.com" =>
                                             "ampfs--s1val1.my.salesforce.com" => "AMP-CCF ORG",
                                             "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
                                             "my-packages-dev-ed.my.salesforce.com" => "Packaging Org",
-                                            "accenture-playground-dev-ed.my.salesforce.com", "My Playground"
+                                            "accenture-playground-dev-ed.my.salesforce.com" => "My Playground"
                                           );
 
 
