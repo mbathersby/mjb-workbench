@@ -24,6 +24,7 @@ $config["oauthAppSecret"]["default"] = "3163979385997040958";
 
 $config["oauthConfigs"]["default"] = array( "nbn--csabau.my.salesforce.com" => "NBN-CSABAU",
                                             "nbn--csast.my.salesforce.com" => "NBN-CSAST",
+                                            "nbn--bauuat.my.salesforce.com" => "NBN-BAUUAT",
                                             "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
                                             "my-packages-dev-ed.my.salesforce.com" => "Packaging Org",
                                             "accenture-playground-dev-ed.my.salesforce.com" => "My Playground"
