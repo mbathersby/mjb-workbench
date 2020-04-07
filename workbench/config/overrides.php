@@ -22,8 +22,8 @@ $config["fuzzyServerUrlLookup"]["default"] = true;
 $config["oauthAppKey"]["default"] = "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9oXmebZnozj.bYc_jt2u7OvqTWQ_yvV.w==";
 $config["oauthAppSecret"]["default"] = "3163979385997040958";
 
-$config["oauthConfigs"]["default"] = array( "nbn--csabau.my.salesforce.com" => "NBN-CSABAU",
-                                            "nbn--csast.my.salesforce.com" => "NBN-CSAST",
+$config["oauthConfigs"]["default"] = array( "nbn--csabau.cs57.my.salesforce.com" => "NBN-CSABAU",
+                                            "nbn--csast.cs113.my.salesforce.com" => "NBN-CSAST",
                                             "nbn--bauuat.my.salesforce.com" => "NBN-BAUUAT",
                                             "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
                                             "my-packages-dev-ed.my.salesforce.com" => "Packaging Org",
