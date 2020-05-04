@@ -26,6 +26,7 @@ $config["oauthConfigs"]["default"] = array( "nbn--csabau.cs57.my.salesforce.com"
                                             "nbn--csast.cs113.my.salesforce.com" => "NBN-CSAST",
                                             "nbn--bauuat.my.salesforce.com" => "NBN-BAUUAT",
                                             "nbn--mrsf2.cs6.my.salesforce.com" => "NBN -MRSF2",
+                                            "nbn--caaperf.lightning.force.com" => "NBN - CAAPERF",
                                             "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
                                             "my-packages-dev-ed.my.salesforce.com" => "Packaging Org",
                                             "accenture-playground-dev-ed.my.salesforce.com" => "My Playground"
