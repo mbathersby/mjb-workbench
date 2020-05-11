@@ -23,7 +23,7 @@ $config["oauthAppKey"]["default"] = "3MVG9d8..z.hDcPLGQxR.BskW.oT3COrLww_ffIavG9
 $config["oauthAppSecret"]["default"] = "3163979385997040958";
 
 $config["oauthConfigs"]["default"] = array( "nbn--caadev2.cs76.my.salesforce.com" => "NBN-CAADEV2",
-                                            "nbn--caast2.my.salesforce.com" => "NBN-CAAST2",
+                                            "nbn--caast2.cs76.my.salesforce.com" => "NBN-CAAST2",
                                             "nbn--csabau.cs57.my.salesforce.com" => "NBN-CSABAU",
                                             "nbn--csast.cs113.my.salesforce.com" => "NBN-CSAST",
                                             "nbn--bauuat.my.salesforce.com" => "NBN-BAUUAT",
