@@ -10,6 +10,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // EXAMPLE: $config["fuzzyServerUrlLookup"]["default"] = false;
+$config["fuzzyServerUrlLookup"]["default"] = true;
 
 
 // OAUTH 2.0 SETTINGS
@@ -26,7 +27,8 @@ $config["oauthConfigs"]["default"] = array( "nbn--caadev2.cs76.my.salesforce.com
                                             "nbn--caast2.cs76.my.salesforce.com" => "NBN-CAAST2",
                                             "nbn--bauuat.my.salesforce.com" => "NBN-BAUUAT",
                                             "nbn--mrsf2.cs6.my.salesforce.com" => "NBN-MRSF2",
-                                            "nbn--caaperf.cs75.my.salesforce.com" => "NBN-CAAPERF",
+                                            //"nbn--caaperf.cs75.my.salesforce.com" => "NBN-CAAPERF",
+                                            "nbn--caaperf.my.salesforce.com" => "NBN-CAAPERF",
                                             "ado-tso--dev.my.salesforce.com" => "ADO-DEV",
                                             "my-packages-dev-ed.my.salesforce.com" => "Packaging Org",
                                             "accenture-playground-dev-ed.my.salesforce.com" => "My Playground"
