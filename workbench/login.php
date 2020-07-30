@@ -41,10 +41,10 @@ require_once "header.php";
         <div class="loginType_oauth">
             <p>
                 <label for="inst">Environment:</label>
-                <input id="oauth_env" name="oauth_host" style="width: 200px;"></input>
-                <!--select id="oauth_env" name="oauth_host" style="width: 200px;">
+                <!--input id="oauth_env" name="oauth_host" style="width: 200px;"></input-->
+                <select id="oauth_env" name="oauth_host" style="width: 200px;">
                     <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
-                </select-->
+                </select>
             </p>
 
             <p>
