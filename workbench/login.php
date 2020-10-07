@@ -43,7 +43,7 @@ require_once "header.php";
                 <label for="inst">Environment:</label>
                 <!--input id="oauth_env" name="oauth_host" style="width: 200px;"></input-->
                 <select id="oauth_env" name="oauth_host" style="width: 200px;">
-                    <select value=""></select>
+                    <option value="">-- Select --</option>
                     <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
                 </select>
             </p>
