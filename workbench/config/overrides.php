@@ -22,7 +22,12 @@ $config["fuzzyServerUrlLookup"]["default"] = true;
 $config["oauthAppKey"]["default"] = "3MVG9n_HvETGhr3AvIZ7NpzAALFVWT5g.sGbggTW95N5E0d6WuxPYOEctzp1yoQv8a2H7LcE37aYgeMjReEQM";
 $config["oauthAppSecret"]["default"] = "B3B698ACE3976567A55DED92AA217D0623BD58868E9796BC249B0E371E8B44DB";
 
-$config["oauthConfigs"]["default"] = array( "ap16.salesforce.com" => "My Aware Playground" );
+$config["oauthConfigs"]["default"] = array( "ap16.salesforce.com" => "My Aware Playground",
+                                            "cppau--dev.my.salesforce.com" => "CPP DEV",
+                                            "cppau--sit.my.salesforce.com" => "CPP SIT",
+                                            "cppau--uat1.my.salesforce.com" => "CPP UAT1",
+                                            "cppau--fsl.my.salesforce.com" => "CPP FSL",
+                                            "cppau--int.my.salesforce.com" => "CPP INT");
 
 /*"ampfs--jandev.my.salesforce.com" => "AMP-JANDEV",
 "ampfs--janqa.my.salesforce.com" => "AMP-JANQA",
