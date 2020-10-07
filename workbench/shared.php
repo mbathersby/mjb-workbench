@@ -523,10 +523,10 @@ function printSelectOptions($valuesToLabelsArray,$defaultValue = null) {
     $valueAndLabelMatched = false;
     foreach ($valuesToLabelsArray as $value => $label) {
         print "<option value=\"" . htmlspecialchars($value) . "\"";
-        if ($defaultValue == $value) {
-            print " selected=\"selected\"";
-            $valueAndLabelMatched = true;
-        }
+        //if ($defaultValue == $value) {
+            //print " selected=\"selected\"";
+            //$valueAndLabelMatched = true;
+        //}
 	    if($value==""){
 		    print " disabled";
 	    }
