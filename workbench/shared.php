@@ -527,6 +527,9 @@ function printSelectOptions($valuesToLabelsArray,$defaultValue = null) {
             print " selected=\"selected\"";
             $valueAndLabelMatched = true;
         }
+	    if($value==""){
+		    print " disabled"
+	    }
         print ">" . htmlspecialchars($label) . "</option>\n";
     }
     return $valueAndLabelMatched;
