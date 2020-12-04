@@ -25,6 +25,7 @@ $config["oauthAppSecret"]["default"] = "B3B698ACE3976567A55DED92AA217D0623BD5886
 $config["oauthConfigs"]["default"] = array( "ap16.salesforce.com" => "My Aware Playground",
                                             "" => "--- Canon ---",
                                             "cppau--dev.my.salesforce.com" => "CPP DEV",
+                                            "cppau--dev2.my.salesforce.com" => "CPP DEV2",
                                             "cppau--sit.my.salesforce.com" => "CPP SIT",
                                             "cppau--uat1.my.salesforce.com" => "CPP UAT1",
                                             "cppau--fsl.my.salesforce.com" => "CPP FSL",
