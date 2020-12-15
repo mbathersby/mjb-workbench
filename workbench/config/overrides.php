@@ -29,7 +29,9 @@ $config["oauthConfigs"]["default"] = array( "ap16.salesforce.com" => "My Aware P
                                             "cppau--sit.my.salesforce.com" => "CPP SIT",
                                             "cppau--uat1.my.salesforce.com" => "CPP UAT1",
                                             "cppau--fsl.my.salesforce.com" => "CPP FSL",
-                                            "cppau--int.my.salesforce.com" => "CPP INT");
+                                            "cppau--int.my.salesforce.com" => "CPP INT",
+                                            "cppau--training.my.salesforce.com" => "CPP TRAINING"
+                                          );
 
 /*"ampfs--jandev.my.salesforce.com" => "AMP-JANDEV",
 "ampfs--janqa.my.salesforce.com" => "AMP-JANQA",
