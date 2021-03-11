@@ -17,11 +17,11 @@ if (isset($_POST['uiLogin'])
 require_once "header.php";
 ?>
 
-<p>
-    <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
-</p>
-
 <div id="loginBlockContainer">
+    <p>
+        <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
+    </p>
+    
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
