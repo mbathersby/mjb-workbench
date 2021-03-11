@@ -13,7 +13,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~7.3.24",
+        "php": "~8.0.3",
         "ext-redis": "*",
         "ext-soap": "*"
     },
