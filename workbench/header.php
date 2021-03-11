@@ -98,71 +98,72 @@
 	    }
 	}
 	?>
-
-
-	<div id='mainBlock'>
-
-	<div id='navMenu' style="clear: both;">
-	    <span class="preload1"></span>
-	    <span class="preload2"></span>
-	    <ul id="nav">
-	    <?php
-	    foreach ($GLOBALS["MENUS"] as $menu => $pages) {
-		if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
-		    continue;
-		}
-		$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
-		print "<li class='top'><a class='top_link'><span class='down'>" . $menuLabel ."</span></a>\n" .
-			  "<ul class='sub'>";
-		foreach ($pages as $href => $page) {
-		    if (!$page->onNavBar || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
-			continue;
-		    }
-		    print "<li><a href='$href' onmouseover=\"Tip('$page->desc')\" target=\"" . $page->window . "\">$page->title</a></li>\n";
-		}
-		print "</ul></li>";
-
-		if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
-	    }
-	    ?>
-	    </ul>
-	</div>
-
-	<?php
-	if (!termsOk() && $myPage->requiresSfdcSession) {
-	    ?>
-	    <div style="margin-left: 95px; margin-top: 10px;">
-		<form method="POST" action="">
-		    <input type="checkbox" id="termsAccepted" name="termsAccepted"/>
-		    <label for="termsAccepted"><a href="terms.php" target="_blank">I agree to the terms of service</a></label>
-		    <input type="submit" value="Continue" style="margin-left: 10px; "/>
-		</form>
-	    </div>
-	   <?php
-	    exit;
-	}
-
-	print "<table width='100%' border='0'><tr>";
-	if ($myPage->showTitle) {
-	    print "<td id='pageTitle'>" . $myPage->title . "</td>";
-	}
-	if (isLoggedIn() && termsOk()) {
-	    $userInfo = WorkbenchContext::get()->getUserInfo();
-	    $infoTips = array("Username: " . $userInfo->userName,
-			      "Instance: " . WorkbenchContext::get()->getHost(),
-			      "Org Id:&nbsp;&nbsp;" . substr($userInfo->organizationId, 0, 15),
-			      "User Id:&nbsp;" . substr($userInfo->userId, 0, 15));
-
-	    print "<td id='myUserInfo'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
-		   htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
-	}
-	print "</tr></table>";
-
-	if (isset($errors)) {
-	    print "<p/>";
-	    displayError($errors, false, true);
-	}
-
-	?>
+	
 	</head>
-    	<body>
+	<body>
+
+		<div id='mainBlock'>
+
+		<div id='navMenu' style="clear: both;">
+		    <span class="preload1"></span>
+		    <span class="preload2"></span>
+		    <ul id="nav">
+		    <?php
+		    foreach ($GLOBALS["MENUS"] as $menu => $pages) {
+			if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
+			    continue;
+			}
+			$menuLabel = ($menu == "WORKBENCH") ? "&nbsp;<img src='" . getPathToStaticResource('/images/acn_white.png') . "' style='height: 32px; width: 140px;'/>" : strtolower($menu);
+			print "<li class='top'><a class='top_link'><span class='down'>" . $menuLabel ."</span></a>\n" .
+				  "<ul class='sub'>";
+			foreach ($pages as $href => $page) {
+			    if (!$page->onNavBar || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
+				continue;
+			    }
+			    print "<li><a href='$href' onmouseover=\"Tip('$page->desc')\" target=\"" . $page->window . "\">$page->title</a></li>\n";
+			}
+			print "</ul></li>";
+
+			if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
+		    }
+		    ?>
+		    </ul>
+		</div>
+
+		<?php
+		if (!termsOk() && $myPage->requiresSfdcSession) {
+		    ?>
+		    <div style="margin-left: 95px; margin-top: 10px;">
+			<form method="POST" action="">
+			    <input type="checkbox" id="termsAccepted" name="termsAccepted"/>
+			    <label for="termsAccepted"><a href="terms.php" target="_blank">I agree to the terms of service</a></label>
+			    <input type="submit" value="Continue" style="margin-left: 10px; "/>
+			</form>
+		    </div>
+		   <?php
+		    exit;
+		}
+
+		print "<table width='100%' border='0'><tr>";
+		if ($myPage->showTitle) {
+		    print "<td id='pageTitle'>" . $myPage->title . "</td>";
+		}
+		if (isLoggedIn() && termsOk()) {
+		    $userInfo = WorkbenchContext::get()->getUserInfo();
+		    $infoTips = array("Username: " . $userInfo->userName,
+				      "Instance: " . WorkbenchContext::get()->getHost(),
+				      "Org Id:&nbsp;&nbsp;" . substr($userInfo->organizationId, 0, 15),
+				      "User Id:&nbsp;" . substr($userInfo->userId, 0, 15));
+
+		    print "<td id='myUserInfo'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
+			   htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
+		}
+		print "</tr></table>";
+
+		if (isset($errors)) {
+		    print "<p/>";
+		    displayError($errors, false, true);
+		}
+
+		?>
+	
