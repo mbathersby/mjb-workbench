@@ -1,4 +1,6 @@
 <?php
+require_once "header.php";
+
 require_once "shared.php";
 require_once "session.php";
 require_once "controllers/LoginController.php";
@@ -14,13 +16,12 @@ if (isset($_POST['uiLogin'])
     $c->processRequest();
 }
 
-require_once "header.php";
 ?>
 
 <div id="loginBlockContainer">
-    <p>
+    <!--p>
         <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
-    </p>
+    </p-->
     
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
