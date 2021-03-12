@@ -3,6 +3,8 @@ var WorkbenchLogin = new function() {
     var form = document.getElementById('login_form');
 
     this.initializeForm = function(loginType) {
+        console.log('Login Form ID: loginType_' + loginType';
+                    
         var loginTypeElem = form['loginType_' + loginType];
         if (loginTypeElem === undefined) {
             alert("Unknown login type '" + loginType + "'. Check configuration!");
