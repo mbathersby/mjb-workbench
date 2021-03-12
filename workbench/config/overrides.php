@@ -22,14 +22,10 @@ $config["oauthRequired"]["default"] = FALSE;
 
 $config["oauthConfigs"]["default"] = array(
                                             "login.salesforce.com" => array(
-                                                "label" => "Production",
-                                                "key" => $config["defaultOauthKey"]["default"],
-                                                "secret" => $config["defaultOauthSecret"]["default"]
+                                                "label" => "Production"
                                             ),
                                             "test.salesforce.com" => array(
-                                                "label" => "Sandbox",
-                                                "key" => $config["defaultOauthKey"]["default"],
-                                                "secret" => $config["defaultOauthSecret"]["default"]
+                                                "label" => "Sandbox"
                                             )
                                         );
 
