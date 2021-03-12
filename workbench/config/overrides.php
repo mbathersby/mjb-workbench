@@ -17,8 +17,8 @@
 // Note, Production and Sandbox can have the same key and secret, but it is not required
 // If connecting to other Salesforce environments, add a new entry to the array:
 //
-$config["oauthEnabled"]["value"] = TRUE;
-$config["oauthEnabled"]["value"] = FALSE;
+$config["oauthEnabled"]["default"] = TRUE;
+$config["oauthRequired"]["default"] = FALSE;
 
 $config["oauthConfigs"]["default"] = array(
                                             "login.salesforce.com" => array(
@@ -32,6 +32,14 @@ $config["oauthConfigs"]["default"] = array(
                                                 "secret" => ""
                                             )
                                         );
+foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
+    if(!empty($hostInfo["key"]){
+        $hostInfo["key"]->WorkbenchConfig::get()->value('defaultOauthKey');
+    }
+    if(!empty($hostInfo["secret"]){
+        $hostInfo["secret"]->WorkbenchConfig::get()->value('defaultOauthSecret');
+    }
+}
 
 
 // CSRF SECURITY SETTINGS
