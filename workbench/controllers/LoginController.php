@@ -497,13 +497,6 @@ class LoginController {
     public function getOauthHostSelectOptions() {
         $hosts = array();
         foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
-            if(!isset($hostInfo["key"])){
-                $hostInfo["key"] = WorkbenchConfig::get()->value('defaultOauthKey');
-            }
-            if(!isset($hostInfo["secret"])){
-                $hostInfo["secret"] = WorkbenchConfig::get()->value('defaultOauthSecret');
-            }
-
             $hosts[$host] = $hostInfo["label"];
         }
 
