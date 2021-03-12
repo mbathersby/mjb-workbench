@@ -207,7 +207,7 @@ $config["header_LoginOptions"] = array(
    $config["defaultLoginType"]  = array(
         "label" => "Default Login Type",
         "description" => "Determines default login type that is loaded on startup.",
-        "default" => "std",
+        "default" => "oauth",
         "overrideable" => true,
         "dataType" => "picklist",
         "valuesToLabels" => array(
@@ -215,6 +215,22 @@ $config["header_LoginOptions"] = array(
             "adv" => "Advanced",
             "oauth" => "OAuth Remote Access",
         )
+    );
+
+    $config["defaultOauthKey"] = array(
+        "label" => "Default OAuth Client ID",
+        "description" => "Default Client ID to use for OAuth",
+        "default" => "",
+        "overrideable" => true,
+        "dataType" => "string"
+    );
+
+    $config["defaultOauthSecret"] = array(
+        "label" => "Default OAuth Client Secret",
+        "description" => "Default Client Secret to use for OAuth",
+        "default" => "",
+        "overrideable" => true,
+        "dataType" => "string"
     );
 
     $config["defaultInstance"]  = array(
@@ -1006,22 +1022,6 @@ $config["header_internal"] = array(
         "description" => "Only redis:// URL are currently supported; otherwise, blank for default value",
         "default" => "",
         "overrideable" => false,
-        "dataType" => "string"
-    );
-
-    $config["defaultOauthKey"] = array(
-        "label" => "Default OAuth Client ID",
-        "description" => "Default Client ID to use for OAuth",
-        "default" => "3MVG9n_HvETGhr3AvIZ7NpzAALFVWT5g.sGbggTW95N5E0d6WuxPYOEctzp1yoQv8a2H7LcE37aYgeMjReEQM",
-        "overrideable" => true,
-        "dataType" => "string"
-    );
-
-    $config["defaultOauthSecret"] = array(
-        "label" => "Default OAuth Client Secret",
-        "description" => "Default Client Secret to use for OAuth",
-        "default" => "B3B698ACE3976567A55DED92AA217D0623BD58868E9796BC249B0E371E8B44DB",
-        "overrideable" => true,
         "dataType" => "string"
     );
 ?>
