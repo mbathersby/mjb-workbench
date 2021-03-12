@@ -348,10 +348,16 @@ class LoginController {
         }
 
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
+		
+		if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
+			$oauthConfigs[$hostName]['key'] = $this->oauthKey;
+			$oauthConfigs[$hostName]['secret'] = $this->oauthSecret;
+        }
+		
         $authUrl = "https://" . $hostName .
                     "/services/oauth2/authorize?response_type=code&display=popup".
-                    "&client_id=" . urlencode($this->oauthKey) .
-                    "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl()) .
+                    "&client_id=" . urlencode($oauthConfigs[$hostName]['key']) .
+                    "&redirect_uri=" . urlencode($oauthConfigs[$hostName]['secret']) .
                     "&state=" . urlencode($state);
 
         header('Location: ' . $authUrl);
@@ -372,14 +378,10 @@ class LoginController {
 
         $tokenUrl =  "https://" . $hostName . "/services/oauth2/token";
 
-        if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
-            throw new Exception("Misconfigured OAuth Host");
-        }
-
         $params = "code=" . $code
                   . "&grant_type=authorization_code"
-                  . "&client_id=" . $oauthConfigs[$hostName]['key']
-                  . "&client_secret=" . $this->oauthSecret
+                  . "&client_id=" . urlencode($oauthConfigs[$hostName]['key'])
+                  . "&client_secret=" . urlencode($oauthConfigs[$hostName]['secret'])
                   . "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl());
 
         $curl = curl_init($tokenUrl);
@@ -495,6 +497,7 @@ class LoginController {
 
     public function getOauthHostSelectOptions() {
         $hosts = array();
+		
         foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
             $hosts[$host] = $hostInfo["label"];
         }
