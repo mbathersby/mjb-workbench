@@ -5,7 +5,7 @@ class WorkbenchConfig {
     const INSTANCE = "WORKBENCH_CONFIG";
 
     private $config;
-    private $authConfigs;
+    //private $authConfigs;
 
     /**
      * @static
@@ -30,7 +30,7 @@ class WorkbenchConfig {
     function __construct() {
         // initialize in case load issues
         $config = array();
-        $authConfigs = array();
+        //$authConfigs = array();
 
         //load default config values
         require 'defaults.php';
@@ -114,7 +114,7 @@ class WorkbenchConfig {
             }
         }
         
-        $this->authConfigs = $this->config["oauthConfigs"]["default"];
+        /*$this->authConfigs = $this->config["oauthConfigs"]["default"];
         
         foreach ($this->authConfigs as $auth => $authConfig) {
             if(!isset($authConfig["key"] || !isset($authConfig["secret"]){
@@ -122,7 +122,7 @@ class WorkbenchConfig {
                 $this->config["oauthConfigs"]["default"][$auth]["secret"] =  $this->config["defaultOauthSecret"];
                 
             }
-        }
+        }*/
 
         if ($this->config['callOptions_client']['default'] == 'WORKBENCH_DEFAULT' && !isset($_COOKIE['callOptions_client'])) {
             $this->config['callOptions_client']['value'] = getWorkbenchUserAgent();
