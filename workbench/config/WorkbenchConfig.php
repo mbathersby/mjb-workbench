@@ -118,8 +118,9 @@ class WorkbenchConfig {
         
         foreach ($this->authConfigs as $auth => $authConfig) {
             if(!isset($authConfig["key"] || !isset($authConfig["secret"]){
-                $authConfig["key"] =  $this->config["defaultOauthKey"];
-                $authConfig["secret"] =  $this->config["defaultOauthSecret"];
+                $this->config["oauthConfigs"]["default"][$auth]["key"] =  $this->config["defaultOauthKey"];
+                $this->config["oauthConfigs"]["default"][$auth]["secret"] =  $this->config["defaultOauthSecret"];
+                
             }
         }
 
