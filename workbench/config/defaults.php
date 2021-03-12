@@ -1008,4 +1008,20 @@ $config["header_internal"] = array(
         "overrideable" => false,
         "dataType" => "string"
     );
+
+    $config["defaultOauthKey"] = array(
+        "label" => "Default OAuth Client ID",
+        "description" => "Default Client ID to use for OAuth",
+        "default" => "3MVG9n_HvETGhr3AvIZ7NpzAALFVWT5g.sGbggTW95N5E0d6WuxPYOEctzp1yoQv8a2H7LcE37aYgeMjReEQM",
+        "overrideable" => true,
+        "dataType" => "string"
+    );
+
+    $config["defaultOauthSecret"] = array(
+        "label" => "Default OAuth Client Secret",
+        "description" => "Default Client Secret to use for OAuth",
+        "default" => "B3B698ACE3976567A55DED92AA217D0623BD58868E9796BC249B0E371E8B44DB",
+        "overrideable" => true,
+        "dataType" => "string"
+    );
 ?>
