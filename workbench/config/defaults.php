@@ -935,6 +935,15 @@ $config["header_Performance"] = array(
     );
 
     // This should never be overrideable by end users; instead, admins SHOULD override default in overrides.php
+    $config["oauthREnabled"] = array(
+        "label" => "Enable OAuth Login",
+        "description" => "Enable OAuth Login",
+        "default" => false,
+        "overrideable" => false,
+        "dataType" => "boolean"
+    );
+
+    // This should never be overrideable by end users; instead, admins SHOULD override default in overrides.php
     $config["oauthRequired"] = array(
         "label" => "Require OAuth Login",
         "description" => "Require OAuth Login",
