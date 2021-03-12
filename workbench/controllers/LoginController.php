@@ -58,6 +58,7 @@ class LoginController {
         $this->oauthRequired = WorkbenchConfig::get()->value("oauthRequired");
         if ($this->oauthRequired) {
             $this->loginType = "oauth";
+            $this->oauthEnabled = TRUE;
         }
 
         if ($this->oauthRequired && !$this->oauthEnabled) {
