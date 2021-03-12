@@ -50,12 +50,6 @@ class LoginController {
                               : "select.php";
 
         $this->oauthEnabled = WorkbenchConfig::get()->value("oauthEnabled");
-        /*foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
-            if (!empty($hostInfo["label"]) && !empty($hostInfo["key"]) && !empty($hostInfo["secret"])) {
-                $this->oauthEnabled = true;
-                break;
-            }
-        }*/
 
         $this->oauthRequired = WorkbenchConfig::get()->value("oauthRequired");
         if ($this->oauthRequired) {
