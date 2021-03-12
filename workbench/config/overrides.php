@@ -32,12 +32,12 @@ $config["oauthConfigs"]["default"] = array(
                                             )
                                         );
 
-foreach($config["oauthConfigs"]["default"] as $host => $hostInfo) {
-    if(!empty($hostInfo["key"]){
-        $hostInfo["key"]->WorkbenchConfig::get()->value('defaultOauthKey');
+foreach($config["oauthConfigs"]["default"] as $hosts) {
+    if(!isset($hosts["key"]){
+        $hosts["key"] = $config["defaultOauthKey");
     }
-    if(!empty($hostInfo["secret"]){
-        $hostInfo["secret"]->WorkbenchConfig::get()->value('defaultOauthSecret');
+    if(!isset($hosts["secret"]){
+        $hosts["secret"] = $config["defaultOauthSecret");
     }
 }
 
