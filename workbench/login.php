@@ -4,6 +4,7 @@ require_once "session.php";
 require_once "controllers/LoginController.php";
 
 $c = new LoginController();
+
 if (isset($_POST['uiLogin'])
     || !empty($_REQUEST["pw"])
     || !empty($_REQUEST["sid"])
@@ -29,12 +30,14 @@ require_once "header.php";
             <input type="radio" id="loginType_std" name="loginType" value="std"/>
             <label for="loginType_std">Standard</label>
 
-            <input type="radio" id="loginType_adv" name="loginType" value="adv"/>
-            <label for="loginType_adv">Advanced</label>
+            <?php if (!$c->isOAuthRequired()) { ?>
+                <input type="radio" id="loginType_adv" name="loginType" value="adv"/>
+                <label for="loginType_adv">Advanced</label>
+            <?php } ?>
 
              <?php if ($c->isOAuthEnabled()) { ?>
-            <input type="radio" id="loginType_oauth" name="loginType" value="oauth"/>
-            <label for="loginType_oauth">OAuth</label>
+                <input type="radio" id="loginType_oauth" name="loginType" value="oauth"/>
+                <label for="loginType_oauth">OAuth</label>
             <?php } ?>
         </div>
 
