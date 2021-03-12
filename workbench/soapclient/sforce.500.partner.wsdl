@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 Salesforce.com Partner Web Services API Version 50.0
-Generated on 2020-12-15 05:00:30 +0000.
+Generated on 2020-08-24 21:11:24 +0000.
 
 Copyright 1999-2020 salesforce.com, inc.
 All Rights Reserved
@@ -1284,6 +1284,9 @@ All Rights Reserved
                     </enumeration>
                     <enumeration value="FORMULA_EXPRESSION_INVALID">
                         <xsd:annotation><xsd:documentation>Errors with this extended error code have the following properties: erroneousElementApiName, erroneousElementType, erroneousFields, severity, formulaExpression</xsd:documentation></xsd:annotation>
+                    </enumeration>
+                    <enumeration value="FTEST_EXTENSION_CODE_FOR_TEST">
+                        <xsd:annotation><xsd:documentation>Errors with this extended error code have the following properties: FTestName, ftestClass</xsd:documentation></xsd:annotation>
                     </enumeration>
                     <enumeration value="GLOBAL_VARIABLE_NOT_SUPPORTED_FOR_PROCESSTYPE">
                         <xsd:annotation><xsd:documentation>Errors with this extended error code have the following properties: erroneousElementApiName, erroneousElementType, erroneousFields, severity, processType, systemVariable</xsd:documentation></xsd:annotation>
@@ -8090,7 +8093,7 @@ All Rights Reserved
     <service name="SforceService">
         <documentation>Sforce SOAP API</documentation>
         <port binding="tns:SoapBinding" name="Soap">
-            <soap:address location="https://test.salesforce.com/services/Soap/u/50.0"/>
+            <soap:address location="https://login.salesforce.com/services/Soap/u/50.0"/>
         </port>
     </service>
 </definitions>

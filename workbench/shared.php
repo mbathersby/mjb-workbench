@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+require_once "util/ErrorLogging.php";
 require_once "util/ExpandableTree.php";
 
 function disallowDoctype($xmlString) {
@@ -523,13 +525,10 @@ function printSelectOptions($valuesToLabelsArray,$defaultValue = null) {
     $valueAndLabelMatched = false;
     foreach ($valuesToLabelsArray as $value => $label) {
         print "<option value=\"" . htmlspecialchars($value) . "\"";
-        //if ($defaultValue == $value) {
-            //print " selected=\"selected\"";
-            //$valueAndLabelMatched = true;
-        //}
-	    if($value==""){
-		    print " disabled";
-	    }
+        if ($defaultValue == $value) {
+            print " selected=\"selected\"";
+            $valueAndLabelMatched = true;
+        }
         print ">" . htmlspecialchars($label) . "</option>\n";
     }
     return $valueAndLabelMatched;
@@ -702,260 +701,24 @@ function prettyPrintXml($xml, $htmlOutput=FALSE) {
     return ($htmlOutput) ? '<pre>' . htmlspecialchars($xml) . '</pre>' : $xml;
 }
 
-function rc4($data, $salt, $encrypt) {
-    $key = array();
-    $result = "";
-    $state = array();
-    $salt = md5(str_rot13($salt));
-    $len = strlen($salt);
-
-    if ($encrypt)
-    {
-        $data = str_rot13($data);
-    }
-    else
-    {
-        $data = base64_decode($data);
-    }
-
-    $ii = -1;
-
-    while (++$ii < 256)
-    {
-        $key[$ii] = ord(substr($salt, (($ii % $len) + 1), 1));
-        $state[$ii] = $ii;
-    }
-
-    $ii = -1;
-    $j = 0;
-
-    while (++$ii < 256)
-    {
-        $j = ($j + $key[$ii] + $state[$ii]) % 255;
-        $t = $state[$j];
-
-        $state[$ii] = $state[$j];
-        $state[$j] = $t;
-    }
-
-    $len = strlen($data);
-    $ii = -1;
-    $j = 0;
-    $k = 0;
-
-    while (++$ii < $len)
-    {
-        $j = ($j + 1) % 256;
-        $k = ($k + $state[$j]) % 255;
-        $t = $key[$j];
-
-        $state[$j] = $state[$k];
-        $state[$k] = $t;
-
-        $x = $state[(($state[$j] + $state[$k]) % 255)];
-        $result .= chr(ord($data[$ii]) ^ $x);
-    }
-
-    if ($encrypt)
-    {
-        $result = base64_encode($result);
-    }
-    else
-    {
-        $result = str_rot13($result);
-    }
-
-    return $result;
-}
-
 function crypto_serialize($data) {
-    return rc4(base64_encode(serialize($data)), WorkbenchConfig::get()->value("rc4Secret"), true);
+    return sodium_crypto_box(serialize($data), WorkbenchConfig::get()->value("nonce"), WorkbenchConfig::get()->value("sodiumKey"));
 }
 
 function crypto_unserialize($data) {
-    return unserialize(base64_decode(rc4($data, WorkbenchConfig::get()->value("rc4Secret"), false)));
-}
-
-function debug($showSuperVars = true, $showSoap = true, $customName = null, $customValue = null) {
-    if (WorkbenchConfig::get()->value("debug") == true) {
-
-        print "<script>
-            function toggleDebugSection(title, sectionId) {
-                var section = document.getElementById(sectionId);
-                if (section.style.display == 'inline') {
-                    section.style.display = 'none';
-                    title.childNodes[0].nodeValue = title.childNodes[0].nodeValue.replace('-','+');
-                } else {
-                    title.childNodes[0].nodeValue = title.childNodes[0].nodeValue.replace('+','-');
-                    section.style.display = 'inline';
-                }
-            }
-            </script>";
-         
-        print "<div style='text-align: left;'><h1>Debug Mode</h1>";
-
-
-        if ($customValue) {
-            if ($customName) {
-                print "<h2>$customName</h2>\n";
-            } else {
-                print "<h2>CUSTOM</h2>\n";
-            }
-
-            var_dump($customValue);
-            print "<hr/>";
-        }
-
-        if ($showSuperVars) {
-            print "<h2 onclick=\"toggleDebugSection(this,'container_globals')\" class=\"debugHeader\">+ SUPERGLOBAL VARIABLES</h2>\n";
-            print "<div id='container_globals' class='debugContainer'>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_cookie')\" class=\"debugHeader\">+ SERVER SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_cookie' class='debugContainer'>";
-            print htmlspecialchars(var_export($_SERVER, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_cookie')\" class=\"debugHeader\">+ COOKIE SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_cookie' class='debugContainer'>";
-            print htmlspecialchars(var_export($_COOKIE, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_session')\" class=\"debugHeader\">+ SESSION SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_session' class='debugContainer'>";
-            print htmlspecialchars(var_export($_SESSION, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_post')\" class=\"debugHeader\">+ POST SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_post' class='debugContainer'>";
-            print htmlspecialchars(var_export($_POST, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_get')\" class=\"debugHeader\">+ GET SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_get' class='debugContainer'>";
-            print htmlspecialchars(var_export($_GET, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_files')\" class=\"debugHeader\">+ FILES SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_files' class='debugContainer'>";
-            print htmlspecialchars(var_export($_FILES, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "<strong onclick=\"toggleDebugSection(this,'container_globals_env')\" class=\"debugHeader\">+ ENVIRONMENT SUPERGLOBAL VARIABLE</strong>\n";
-            print "<div id='container_globals_env' class='debugContainer'>";
-            print htmlspecialchars(var_export($_ENV, true),ENT_QUOTES);
-            print "<hr/>";
-            print "</div>";
-
-            print "</div>";
-        }
-
-// todo: contextify
-        if ($showSoap && WorkbenchContext::isEstablished() && WorkbenchContext::get()->getPartnerConnection()->getLastRequestHeaders()) {
-            try {
-                print "<h2 onclick=\"toggleDebugSection(this,'partner_soap_container')\" class=\"debugHeader\">+ PARTNER SOAP MESSAGES</h2>\n";
-                print "<div id='partner_soap_container'  class='debugContainer'>";
-
-                print "<strong>LAST REQUEST HEADER</strong>\n";
-                print htmlspecialchars(WorkbenchContext::get()->getPartnerConnection()->getLastRequestHeaders(),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST REQUEST</strong>\n";
-                print htmlspecialchars(prettyPrintXml(WorkbenchContext::get()->getPartnerConnection()->getLastRequest()),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST RESPONSE HEADER</strong>\n";
-                print htmlspecialchars(WorkbenchContext::get()->getPartnerConnection()->getLastResponseHeaders(),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST RESPONSE</strong>\n";
-                print htmlspecialchars(prettyPrintXml(WorkbenchContext::get()->getPartnerConnection()->getLastResponse()),ENT_QUOTES);
-                print "<hr/>";
-
-                print "</div>";
-            }
-            catch (Exception $e) {
-                print "<strong>SOAP Error</strong>\n";
-                print_r ($e);
-            }
-        }
-
-        if ($showSoap && WorkbenchContext::isEstablished() && WorkbenchContext::get()->getMetadataConnection()->getLastRequestHeaders()) {
-            try {
-                print "<h2 onclick=\"toggleDebugSection(this,'metadata_soap_container')\" class=\"debugHeader\">+ METADATA SOAP MESSAGES</h2>\n";
-                print "<div id='metadata_soap_container' class='debugContainer'>";
-
-                print "<strong>LAST REQUEST HEADER</strong>\n";
-                print htmlspecialchars(WorkbenchContext::get()->getMetadataConnection()->getLastRequestHeaders(),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST REQUEST</strong>\n";
-                print htmlspecialchars(prettyPrintXml(WorkbenchContext::get()->getMetadataConnection()->getLastRequest()),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST RESPONSE HEADER</strong>\n";
-                print htmlspecialchars(WorkbenchContext::get()->getMetadataConnection()->getLastResponseHeaders(),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST RESPONSE</strong>\n";
-                print htmlspecialchars(prettyPrintXml(WorkbenchContext::get()->getMetadataConnection()->getLastResponse()),ENT_QUOTES);
-                print "<hr/>";
-
-                print "</div>";
-            }
-            catch (Exception $e) {
-                print "<strong>SOAP Error</strong>\n";
-                print_r ($e);
-            }
-        }
-
-        if ($showSoap  && WorkbenchContext::isEstablished() && WorkbenchContext::get()->getApexConnection()->getLastRequestHeaders()) {
-            try {
-                print "<h2 onclick=\"toggleDebugSection(this,'apex_soap_container')\" class=\"debugHeader\">+ APEX SOAP MESSAGES</h2>\n";
-                print "<div id='apex_soap_container' class='debugContainer'>";
-
-                print "<strong>LAST REQUEST HEADER</strong>\n";
-                print htmlspecialchars(WorkbenchContext::get()->getApexConnection()->getLastRequestHeaders(),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST REQUEST</strong>\n";
-                print htmlspecialchars(prettyPrintXml(WorkbenchContext::get()->getApexConnection()->getLastRequest()),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST RESPONSE HEADER</strong>\n";
-                print htmlspecialchars(WorkbenchContext::get()->getApexConnection()->getLastResponseHeaders(),ENT_QUOTES);
-                print "<hr/>";
-
-                print "<strong>LAST RESPONSE</strong>\n";
-                print htmlspecialchars(prettyPrintXml(WorkbenchContext::get()->getApexConnection()->getLastResponse()),ENT_QUOTES);
-                print "<hr/>";
-
-                print "</div>";
-            }
-            catch (Exception $e) {
-                print "<strong>SOAP Error</strong>\n";
-                htmlspecialchars(print_r ($e));
-            }
-        }
-
-        // TODO: move into WbCtx
-        if (isset($_SESSION['restDebugLog']) && $_SESSION['restDebugLog'] != "") {
-            print "<h2 onclick=\"toggleDebugSection(this,'rest_debug_container')\" class=\"debugHeader\">+ REST/BULK API LOGS</h2>\n";
-            print "<div id='rest_debug_container' class='debugContainer'>";
-            print "<pre>" . $_SESSION['restDebugLog'] . "</pre>";
-            print "<hr/>";
-            print "</div>";
-
-            $_SESSION['restDebugLog'] = null;
-        }
-
-        print "</div>";
-    }
+    $allowlistClasses = [
+        ApexExecuteFutureTask::class, 
+        QueryFutureTask::class, 
+        ConnectionConfiguration::class, 
+        RestExplorerFutureTask::class, 
+        QueryRequest::class,
+        WorkbenchHandledException::class,
+        WorkbenchAuthenticationException::class
+    ];
+    
+    $decryptedData = sodium_crypto_box_open($data, WorkbenchConfig::get()->value("nonce"), WorkbenchConfig::get()->value("sodiumKey"));
+    
+    return unserialize($decryptedData, ['allowed_classes' => $allowlistClasses]);
 }
 
 function getComparisonOperators() {

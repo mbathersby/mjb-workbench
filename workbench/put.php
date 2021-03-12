@@ -1,8 +1,6 @@
 <?php
-
 // ALL PUT FUNCTIONS:
 // INSERT, UPDATE, UPSERT, DELETE, UNDELETE, AND PURGE
-
 
 /**
  * Main logic and control flow for all PUT funcions

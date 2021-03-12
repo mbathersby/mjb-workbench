@@ -1,6 +1,4 @@
 <?php
-require_once "header.php";
-
 require_once "shared.php";
 require_once "session.php";
 require_once "controllers/LoginController.php";
@@ -16,13 +14,14 @@ if (isset($_POST['uiLogin'])
     $c->processRequest();
 }
 
+require_once "header.php";
 ?>
 
+<p>
+    <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
+</p>
+
 <div id="loginBlockContainer">
-    <!--p>
-        <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
-    </p-->
-    
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
@@ -42,9 +41,7 @@ if (isset($_POST['uiLogin'])
         <div class="loginType_oauth">
             <p>
                 <label for="inst">Environment:</label>
-                <!--input id="oauth_env" name="oauth_host" style="width: 200px;"></input-->
                 <select id="oauth_env" name="oauth_host" style="width: 200px;">
-                    <option value="">-- Select --</option>
                     <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
                 </select>
             </p>
@@ -111,6 +108,16 @@ if (isset($_POST['uiLogin'])
                 <label for="termsAccepted"><a href="terms.php" target="_blank">I agree to the terms of service</a></label>
             </div>
             <?php } ?>
+
+            <p>
+                <strong>Workbench is free to use, but is not an official salesforce.com product.</strong> Workbench has not been officially tested or
+                documented. salesforce.com support is not available for Workbench. Support requests for Workbench should be directed
+                to Stackoverflow at
+                <a href="https://salesforce.stackexchange.com/questions/tagged/workbench">https://salesforce.stackexchange.com/questions/tagged/workbench</a>.
+                Source code for Workbench  can be found at
+                <a href="https://github.com/forceworkbench/forceworkbench">https://github.com/forceworkbench/forceworkbench</a>
+                under separate and different license terms.
+            </p>
 
             <p>
                 <div style="text-align: right;">

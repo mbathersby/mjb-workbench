@@ -47,12 +47,9 @@ class LoginController {
                               ? $_REQUEST['startUrl']
                               : "select.php";
 
-        $this->oauthEnabled = true;
-		$oauthAppKey = WorkbenchConfig::get()->value('oauthAppKey');
-		$oauthAppSecret = WorkbenchConfig::get()->value('oauthAppSecret');
-		
-        foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostLabel) {
-            if (!empty($hostLabel) && !empty($oauthAppKey) && !empty($oauthAppSecret)) {
+        $this->oauthEnabled = false;
+        foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
+            if (!empty($hostInfo["label"]) && !empty($hostInfo["key"]) && !empty($hostInfo["secret"])) {
                 $this->oauthEnabled = true;
                 break;
             }
@@ -152,8 +149,8 @@ class LoginController {
         $req = json_decode(base64_decode($encodedEnv));
 
         $clientId = $req->client->clientId;
-        //$oauthConfig = $this->findOAuthConfigByClientId($clientId);
-        $secret = WorkbenchConfig::get()->value("oauthAppSecret");
+        $oauthConfig = $this->findOAuthConfigByClientId($clientId);
+        $secret = $oauthConfig['secret'];
 
         $calcedSig = base64_encode(hash_hmac("sha256", $encodedEnv, $secret, true));
         if ($calcedSig != $encodedSig) {
@@ -163,7 +160,7 @@ class LoginController {
         $this->processLogin(null, null, $req->client->instanceUrl . $req->context->links->partnerUrl, $req->client->oauthToken, "select.php");
     }
 
-    /*private function findOAuthConfigByClientId($clientId) {
+    private function findOAuthConfigByClientId($clientId) {
         foreach (WorkbenchConfig::get()->value("oauthConfigs") as $oauthConfig) {
             if (isset($oauthConfig['key']) && $oauthConfig['key'] == $clientId) {
                 return $oauthConfig;
@@ -171,7 +168,7 @@ class LoginController {
         }
 
         throw new Exception("Unknown OAuth Client ID");
-    }*/
+    }
 
     public function processRememberUserCookie() {
         if (isset($_POST['rememberUser']) && $_POST['rememberUser'] == 'on') {
@@ -213,12 +210,12 @@ class LoginController {
     }
 
     private function isAllowedHost($serverUrl) {
-        $domainWhitelist = array(
+        $domainAllowlist = array(
             'salesforce\.com',
             'vpod\.t\.force\.com',
             'cloudforce\.com'
         );
-        foreach ($domainWhitelist as $w) {
+        foreach ($domainAllowlist as $w) {
             if (preg_match('/^https?\:\/\/[\w\.\-_]+\.' . $w . '/', $serverUrl)) {
                 return true;
             }
@@ -306,25 +303,25 @@ class LoginController {
         // exceptions will be caught by top-level handler
         $userInfo = WorkbenchContext::get()->getUserInfo();
 
-        // do org id whitelist/blacklisting
+        // do org id allowlist/blocklisting
         $orgId15 = substr($userInfo->organizationId,0,15);
-        $orgIdWhiteList = array_map('trim',explode(",",WorkbenchConfig::get()->value("orgIdWhiteList")));
-        $orgIdBlackList = array_map('trim',explode(",",WorkbenchConfig::get()->value("orgIdBlackList")));
+        $orgIdAllowList = array_map('trim',explode(",",WorkbenchConfig::get()->value("orgIdAllowList")));
+        $orgIdBlockList = array_map('trim',explode(",",WorkbenchConfig::get()->value("orgIdBlockList")));
         $isAllowed = true;
-        foreach ($orgIdWhiteList as $allowedOrgId) {
+        foreach ($orgIdAllowList as $allowedOrgId) {
             if ($allowedOrgId === "") {
                 continue;
             } else if ($orgId15 === substr($allowedOrgId,0,15)) {
                 $isAllowed = true;
                 break;
             } else {
-                // there is something on the whitelist that's not us
+                // there is something on the Allowlist that's not us
                 // disallow and keep looking until we find our org id
                 $isAllowed = false;
             }
         }
 
-        foreach ($orgIdBlackList as $disallowedOrgId) {
+        foreach ($orgIdBlockList as $disallowedOrgId) {
             if ($orgId15 ===  substr($disallowedOrgId,0,15)) {
                 $isAllowed = false;
                 break;
@@ -351,11 +348,9 @@ class LoginController {
         }
 
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
-		$oauthAppKey = WorkbenchConfig::get()->value('oauthAppKey');
-		
         $authUrl = "https://" . $hostName .
                     "/services/oauth2/authorize?response_type=code&display=popup".
-                    "&client_id=" . urlencode($oauthAppKey) .
+                    "&client_id=" . urlencode($oauthConfigs[$hostName]["key"]) .
                     "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl()) .
                     "&state=" . urlencode($state);
 
@@ -374,19 +369,17 @@ class LoginController {
         }
 
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
-		$oauthAppKey = WorkbenchConfig::get()->value("oauthAppKey");
-		$oauthAppSecret = WorkbenchConfig::get()->value("oauthAppSecret");
 
         $tokenUrl =  "https://" . $hostName . "/services/oauth2/token";
 
-        if (!isset($oauthConfigs[$hostName])) {
+        if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
             throw new Exception("Misconfigured OAuth Host");
         }
 
         $params = "code=" . $code
                   . "&grant_type=authorization_code"
-                  . "&client_id=" . urlencode($oauthAppKey)
-                  . "&client_secret=" . urlencode($oauthAppSecret)
+                  . "&client_id=" . $oauthConfigs[$hostName]['key']
+                  . "&client_secret=" . $oauthConfigs[$hostName]['secret']
                   . "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl());
 
         $curl = curl_init($tokenUrl);
@@ -502,15 +495,12 @@ class LoginController {
 
     public function getOauthHostSelectOptions() {
         $hosts = array();
-		$oauthAppKey = WorkbenchConfig::get()->value("oauthAppKey");
-		$oauthAppSecret = WorkbenchConfig::get()->value("oauthAppSecret");
-		
-        foreach (WorkbenchConfig::get()-> value('oauthConfigs') as $host => $hostLabel) {
-            if (empty($hostLabel) || empty($oauthAppKey) || empty($oauthAppSecret)) {
+        foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
+            if (empty($hostInfo["label"]) || empty($hostInfo["key"]) || empty($hostInfo["secret"])) {
                 continue;
             }
 
-            $hosts[$host] = $hostLabel;
+            $hosts[$host] = $hostInfo["label"];
         }
 
         if (array_key_exists("login.salesforce.com", $hosts)) {

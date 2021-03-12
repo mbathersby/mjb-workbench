@@ -2158,6 +2158,7 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
     <xsd:complexContent>
      <xsd:extension base="tns:Metadata">
       <xsd:sequence>
+       <xsd:element name="aiAttributionSuccessMilestone" minOccurs="0" type="xsd:string"/>
        <xsd:element name="aiAttributionTimeframe" minOccurs="0" type="xsd:int"/>
        <xsd:element name="enableAIAttribution" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableAutoCampInfluenceDisabled" minOccurs="0" type="xsd:boolean"/>
@@ -3608,6 +3609,7 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
      <xsd:enumeration value="Standard"/>
      <xsd:enumeration value="Custom"/>
      <xsd:enumeration value="System"/>
+     <xsd:enumeration value="Package"/>
      <xsd:enumeration value="Derived"/>
      <xsd:enumeration value="Bridge"/>
     </xsd:restriction>
@@ -5740,20 +5742,6 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
      <xsd:enumeration value="CustomURL"/>
     </xsd:restriction>
    </xsd:simpleType>
-   <xsd:complexType name="EmployeeUserSettings">
-    <xsd:complexContent>
-     <xsd:extension base="tns:Metadata">
-      <xsd:sequence>
-       <xsd:element name="emailEncoding" type="xsd:string"/>
-       <xsd:element name="enableEmployeeAutoCreateUser" minOccurs="0" type="xsd:boolean"/>
-       <xsd:element name="enableEmployeeIsSourceOfTruth" minOccurs="0" type="xsd:boolean"/>
-       <xsd:element name="permset" minOccurs="0" type="xsd:string"/>
-       <xsd:element name="profile" type="xsd:string"/>
-       <xsd:element name="usernameSuffix" minOccurs="0" type="xsd:string"/>
-      </xsd:sequence>
-     </xsd:extension>
-    </xsd:complexContent>
-   </xsd:complexType>
    <xsd:complexType name="EncryptionKeySettings">
     <xsd:complexContent>
      <xsd:extension base="tns:Metadata">
@@ -7927,7 +7915,9 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
        <xsd:element name="enableCalculationUsingParentPolicyOnly" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableCompliantDataSharingForAccount" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableCompliantDataSharingForOpportunity" minOccurs="0" type="xsd:boolean"/>
-       <xsd:element name="enableEinsteinDocReader" minOccurs="0" type="xsd:boolean"/>
+       <xsd:element name="enableContactInteraction" minOccurs="0" type="xsd:boolean"/>
+       <xsd:element name="enableEinsteinDocReaderEnabled" minOccurs="0" type="xsd:boolean"/>
+       <xsd:element name="enableEinsteinDocReaderMappings" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableEinsteinVisits" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableEventManagementOrgPref" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableEventWriteOrgPref" minOccurs="0" type="xsd:boolean"/>
@@ -8276,7 +8266,6 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
     <xsd:restriction base="xsd:string">
      <xsd:enumeration value="AllUpdates"/>
      <xsd:enumeration value="FeedItemType"/>
-     <xsd:enumeration value="Custom"/>
     </xsd:restriction>
    </xsd:simpleType>
    <xsd:complexType name="FeedLayoutComponent">
@@ -10656,7 +10645,7 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
        <xsd:element name="enableMySettings" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableQuantitySchedule" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableRevenueSchedule" minOccurs="0" type="xsd:boolean"/>
-       <xsd:element name="enableSecureGuestUserRecordAccess" minOccurs="0" type="xsd:boolean"/>
+       <xsd:element name="enableSecureGuestUserRecordAccessForProduct2" minOccurs="0" type="xsd:boolean"/>
       </xsd:sequence>
      </xsd:extension>
     </xsd:complexContent>
@@ -10892,7 +10881,7 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
      <xsd:element name="shouldIgnoreGlobalDelay" minOccurs="0" type="xsd:boolean"/>
      <xsd:element name="startDate" minOccurs="0" type="xsd:date"/>
      <xsd:element name="stepNumber" minOccurs="0" type="xsd:int"/>
-     <xsd:element name="targetAppDeveloperName" minOccurs="0" type="xsd:string"/>
+     <xsd:element name="targetAppDeveloperName" type="xsd:string"/>
      <xsd:element name="targetAppNamespacePrefix" minOccurs="0" type="xsd:string"/>
      <xsd:element name="targetPageKey1" type="xsd:string"/>
      <xsd:element name="targetPageKey2" minOccurs="0" type="xsd:string"/>
@@ -12381,8 +12370,6 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
        <xsd:element name="passwordPolicies" minOccurs="0" type="tns:PasswordPolicies"/>
        <xsd:element name="sessionSettings" minOccurs="0" type="tns:SessionSettings"/>
        <xsd:element name="singleSignOnSettings" minOccurs="0" type="tns:SingleSignOnSettings"/>
-       <xsd:element name="turnTLSv11Off" minOccurs="0" type="xsd:boolean"/>
-       <xsd:element name="turnTLSv11OffSites" minOccurs="0" type="xsd:boolean"/>
       </xsd:sequence>
      </xsd:extension>
     </xsd:complexContent>
@@ -13649,6 +13636,7 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
        <xsd:element name="enableWorkRewardsPref" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableWorkThanksPref" minOccurs="0" type="xsd:boolean"/>
        <xsd:element name="enableWorkUseObjectivesForGoals" minOccurs="0" type="xsd:boolean"/>
+       <xsd:element name="enableWorkdotcomSchedulingEnabled" minOccurs="0" type="xsd:boolean"/>
       </xsd:sequence>
      </xsd:extension>
     </xsd:complexContent>
@@ -14433,6 +14421,9 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
      <xsd:enumeration value="FORMULA_EXPRESSION_INVALID">
       <xsd:annotation>
        <xsd:documentation>Errors with this extended error code have the following properties: erroneousElementApiName, erroneousElementType, erroneousFields, severity, formulaExpression</xsd:documentation></xsd:annotation></xsd:enumeration>
+     <xsd:enumeration value="FTEST_EXTENSION_CODE_FOR_TEST">
+      <xsd:annotation>
+       <xsd:documentation>Errors with this extended error code have the following properties: FTestName, ftestClass</xsd:documentation></xsd:annotation></xsd:enumeration>
      <xsd:enumeration value="GLOBAL_VARIABLE_NOT_SUPPORTED_FOR_PROCESSTYPE">
       <xsd:annotation>
        <xsd:documentation>Errors with this extended error code have the following properties: erroneousElementApiName, erroneousElementType, erroneousFields, severity, processType, systemVariable</xsd:documentation></xsd:annotation></xsd:enumeration>
@@ -16317,7 +16308,7 @@ Copyright 2006-2020 Salesforce.com, inc. All Rights Reserved
  <service name="MetadataService">
   <documentation>Manage your Salesforce.com metadata</documentation>
   <port binding="tns:MetadataBinding" name="Metadata">
-   <soap:address location="https://test.salesforce.com/services/Soap/m/50.0"/>
+   <soap:address location="https://login.salesforce.com/services/Soap/m/50.0"/>
   </port>
  </service>
 </definitions>

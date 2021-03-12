@@ -5,6 +5,8 @@ require_once 'session.php';
 require_once 'shared.php';
 require_once 'async/QueryFutureTask.php';
 
+$MIGRATION_MESSAGE = "Visual Studio Code now includes <a href=\"https://developer.salesforce.com/tools/vscode/en/soql/writing\">a SOQL Builder</a>. <a href=\"https://developer.salesforce.com/tools/vscode/en/soql/soql-builder\">Try it today!</a>";
+
 //clear all saved queries in cookies
 // TODO: remove after next version
 $persistedSavedQueryRequestsKey = "PSQR@";
@@ -135,7 +137,7 @@ function displayQueryForm($queryRequest) {
     print getCsrfFormTag();
     print "<input type='hidden' name='justUpdate' value='0' />";
     print "<input type='hidden' id='numFilters' name='numFilters' value='" . count($queryRequest->getFilters()) ."' />";
-    print "<p class='instructions'>Choose the object, fields, and critera to build a SOQL query below:</p>\n";
+    print "<p class='instructions'>Choose the object, fields, and criteria to build a SOQL query below:</p>\n";
     print "<table border='0' style='width: 100%;'>\n";
     print "<tr><td valign='top' width='1'>Object:";
 

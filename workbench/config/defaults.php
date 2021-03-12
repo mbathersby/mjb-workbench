@@ -276,7 +276,50 @@ $config["header_LoginOptions"] = array(
     );
 
     $GLOBALS['API_VERSIONS'] = array(
-	"50.0" => "50.0"
+        "51.0" => "51.0",
+        "50.0" => "50.0",
+        "49.0" => "49.0",
+        "48.0" => "48.0",
+        "47.0" => "47.0",
+        "46.0" => "46.0",
+        "45.0" => "45.0",
+        "44.0" => "44.0",
+        "43.0" => "43.0",
+        "42.0" => "42.0",
+        "41.0" => "41.0",
+        "40.0" => "40.0",
+        "39.0" => "39.0",
+        "37.0" => "37.0",
+        "36.0" => "36.0",
+        "35.0" => "35.0",
+        "34.0" => "34.0",
+        "33.0" => "33.0",
+        "32.0" => "32.0",
+        "31.0" => "31.0",
+        "30.0" => "30.0",
+        "29.0" => "29.0",
+        "28.0" => "28.0",
+        "27.0" => "27.0",
+        "26.0" => "26.0",
+        "25.0" => "25.0",
+        "24.0" => "24.0",
+        "23.0" => "23.0",
+        "22.0" => "22.0",
+        "21.0" => "21.0",
+        "20.0" => "20.0",
+        "19.0" => "19.0",
+        "18.0" => "18.0",
+        "17.0" => "17.0",
+        "16.0" => "16.0",
+        "15.0" => "15.0",
+        "14.0" => "14.0",
+        "13.0" => "13.0",
+        "12.0" => "12.0",
+        "11.1" => "11.1",
+        "11.0" => "11.0",
+        "10.0" => "10.0",
+        "9.0"  => "9.0",
+        "8.0"  => "8.0"
     );
 
     $config["defaultApiVersion"]  = array(
@@ -304,7 +347,7 @@ $config["header_LoginOptions"] = array(
     $config["fuzzyServerUrlLookup"] = array(
         "label" => "Enable Server URL Fuzzy Lookup",
         "description" => "When logging in with a Session Id, Workbench attempts to guess the associated Server URL. This may fail for orgs that have been migrated from one instance to another.",
-        "default" => false,
+        "default" => true,
         "overrideable" => true,
         "dataType" => "boolean"
     );
@@ -764,16 +807,16 @@ $config["header_Performance"] = array(
         "minValue" => 1
     );
 
-$config["header_SecurityOptions"] = array(
-    "label" => "Security Options",
-    "display" => true,
-    "isHeader" => true
-);
+    $config["header_SecurityOptions"] = array(
+        "label" => "Security Options",
+        "display" => true,
+        "isHeader" => true
+    );
 
     $config["invalidateSessionOnLogout"] = array(
         "label" => "Invalidate Session on Logout",
         "description" => "Invalidates the current API session when logging out of Workbench.",
-        "default" => false,
+        "default" => true,
         "overrideable" => true,
         "dataType" => "boolean",
         "minApiVersion" => 13.0
@@ -840,17 +883,26 @@ $config["header_SecurityOptions"] = array(
     );
 
     // This should never be overrideable by end users; instead, admins SHOULD override default in overrides.php
-    $config["rc4Secret"] = array(
-        "label" => "RC4 Salting Secret",
-        "description" => "Used for salting the RC4 encryption.",
+    $config["sodiumKey"] = array(
+        "label" => "Libsodium Encryption Key",
+        "description" => "Used for salting libsodium encryption.",
         "default" => "OVERRIDE_ME_IN_CONFIG_OVERRIDES_PHP",
         "overrideable" => false,
         "dataType" => "string"
     );
 
     // This should never be overrideable by end users; instead, admins SHOULD override default in overrides.php
-    $config["orgIdWhiteList"] = array(
-        "label" => "Organization Id Whitelist",
+    $config["nonce"] = array(
+        "label" => "Nonce For libsodium Encryption",
+        "description" => "required nonce value for libsodium encryption.",
+        "default" => "OVERRIDE_ME_IN_CONFIG_OVERRIDES_PHP",
+        "overrideable" => false,
+        "dataType" => "string"
+    );
+
+    // This should never be overrideable by end users; instead, admins SHOULD override default in overrides.php
+    $config["orgIdAllowList"] = array(
+        "label" => "Organization Id Allowlist",
         "description" => "A comma-separated list of organization ids which are the only ones allowed to connect to Workbench.",
         "default" => "",
         "overrideable" => false,
@@ -858,8 +910,8 @@ $config["header_SecurityOptions"] = array(
     );
 
     // This should never be overrideable by end users; instead, admins SHOULD override default in overrides.php
-    $config["orgIdBlackList"] = array(
-        "label" => "Organization Id Blacklist",
+    $config["orgIdBlockList"] = array(
+        "label" => "Organization Id Blocklist",
         "description" => "A comma-separated list of organization ids which are not allowed to connect to Workbench.",
         "default" => "",
         "overrideable" => false,
@@ -870,7 +922,7 @@ $config["header_SecurityOptions"] = array(
     $config["oauthRequired"] = array(
         "label" => "Require OAuth Login",
         "description" => "Require OAuth Login",
-        "default" => true,
+        "default" => false,
         "overrideable" => false,
         "dataType" => "boolean"
     );

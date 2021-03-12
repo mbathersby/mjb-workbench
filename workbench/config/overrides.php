@@ -16,46 +16,39 @@
 // Uncomment and populate with keys and secrets to enable OAuth.
 // Note, Production and Sandbox can have the same key and secret, but it is not required
 // If connecting to other Salesforce environments, add a new entry to the array:
+//
+//$config["oauthConfigs"]["default"] = array(
+//                                            "login.salesforce.com" => array(
+//                                                "label" => "Production",
+//                                                "key" => "",
+//                                                "secret" => ""
+//                                            ),
+//                                            "test.salesforce.com" => array(
+//                                                "label" => "Sandbox",
+//                                                "key" => "",
+//                                                "secret" => ""
+//                                            )
+//                                        );
 
-$config["oauthRequired"]["default"] = true;
-$config["fuzzyServerUrlLookup"]["default"] = true;
-$config["oauthAppKey"]["default"] = "3MVG9n_HvETGhr3AvIZ7NpzAALFVWT5g.sGbggTW95N5E0d6WuxPYOEctzp1yoQv8a2H7LcE37aYgeMjReEQM";
-$config["oauthAppSecret"]["default"] = "B3B698ACE3976567A55DED92AA217D0623BD58868E9796BC249B0E371E8B44DB";
-
-$config["oauthConfigs"]["default"] = array( "ap16.salesforce.com" => "My Aware Playground",
-                                            "" => "--- Canon ---",
-                                            "cppau.my.salesforce.com" => "CPP PROD",
-                                            "cppau--dev.my.salesforce.com" => "CPP DEV",
-                                            "cppau--dev2.my.salesforce.com" => "CPP DEV2",
-                                            "cppau--sit.my.salesforce.com" => "CPP SIT",
-                                            "cppau--uat1.my.salesforce.com" => "CPP UAT1",
-                                            "cppau--fsl.my.salesforce.com" => "CPP FSL",
-                                            "cppau--int.my.salesforce.com" => "CPP INT",
-                                            "cppau--training.my.salesforce.com" => "CPP TRAINING",
-                                            "cppau--data.my.salesforce.com" => "CPP DATA"
-                                          );
-
-/*"ampfs--jandev.my.salesforce.com" => "AMP-JANDEV",
-"ampfs--janqa.my.salesforce.com" => "AMP-JANQA",
-"ampfs--novdev2.my.salesforce.com" => "AMP-NOVDEV2",
-"ampfs--novqa.my.salesforce.com" => "AMP-NOVQA",
-"ampfs--sepdev1.my.salesforce.com" => "AMP-SEPDEV1",
-"ampfs--uat1.my.salesforce.com" => "AMP-UAT1",
-"ampfs--datauat.my.salesforce.com" => "AMP-DATAUAT",
-"ampfs--s1val1.my.salesforce.com" => "AMP-CCF ORG",*/
 
 // CSRF SECURITY SETTINGS
 // Uncomment and change the value below to a random, secret value:
 //
 // $config["csrfSecret"]["default"] = "CHANGE_ME";
 
+/* SODIUM ENCRYPTION KEY AND NONCE SETTINGS
+It is recommended that you change the values below to custom strings.
+    -The sodiumKey must be 64 characters long
+    -The nonce must be 24 characters long
+ */
+$config["sodiumKey"]["default"] = "T8TAoGtlCWOwWrFFRjTThFDn9+iGsGGjhvALbWkSONN4KyDNbI2VNZmm+sCiM5X7";
+$config["nonce"]["default"] = "aojzmL4AKy1s5T5JnQ1yn+2U";
 
-// ORG ID WHITELIST / BLACKLIST
+// ORG ID ALLOWLIST / BLOCKLIST
 // To only allow access to a set of orgs or block access to particular orgs,
 // uncomment and add the orgs to the respective lists below as comma-separated values:
 //
-// $config["orgIdWhiteList"]["default"] = "00D000000000001, 00D000000000002";
-// $config["orgIdBlackList"]["default"] = "00D000000000003";
-
+// $config["orgIdAllowList"]["default"] = "00D000000000001, 00D000000000002";
+// $config["orgIdBlockList"]["default"] = "00D000000000003";
 
 ?>
