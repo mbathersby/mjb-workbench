@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
 
 		<!--link rel="shortcut icon" href="<?php echo getPathToStaticResource('/images/favicon.ico'); ?>" /-->
-		print "<link rel='shortcut icon' href='".<?php echo getPathToStaticResource('/images/favicon.ico'); ?>.'" /-->";
+		print "<link rel='shortcut icon' href='".<?php echo getPathToStaticResource('/images/favicon.ico'); ?>." /-->";
 
 		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/master.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/pro_dropdown.css'); ?>" />
