@@ -32,8 +32,7 @@ $config["oauthConfigs"]["default"] = array(
                                             )
                                         );
 
-/*
-foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
+foreach($config["oauthConfigs"]["default"] as $host => $hostInfo) {
     if(!empty($hostInfo["key"]){
         $hostInfo["key"]->WorkbenchConfig::get()->value('defaultOauthKey');
     }
@@ -41,7 +40,6 @@ foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
         $hostInfo["secret"]->WorkbenchConfig::get()->value('defaultOauthSecret');
     }
 }
-*/
 
 // CSRF SECURITY SETTINGS
 // Uncomment and change the value below to a random, secret value:
