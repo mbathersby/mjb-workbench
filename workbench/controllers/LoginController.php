@@ -357,7 +357,7 @@ class LoginController {
         $authUrl = "https://" . $hostName .
                     "/services/oauth2/authorize?response_type=code&display=popup".
                     "&client_id=" . urlencode($oauthConfigs[$hostName]['key']) .
-                    "&redirect_uri=" . urlencode($oauthConfigs[$hostName]['secret']) .
+                    "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl()) .
                     "&state=" . urlencode($state);
 
         header('Location: ' . $authUrl);
