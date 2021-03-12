@@ -23,6 +23,8 @@ require_once "header.php";
 </p>
 
 <div id="loginBlockContainer">
+    <?php print "<p>".$c->isOAuthRequired()/"</p>" ?>
+    <?php print "<p>".$c->isOAuthEnabled()/"</p>" ?>
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
