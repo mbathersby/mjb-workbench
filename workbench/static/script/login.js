@@ -1,8 +1,8 @@
 var WorkbenchLogin = new function() {
 
-    var form = document.getElementById('login_form');
-
     this.initializeForm = function(loginType) {
+        
+        var form = document.getElementById('login_form');
 
         console.log(form);
         console.log(form['loginType_oauth']);
