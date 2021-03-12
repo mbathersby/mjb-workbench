@@ -500,7 +500,7 @@ class LoginController {
             if (empty($hostInfo["key"]){
                 $hostInfo["key"] = WorkbenchConfig::get()->value('defaultOauthKey');
             }
-            if(empty($hostInfo["secret"])) {
+            if(empty($hostInfo["secret"]){
                 $hostInfo["secret"] = WorkbenchConfig::get()->value('defaultOauthSecret');
             }
 
