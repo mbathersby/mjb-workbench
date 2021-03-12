@@ -28,19 +28,18 @@ require_once "header.php";
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
         <div id="login_type_selection" style="text-align: right;">
             
-            <!--?php if (!$c->isOAuthRequired()) { ?-->
+            <?php if (!$c->isOAuthRequired() !== true) { ?>
                 <input type="radio" id="loginType_std" name="loginType" value="std"/>
                 <label for="loginType_std">Standard</label>
 
                 <input type="radio" id="loginType_adv" name="loginType" value="adv"/>
                 <label for="loginType_adv">Advanced</label>
+            <?php } ?>
             
-                <!--?php if ($c->isOAuthEnabled()) { ?-->
-                    <input type="radio" id="loginType_oauth" name="loginType" value="oauth"/>
-                    <label for="loginType_oauth">OAuth</label>
-                <!--?php } ?-->
-            
-            <!--?php } ?-->
+            <?php if ($c->isOAuthEnabled() === true) { ?>
+                <input type="radio" id="loginType_oauth" name="loginType" value="oauth"/>
+                <label for="loginType_oauth">OAuth</label>
+            <?php } ?>
         </div>
 
         <div class="loginType_oauth">
