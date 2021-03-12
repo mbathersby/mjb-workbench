@@ -349,14 +349,14 @@ class LoginController {
 
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
 		
-		if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
-			$oauthConfigs[$hostName]['key'] = $this->oauthKey;
-			$oauthConfigs[$hostName]['secret'] = $this->oauthSecret;
+		if (isset($oauthConfigs[$hostName]['key']) && isset($oauthConfigs[$hostName]['secret'])) {
+			$this->oauthKey = $oauthConfigs[$hostName]['key'];
+			$this->oauthSecret = $oauthConfigs[$hostName]['secret'];
         }
 		
         $authUrl = "https://" . $hostName .
                     "/services/oauth2/authorize?response_type=code&display=popup".
-                    "&client_id=" . urlencode($oauthConfigs[$hostName]['key']) .
+                    "&client_id=" . urlencode($this->oauthKey) .
                     "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl()) .
                     "&state=" . urlencode($state);
 
@@ -380,8 +380,8 @@ class LoginController {
 
         $params = "code=" . $code
                   . "&grant_type=authorization_code"
-                  . "&client_id=" . urlencode($oauthConfigs[$hostName]['key'])
-                  . "&client_secret=" . urlencode($oauthConfigs[$hostName]['secret'])
+                  . "&client_id=" . urlencode($this->oauthKey)
+                  . "&client_secret=" . urlencode($this->oauthSecret)
                   . "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl());
 
         $curl = curl_init($tokenUrl);
