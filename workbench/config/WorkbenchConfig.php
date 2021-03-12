@@ -114,14 +114,14 @@ class WorkbenchConfig {
             }
         }
         
-        /*$this->authConfigs = $this->config["oauthConfigs"]["default"];*/
+        /*$this->authConfigs = $this->config["oauthConfigs"]["default"];
         
         foreach($this->config["oauthConfigs"]["value"] as $auth => $authConfig){
             if(!isset($authConfig["key"]) || !isset($authConfig["secret"]){
                 $this->config["oauthConfigs"]["value"][$auth]["key"] = $this->config["defaultOauthKey"];
                 $this->config["oauthConfigs"]["value"][$auth]["secret"] = $this->config["defaultOauthSecret"];
             }
-        }
+        }*/
 
         if ($this->config['callOptions_client']['default'] == 'WORKBENCH_DEFAULT' && !isset($_COOKIE['callOptions_client'])) {
             $this->config['callOptions_client']['value'] = getWorkbenchUserAgent();
