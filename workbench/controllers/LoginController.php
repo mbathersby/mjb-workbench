@@ -13,6 +13,8 @@ class LoginController {
     private $oauthRequired;
     private $termsRequired;
     private $termsFile;
+    private $oauthKey;
+    private $oauthSecret;
 
     function __construct() {
         $this->errors = array();
@@ -64,7 +66,10 @@ class LoginController {
         if ($this->oauthRequired && !$this->oauthEnabled) {
             throw new Exception("OAuth is required, but not enabled.");
         }
-
+        
+        $this->oauthKey = WorkbenchConfig::get()->value("defaultOauthKey");
+        $this->oauthSecret = WorkbenchConfig::get()->value("defaultOauthSecret");
+        
         $this->termsFile = WorkbenchConfig::get()->value("termsFile");
         if (!empty($this->termsFile)) {
             if (!is_file($this->termsFile)) {
@@ -351,7 +356,7 @@ class LoginController {
         $oauthConfigs = WorkbenchConfig::get()->value("oauthConfigs");
         $authUrl = "https://" . $hostName .
                     "/services/oauth2/authorize?response_type=code&display=popup".
-                    "&client_id=" . urlencode($oauthConfigs[$hostName]["key"]) .
+                    "&client_id=" . urlencode($this->oauthKey) .
                     "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl()) .
                     "&state=" . urlencode($state);
 
@@ -380,7 +385,7 @@ class LoginController {
         $params = "code=" . $code
                   . "&grant_type=authorization_code"
                   . "&client_id=" . $oauthConfigs[$hostName]['key']
-                  . "&client_secret=" . $oauthConfigs[$hostName]['secret']
+                  . "&client_secret=" . $this->oauthSecret
                   . "&redirect_uri=" . urlencode($this->oauthBuildRedirectUrl());
 
         $curl = curl_init($tokenUrl);
