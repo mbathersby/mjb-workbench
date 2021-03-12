@@ -5,6 +5,7 @@ class WorkbenchConfig {
     const INSTANCE = "WORKBENCH_CONFIG";
 
     private $config;
+    private $authConfigs;
 
     /**
      * @static
@@ -29,6 +30,7 @@ class WorkbenchConfig {
     function __construct() {
         // initialize in case load issues
         $config = array();
+        $authConfigs = array();
 
         //load default config values
         require 'defaults.php';
@@ -109,6 +111,15 @@ class WorkbenchConfig {
             // otherwise, just use the default
             else {
                 $this->config[$configKey]['value'] = $configValue['default'];
+            }
+        }
+        
+        $this->authConfigs = $this->config["oauthConfigs"]["default"];
+        
+        foreach ($this->authConfigs as $auth => $authConfig) {
+            if(!isset($authConfig["key"] || !isset($authConfig["secret"]){
+                $authConfig["key"] =  $this->config["defaultOauthKey"];
+                $authConfig["secret"] =  $this->config["defaultOauthSecret"];
             }
         }
 
