@@ -4,14 +4,18 @@
 		<meta http-equiv="Content-Language" content="UTF-8" />
 		<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
 
-		<!--link rel="shortcut icon" href="<?php echo getPathToStaticResource('/images/favicon.ico'); ?>" /-->
-		print "<link rel='shortcut icon' href='".<?php echo getPathToStaticResource('/images/favicon.ico'); ?>." /-->";
-
+		<!--link rel="shortcut icon" href="<?php echo getPathToStaticResource('/images/favicon.ico'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/master.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/pro_dropdown.css'); ?>" />
-		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/simpletree.css'); ?>" />
-
+		<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/simpletree.css'); ?>" /-->
+		
 		<?php
+		print "<link rel='shortcut icon' href='" . getPathToStaticResource('/images/favicon.ico') . " />";
+		print "<link rel='stylesheet' type='text/css' href='".  getPathToStaticResource('/style/master.css') . " />";
+		print "<link rel='stylesheet' type='text/css' href='".  getPathToStaticResource('/style/pro_dropdown.css') . " />";
+		print "<link rel='stylesheet' type='text/css' href='".  getPathToStaticResource('/style/simpletree.css') . " />";
+
+		
 		$myPage = getMyPage();
 		$title = $myPage->showTitle ? ": " . $myPage->title : "";
 		print "<title>Workbench$title</title>";
