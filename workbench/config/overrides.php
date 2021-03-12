@@ -32,16 +32,6 @@ $config["oauthConfigs"]["default"] = array(
                                             )
                                         );
 
-$oauthConfigs = $config["oauthConfigs"]["default"];
-
-foreach($oauthConfigs as $configKey => $configValue){
-  if(!isset($configValue["key"] || !isset($configValue["secret"])){
-    $configValue["key"] = $config["defaultOauthKey"];
-    $configValue["secret"] = $config["defaultOauthSecret"];
-  }
-}
-$config["oauthConfigs"]["default"] = $oauthConfigs;
-
 // CSRF SECURITY SETTINGS
 // Uncomment and change the value below to a random, secret value:
 //
