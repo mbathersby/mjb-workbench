@@ -32,6 +32,8 @@ $config["oauthConfigs"]["default"] = array(
                                                 "secret" => ""
                                             )
                                         );
+
+/*
 foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
     if(!empty($hostInfo["key"]){
         $hostInfo["key"]->WorkbenchConfig::get()->value('defaultOauthKey');
@@ -40,7 +42,7 @@ foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
         $hostInfo["secret"]->WorkbenchConfig::get()->value('defaultOauthSecret');
     }
 }
-
+*/
 
 // CSRF SECURITY SETTINGS
 // Uncomment and change the value below to a random, secret value:
@@ -52,8 +54,8 @@ It is recommended that you change the values below to custom strings.
     -The sodiumKey must be 64 characters long
     -The nonce must be 24 characters long
  */
-$config["sodiumKey"]["default"] = "T8TAoGtlCWOwWrFFRjTThFDn9+iGsGGjhvALbWkSONN4KyDNbI2VNZmm+sCiM5X7";
-$config["nonce"]["default"] = "aojzmL4AKy1s5T5JnQ1yn+2U";
+//$config["sodiumKey"]["default"] = "T8TAoGtlCWOwWrFFRjTThFDn9+iGsGGjhvALbWkSONN4KyDNbI2VNZmm+sCiM5X7";
+//$config["nonce"]["default"] = "aojzmL4AKy1s5T5JnQ1yn+2U";
 
 // ORG ID ALLOWLIST / BLOCKLIST
 // To only allow access to a set of orgs or block access to particular orgs,
