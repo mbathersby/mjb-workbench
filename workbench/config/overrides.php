@@ -32,6 +32,9 @@ $config["oauthConfigs"]["default"] = array(
                                             ),
                                             "aware--athenaqa.my.salesforce.com" => array(
                                                 "label" => "ATHENA - QA"
+                                            ),
+                                            "aware--playground.my.salesforce.com" => array(
+                                                "label" => "ATHENA - PLAYGROUND"
                                             )
                                         );
 
