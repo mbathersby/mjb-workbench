@@ -29,6 +29,9 @@ $config["oauthConfigs"]["default"] = array(
                                             ),
                                             "aware--athenadev1.my.salesforce.com" => array(
                                                 "label" => "ATHENA - DEV1"
+                                            ),
+                                            "aware--athenaqa.my.salesforce.com" => array(
+                                                "label" => "ATHENA - QA"
                                             )
                                         );
 
