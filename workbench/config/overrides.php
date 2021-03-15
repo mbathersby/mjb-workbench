@@ -35,6 +35,9 @@ $config["oauthConfigs"]["default"] = array(
                                             ),
                                             "aware--playground.my.salesforce.com" => array(
                                                 "label" => "ATHENA - PLAYGROUND"
+                                            ),
+                                            "sagegroup--divestment.my.salesforce.com" => array(
+                                                "label" => "SAGE SANDBOX"
                                             )
                                         );
 
