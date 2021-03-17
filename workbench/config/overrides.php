@@ -39,7 +39,7 @@ $config["oauthConfigs"]["default"] = array(
                                             "sagegroup--divestment.my.salesforce.com" => array(
                                                 "label" => "SAGE SANDBOX"
                                             ),
-                                            "tag-sage-test.my.salesforce.com" => array(
+                                            "sage-migration.my.salesforce.com" => array(
                                                 "label" => "SAGE TEST ENV"
                                             )
                                         );
