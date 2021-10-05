@@ -128,7 +128,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-    <div id='mainBlock'>
+    <div class="slds-container_medium">
 
     <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
@@ -162,7 +162,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                 <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
                                     <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
                                         <svg class="slds-button__icon" aria-hidden="true">
-                                            <use href=/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
+                                            <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
                                         </svg>
                                         <span class="slds-assistive-text">More Actions</span>
                                     </button>
