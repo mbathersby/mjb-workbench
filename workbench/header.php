@@ -128,12 +128,56 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-<div id='mainBlock'>
+    <div id='mainBlock'>
 
-<div id='navMenu' style="clear: both;">
+    <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
     <span class="preload2"></span>
-    <ul id="nav">
+
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-opportunity">
+                            <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Workbench</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <ul class="slds-button-group-list">
+                            <li>
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                                        <svg class="slds-button__icon" aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"/>
+                                        </svg>
+                                        <span class="slds-assistive-text">More Actions</span>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    /* <ul id="nav">
     <?php
     foreach ($GLOBALS["MENUS"] as $menu => $pages) {
         if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
@@ -153,7 +197,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
         if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
     }
     ?>
-    </ul>
+    </ul> */
 </div>
 
 <?php
