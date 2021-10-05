@@ -502,9 +502,9 @@ class LoginController {
     public function getOauthHostSelectOptions() {
         $hosts = array();
         foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
-            if (empty($hostInfo["label"]) || empty($hostInfo["key"]) || empty($hostInfo["secret"])) {
-                continue;
-            }
+            //if (empty($hostInfo["label"]) || empty($hostInfo["key"]) || empty($hostInfo["secret"])) {
+                //continue;
+            //}
 
             $hosts[$host] = $hostInfo["label"];
         }
