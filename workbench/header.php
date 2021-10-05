@@ -177,7 +177,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
         </div>
     </div>
 
-    /* <ul id="nav">
+    <!--ul id="nav">
     <?php
     foreach ($GLOBALS["MENUS"] as $menu => $pages) {
         if (isReadOnlyMode() && $menu == "Data") { //special-case for Data menu, since all read-only
@@ -197,7 +197,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
         if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
     }
     ?>
-    </ul> */
+    </ul-->
 </div>
 
 <?php
