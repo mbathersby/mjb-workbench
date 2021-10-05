@@ -31,6 +31,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/master.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/pro_dropdown.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('/style/simpletree.css'); ?>" />
+	    
+    	<link rel="stylesheet" type="text/css" href="<?php echo getPathToStaticResource('assets/styles/salesforce-lightning-design-system.min.css'); ?>" />
 
         <?php
         $myPage = getMyPage();
