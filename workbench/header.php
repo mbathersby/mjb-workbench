@@ -148,9 +148,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                     <div class="slds-media__body">
                         <div class="slds-page-header__name">
                             <div class="slds-page-header__name-title">
-                                <h1>
-                                    <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Workbench</span>
-                                </h1>
+                                <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Workbench</span>
                             </div>
                         </div>
                     </div>
