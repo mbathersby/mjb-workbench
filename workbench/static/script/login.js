@@ -1,6 +1,6 @@
 var WorkbenchLogin = new function() {
-    
-    const form = document.getElementById('login_form');
+
+    var form = document.getElementById('login_form');
 
     this.initializeForm = function(loginType) {
 

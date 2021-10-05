@@ -378,6 +378,10 @@ class LoginController {
 
         $tokenUrl =  "https://" . $hostName . "/services/oauth2/token";
 
+        if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
+            throw new Exception("Misconfigured OAuth Host");
+        }
+
         $params = "code=" . $code
                   . "&grant_type=authorization_code"
                   . "&client_id=" . urlencode($this->oauthKey)
@@ -497,8 +501,11 @@ class LoginController {
 
     public function getOauthHostSelectOptions() {
         $hosts = array();
-		
         foreach (WorkbenchConfig::get()->value('oauthConfigs') as $host => $hostInfo) {
+            if (empty($hostInfo["label"]) || empty($hostInfo["key"]) || empty($hostInfo["secret"])) {
+                continue;
+            }
+
             $hosts[$host] = $hostInfo["label"];
         }
 
