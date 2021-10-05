@@ -3,7 +3,9 @@ include_once 'shared.php';
 ?>
 </div>
 
-<div id='disclaimer'><br />
+<div class="slds-container_large slds-container_center slds-p-around_small">
+    <div id='disclaimer'><br />
+</div>
 
 <?php
 if (WorkbenchConfig::get()->value("checkSSL") && !usingSslEndToEnd()) {
