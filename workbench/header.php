@@ -128,7 +128,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-    <div class="slds-container_large slds-container_center">
+    <div class="slds-container_large slds-container_center slds-p-around_small">
 
     <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
@@ -145,10 +145,12 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                             </svg>
                         </span>
                     </div>
-                    <div class="slds-media__body">
+                    <div class="slds-media__body" style="line-height: 27px;">
                         <div class="slds-page-header__name">
                             <div class="slds-page-header__name-title">
-                                <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Workbench</span>
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Workbench</span>
+                                </h1>
                             </div>
                         </div>
                     </div>
