@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<html lang="en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color: #ffffff;">
     <head>
         <?php
         if (getenv('GA_TRACKING_ID') !== false) {
@@ -44,7 +44,7 @@
         
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
     </head>
-<body style="background-color: #ffffff;">
+<body>
 
 <?php
 if (WorkbenchConfig::get()->isConfigured("displayLiveMaintenanceMessage")) {
