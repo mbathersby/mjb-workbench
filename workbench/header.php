@@ -44,7 +44,7 @@
         
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
     </head>
-<body>
+<body style="background-color: #ffffff;">
 
 <?php
 if (WorkbenchConfig::get()->isConfigured("displayLiveMaintenanceMessage")) {
