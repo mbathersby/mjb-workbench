@@ -378,7 +378,7 @@ class LoginController {
 
         $tokenUrl =  "https://" . $hostName . "/services/oauth2/token";
 
-        if (!isset($oauthConfigs[$hostName]['key']) || !isset($oauthConfigs[$hostName]['secret'])) {
+        if (!isset($this->oauthKey) || !isset($this->oauthSecret)) {
             throw new Exception("Misconfigured OAuth Host");
         }
 
