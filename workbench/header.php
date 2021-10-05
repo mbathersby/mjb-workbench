@@ -128,7 +128,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-    <div class="slds-container_medium">
+    <div class="slds-container_medium slds-container_center">
 
     <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
