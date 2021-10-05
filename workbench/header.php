@@ -128,7 +128,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-    <div class="slds-container_medium slds-container_center">
+    <div class="slds-container_large slds-container_center">
 
     <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
@@ -139,9 +139,9 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
             <div class="slds-page-header__col-title">
                 <div class="slds-media">
                     <div class="slds-media__figure">
-                        <span class="slds-icon_container slds-icon-standard-opportunity">
+                        <span class="slds-icon_container slds-icon-standard-apex">
                             <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                                <use href="/static/assets/icons/standard-sprite/svg/symbols.svg#opportunity"/>
+                                <use href="/static/assets/icons/standard-sprite/svg/symbols.svg#apex"/>
                             </svg>
                         </span>
                     </div>
