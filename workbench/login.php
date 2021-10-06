@@ -43,29 +43,29 @@ require_once "header.php";
         </div>
 
         <div class="slds-form loginType_oauth slds-grid slds-gutters" role="list">
-            <div class="slds-form__row slds-col">
-                <div class="slds-form__item  slds-size_10-of-12" role="listitem">
-                    <div class="slds-form-element slds-form-element_stacked slds-is-editing ">
-                        <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
-                        <div class="slds-form-element__control">
-                            <div class="slds-select_container">
-                                <select class="slds-select" id="oauth_env" name="oauth_host">
-                                    <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
-                                </select>
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__row">
+                    <div class="slds-size_10-of-12">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="oauth_env" name="oauth_host">
+                                        <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <!--/div>
-            <div class="slds-form__row"-->
-                <div class="slds-form__item slds-col slds-size_2-of-12" role="listitem">
-                    <div class="slds-form-element slds-form-element_stacked slds-is-editing">
-                        <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
-                        <div class="slds-form-element__control">
-                            <div class="slds-select_container">
-                                <select class="slds-select" id="oauth_apiVersion" name="oauth_apiVersion">
-                                    <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
-                                </select>
+                    <div class="slds-size_10-of-12">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="oauth_apiVersion" name="oauth_apiVersion">
+                                        <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
