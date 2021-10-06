@@ -26,7 +26,7 @@ require_once "header.php";
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
-        <div id="login_type_selection" style="text-align: right;">
+        <div id="login_type_selection slds-p-around_small" style="text-align: right;">
             
             <?php if (!$c->isOAuthRequired() !== true) { ?>
                 <input type="radio" id="loginType_std" name="loginType" value="std"/>
@@ -56,8 +56,8 @@ require_once "header.php";
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="slds-form__row">
+            <!--/div>
+            <div class="slds-form__row"-->
                 <div class="slds-form__item" role="listitem">
                     <div class="slds-form-element slds-form-element_1-col slds-form-element_horizontal slds-is-editing">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
