@@ -19,32 +19,37 @@ if (isset($_POST['select'])) {
     <p class='instructions slds-m-bottom_small'>Select an action to perform:</p>
 
     <p>
-        <div class="slds-form-element' role="list">
-        	<label class='slds-form-element__label' for="actionJump"><strong>Jump to</strong></label>
-            <div class='slds-form-element__control slds-size_6-of-12'>
-                <div class='slds-select_container'>
-                    <select class='slds-select' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
-                        <option value='select.php'></option>
-            
-                        <?php
-                        foreach ($GLOBALS["MENUS"] as $menu => $pages) {
-                            foreach ($pages as $href => $page) {
-                                if ($page->onMenuSelect) print "<option value='" . $href . "'>" . $page->title . "</option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </p>
-
-    <p>
-        <div class="slds-form-element' role="list">
-            <label class='slds-form-element__label' for="default_object"><strong>Object</strong></label>
-            <div class='slds-form-element__control slds-size_6-of-12'>
-                <div class='slds-select_container'>
-                    <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
+        <div class="slds-form-element slds-form-element_compound loginType_oauth" role="list">
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__row">
+                    <div class="slds-size_2-of-6">
+                        <div class="slds-form-element">
+                            <label class='slds-form-element__label' for="actionJump"><strong>Jump to</strong></label>
+                            <div class='slds-select_container'>
+                                <select class='slds-select' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
+                                    <option value='select.php'></option>
+                        
+                                    <?php
+                                    foreach ($GLOBALS["MENUS"] as $menu => $pages) {
+                                        foreach ($pages as $href => $page) {
+                                            if ($page->onMenuSelect) print "<option value='" . $href . "'>" . $page->title . "</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-size_2-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
+                            <div class="slds-form-element__control">
+                                <div class='slds-select_container'>
+                                    <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
