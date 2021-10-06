@@ -263,7 +263,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
     </ul-->
 </div>
 
-<div class="slds-p-around_small">
+<div class="slds-p-horizontal_medium">
 
 <?php
 if (!termsOk() && $myPage->requiresSfdcSession) {
