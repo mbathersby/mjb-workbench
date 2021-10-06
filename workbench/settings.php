@@ -130,15 +130,26 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
               (isLoggedIn() && isset($configValue['minApiVersion']) && !WorkbenchContext::get()->isApiVersionAtLeast($configValue['minApiVersion']) ? " style='color:orange;'" : "") .
               ">" . htmlspecialchars($configValue['label'],ENT_QUOTES) . "</label></td><td>&nbsp;&nbsp;</td>\n";
         print "\t\t<td align='left'>";
+
         if ($configValue['dataType'] == "boolean") {
             print "<input name='$configKey' id='$configKey' type='checkbox' ";
             if($configValue['value']) print " checked='true'";
             print "/></td>\n";
-        } else if ($configValue['dataType'] == "string" || $configValue['dataType'] == "int") {
-            print "<input name='$configKey' id='$configKey' type='text' value='" . (isset($configValue['value']) ? $configValue['value'] : "") . "' size='30'/></td>\n";
-        } else if ($configValue['dataType'] == "password") {
-            print "<input name='$configKey' id='$configKey' type='password' value='". (isset($configValue['value']) ? $configValue['value'] : "")  . "' size='30'/></td>\n";
-        } else if ($configValue['dataType'] == "picklist") {
+        } 
+        
+        else if ($configValue['dataType'] == "string") {
+            print "<input class='slds-input' name='$configKey' id='$configKey' type='text' value='" . (isset($configValue['value']) ? $configValue['value'] : "") . "' size='30'/></td>\n";
+        } 
+
+        else if ($configValue['dataType'] == "int") {
+            print "<input class='slds-input' name='$configKey' id='$configKey' type='number' value='" . (isset($configValue['value']) ? $configValue['value'] : "") . "' size='30'/></td>\n";
+        } 
+        
+        else if ($configValue['dataType'] == "password") {
+            print "<input class='slds-input' name='$configKey' id='$configKey' type='password' value='". (isset($configValue['value']) ? $configValue['value'] : "")  . "' size='30'/></td>\n";
+        } 
+        
+        else if ($configValue['dataType'] == "picklist") {
             print "<select name='$configKey' id='$configKey'>";
             foreach ($configValue['valuesToLabels'] as $value => $label) {
                 if (isset($configValue['labelKey'])) {
@@ -151,7 +162,9 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
                 print ">" . $label . "</option>";
             }
             print "</select>";
-        } else {
+        } 
+        
+        else {
             print "</td>\n";
         }
         print "\t</tr>\n";
