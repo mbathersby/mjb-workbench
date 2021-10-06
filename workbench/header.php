@@ -176,6 +176,12 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                                         if (!$page->onNavBar || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
                                                             continue;
                                                         }
+
+                                                        if(!$menu == "WORKBENCH"){
+                                                            print   "<li class=\"slds-dropdown__header slds-truncate\" title="$menu" role="separator">" .
+                                                                        "<span>" . $menu . "</span>" .
+                                                                    "</li>";   
+                                                        }
                                                         
                                                         print   "<li class=\"slds-dropdown__item\" role=\"presentation\">" .
                                                                     "<a href=\"$href\" role=\"menuitem\" tabindex=\"0\">" .
@@ -183,6 +189,8 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                                                     "</a>" .
                                                                 "</li>";
                                                     }
+
+                                                    if(!isLoggedIn() || !termsOk()) break; //only show first "Workbench" menu in these cases
                                                 }
                                             ?>
                                         </ul>
