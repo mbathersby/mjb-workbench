@@ -172,7 +172,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                     <div class="slds-page-header__control">
                         <ul class="slds-button-group-list">
                             <li>
-                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" id="menu">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click" id="menu">
                                     <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions" id="menu-btn">
                                         <svg class="slds-button__icon" aria-hidden="true">
                                             <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
