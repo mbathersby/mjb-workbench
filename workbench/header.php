@@ -220,7 +220,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                                     }
 
                                                     foreach ($pages as $href => $page) {
-                                                        if ((!$page->onNavBar || !$page->showAsButton || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
+                                                        if (!$page->onNavBar || $page->showAsButton || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
                                                             continue;
                                                         }
                                                         
