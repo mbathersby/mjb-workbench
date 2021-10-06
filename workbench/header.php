@@ -178,19 +178,21 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                          foreach ($GLOBALS["MENUS"] as $menu => $pages) {
 
                                             foreach ($pages as $href => $page) {
-                                                if (!$page->onNavBar && !$page->showAsButton){
-
-                                                    $iconParts = explode(":", $page->iconName);
-                                                    $iconFolder = $iconParts[0];
-                                                    $icon = $iconParts[1];
-
-                                                    print   "<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\">" .
-                                                        "<svg class=\"slds-button__icon\" aria-hidden=\"true\">" .
-                                                            "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
-                                                        "</svg>" .
-                                                        "<span class=\"slds-assistive-text\">" . $page->title . "</span>" .
-                                                    "</button>";
+                                                if (!$page->showAsButton){
+                                                    continue;
                                                 }
+
+                                                $iconParts = explode(":", $page->iconName);
+                                                $iconFolder = $iconParts[0];
+                                                $icon = $iconParts[1];
+
+                                                print   "<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\">" .
+                                                    "<svg class=\"slds-button__icon\" aria-hidden=\"true\">" .
+                                                        "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
+                                                    "</svg>" .
+                                                    "<span class=\"slds-assistive-text\">" . $page->title . "</span>" .
+                                                "</button>";
+
                                             }
                                         }
                                     ?>
