@@ -105,7 +105,7 @@ print getCsrfFormTag();
 print "<table border='0' cellspacing='5' style='border-width-top: 1'>\n";
 
 $buttons = "<tr>" . 
-                "<td colspan='3' class='slds-text-align_right'>" .
+                "<td colspan='3' class='slds-text-align_center'>" .
                     "<input type='submit' name='submitConfigSetter' value='Apply Settings' class='slds-button slds-button_brand'/>&nbsp;" . 
                     "<input type='submit' name='restoreDefaults' value='Restore Defaults' class='slds-button slds-button_brand'/>&nbsp;" . 
                     "<input type='reset' value='Cancel' class='slds-button slds-button_destructive'/>" . 
@@ -125,8 +125,8 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
     } else if (isset($configValue['overrideable']) && $configValue['overrideable']==true) {
         $tip = htmlspecialchars(addslashes($configValue['description']),ENT_NOQUOTES);
         $tip .= isset($configValue['minApiVersion']) ? "<br/><br/>Minimum API Version: " . sprintf("%01.1f", $configValue['minApiVersion']) : "";
-        print "\t<tr onmouseover=\"Tip('$tip')\">\n";
-        print "\t\t<td align='right'><label for='$configKey'" . 
+        print "\t<tr class='slds-p-around_small' onmouseover=\"Tip('$tip')\">\n";
+        print "\t\t<td class='slds-text-align_right'><label for='$configKey'" . 
               (isLoggedIn() && isset($configValue['minApiVersion']) && !WorkbenchContext::get()->isApiVersionAtLeast($configValue['minApiVersion']) ? " style='color:orange;'" : "") .
               ">" . htmlspecialchars($configValue['label'],ENT_QUOTES) . "</label></td><td>&nbsp;&nbsp;</td>\n";
         print "\t\t<td align='left'>";
