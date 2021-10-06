@@ -172,15 +172,16 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                         <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
                                             <?php
                                                 foreach ($GLOBALS["MENUS"] as $menu => $pages) {
+
+                                                    if($menu != "WORKBENCH"){
+                                                        print   "<li class=\"slds-dropdown__header slds-truncate\" title=\"$menu\" role=\"separator\">" .
+                                                                    "<span>" . $menu . "</span>" .
+                                                                "</li>";   
+                                                    }
+
                                                     foreach ($pages as $href => $page) {
                                                         if (!$page->onNavBar || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
                                                             continue;
-                                                        }
-
-                                                        if($menu != "WORKBENCH"){
-                                                            print   "<li class=\"slds-dropdown__header slds-truncate\" title=\"$menu\" role=\"separator\">" .
-                                                                        "<span>" . $menu . "</span>" .
-                                                                    "</li>";   
                                                         }
                                                         
                                                         print   "<li class=\"slds-dropdown__item\" role=\"presentation\">" .
