@@ -296,9 +296,16 @@ if (isLoggedIn() && termsOk()) {
 print "</tr></table>";
 
 if (isset($GLOBALS['MIGRATION_MESSAGE'])) {
-    print "<div class='migrationInfo'>\n";
-    print "<p>" . $GLOBALS['MIGRATION_MESSAGE'] . "</p>";
-    print "</div>\n";
+
+    print   "<div class='slds-notify slds-notify_alert slds-alert_error' role='alert'>" . 
+                "<span class='slds-assistive-text'>error</span>" . 
+                "<span class='slds-icon_container slds-icon-utility-error slds-m-right_x-small' title='Description of icon when needed'>" . 
+                    "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" . 
+                        "<use xlink:href='/static/assets/icons/utility-sprite/svg/symbols.svg#info_alt'></use>" .
+                    "</svg>" .
+                "</span>" .
+                 "<h2>" . $GLOBALS['MIGRATION_MESSAGE'] . "</h2>" .
+            "</div>";
 }
 
 if (isset($errors)) {
