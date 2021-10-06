@@ -42,7 +42,7 @@ require_once "header.php";
             <?php } ?>
         </div>
 
-        <div class="slds-form loginType_oauth" role="list">
+        <div class="slds-form loginType_oauth slds-grid slds-gutters" role="list">
             <div class="slds-form__row">
                 <div class="slds-form__item slds-col slds-size_10-of-12" role="listitem">
                     <div class="slds-form-element slds-form-element_stacked slds-is-editing ">
@@ -58,7 +58,7 @@ require_once "header.php";
                 </div>
             <!--/div>
             <div class="slds-form__row"-->
-                <div class="slds-form__item slds-col" role="listitem">
+                <div class="slds-form__item slds-col slds-size_2-of-12" role="listitem">
                     <div class="slds-form-element slds-form-element_stacked slds-is-editing">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                         <div class="slds-form-element__control">
@@ -164,8 +164,8 @@ require_once "header.php";
 </div>
     
 <?php
-addFooterScript("<script type='text/javascript' src='" . getPathToStaticResource('/script/login.js') . "'></script>");
-addFooterScript("<script type='text/javascript'>wbLoginConfig=" . $c->getJsConfig() ."</script>");
-addFooterScript("<script type='text/javascript'>WorkbenchLogin.initializeForm(" . json_encode($c->getLoginType()) .");</script>");
+    addFooterScript("<script type='text/javascript' src='" . getPathToStaticResource('/script/login.js') . "'></script>");
+    addFooterScript("<script type='text/javascript'>wbLoginConfig=" . $c->getJsConfig() ."</script>");
+    addFooterScript("<script type='text/javascript'>WorkbenchLogin.initializeForm(" . json_encode($c->getLoginType()) .");</script>");
 require_once "footer.php";
 ?>
