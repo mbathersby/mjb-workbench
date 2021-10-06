@@ -279,7 +279,7 @@ if (!termsOk() && $myPage->requiresSfdcSession) {
 
 print "<table width='100%' border='0'><tr>";
 if ($myPage->showTitle) {
-    print "<td id='pageTitle'>" . $myPage->title . "</td>";
+    print "<td id='pageTitle' class=\"slds-text-heading_small slds-p-bottom_small\">" . $myPage->title . "</td>";
 }
 if (isLoggedIn() && termsOk()) {
     $userInfo = WorkbenchContext::get()->getUserInfo();

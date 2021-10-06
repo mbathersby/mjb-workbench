@@ -104,8 +104,12 @@ print getCsrfFormTag();
 
 print "<table border='0' cellspacing='5' style='border-width-top: 1'>\n";
 
-print "<tr> <td colspan='3' align='left'><input type='submit' name='submitConfigSetter' value='Apply Settings'/>&nbsp;<input type='submit' name='restoreDefaults' value='Restore Defaults'/>&nbsp;<input type='reset' value='Cancel'/></td> </tr>";
-
+print "<tr> <td colspan='3' align='left'>" .
+          "<input type='submit' name='submitConfigSetter' value='Apply Settings'/>&nbsp;" . 
+          "<input type='submit' name='restoreDefaults' value='Restore Defaults'/>&nbsp;" . 
+          "<input type='reset' value='Cancel'/>" . 
+          "</td> </tr>\n";
+          
 foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
     // don't even try to deal with complex types
     if (isset($configValue['dataType']) && $configValue['dataType'] == "complex") {

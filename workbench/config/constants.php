@@ -45,7 +45,7 @@ $GLOBALS["MENUS"] = array(
         'settings.php'        => new Page('Settings','Configuration for Workbench.',false,true,true,false,true,'', false, true, 'utility:settings'),
         'logout.php'          => new Page('Logout','Logs out of your Salesforce organization.',false,true,true,false,false,'', false, false, ''),
         'help.php'            => new Page('Help','Get help about using Workbench.',false,true,true,false,true,'', false, true, 'utility:help'),
-        'about.php'           => new Page('About','Learn about Workbench.',false,true,true,false,true,'', false, true, 'utility:info'),
+        'about.php'           => new Page('About','Learn about Workbench.',false,true,true,false,true,'', false, true, 'utility:info_alt'),
         'terms.php'           => new Page('Terms of Service','Terms of Service.',false,true,false,false,true,'', false, false, ''),
         'healthcheck.php'     => new Page('Health Check','Health Check',false,true,false,false,false,'', false, false, '')
     ),
