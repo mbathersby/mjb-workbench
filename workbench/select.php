@@ -50,7 +50,7 @@ if (isset($_POST['select'])) {
         </div>
     </p>
     
-    <div class='slds-clearfix'>
+    <div class='slds-clearfix slds-p-top_medium'>
         <input type='submit' name='select' value='Select' class='slds-button slds-button_brand slds-float_right' />
     </div>
 </form>
