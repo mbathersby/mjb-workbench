@@ -144,10 +144,12 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
             if($configValue['value']) print " checked='true'";
             print "/>";
 
-            print              "<label class='slds-checkbox__label' for='checkbox-unique-id-73'>" .
+            /*print              "<label class='slds-checkbox__label'>" .
                                     "<span class='slds-checkbox_faux'></span>" .
-                                "</label>" .
-                            "</div>" .
+                                    "<span class='slds-form-element__label'></span>" .
+                                "</label>"; */
+
+            print           "</div>" .
                         "</div>" .
                     "</div>" .
             "</td>\n";
