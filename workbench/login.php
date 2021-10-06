@@ -45,7 +45,7 @@ require_once "header.php";
         <div class="slds-form loginType_oauth slds-grid slds-gutters" role="list">
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
-                    <div class="slds-size_10-of-12">
+                    <div class="slds-size_4-of-12">
                         <div class="slds-form-element">
                             <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
                             <div class="slds-form-element__control">
@@ -57,7 +57,7 @@ require_once "header.php";
                             </div>
                         </div>
                     </div>
-                    <div class="slds-size_10-of-12">
+                    <div class="slds-size_2-of-12">
                         <div class="slds-form-element">
                             <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                             <div class="slds-form-element__control">
