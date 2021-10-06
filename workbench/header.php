@@ -290,7 +290,7 @@ if (isLoggedIn() && termsOk()) {
                       "Org Id:&nbsp;&nbsp;" . substr($userInfo->organizationId, 0, 15),
                       "User Id:&nbsp;" . substr($userInfo->userId, 0, 15));
 
-    print "<td id='myUserInfo' class='slds-text-align_right'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
+    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
            htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
 }
 print "</tr></table>";
