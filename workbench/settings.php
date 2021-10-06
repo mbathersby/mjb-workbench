@@ -196,7 +196,7 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
     }
 }
 
-print "<tr> <td></td> <td></td> <td></td> </tr>\n";
+print "<tr class='slds-p-top_medium'> <td></td> <td></td> <td></td> </tr>\n";
 
 print $buttons;
 
