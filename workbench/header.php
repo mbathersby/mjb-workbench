@@ -161,13 +161,32 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                     <div class="slds-page-header__control">
                         <ul class="slds-button-group-list">
                             <li>
-                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
                                     <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
                                         <svg class="slds-button__icon" aria-hidden="true">
                                             <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
                                         </svg>
                                         <span class="slds-assistive-text">More Actions</span>
                                     </button>
+                                    <div class="slds-dropdown slds-dropdown_left">
+                                        <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                                            <?php
+                                                foreach ($GLOBALS["MENUS"] as $menu => $pages) {
+                                                    foreach ($pages as $href => $page) {
+                                                        if (!$page->onNavBar || (!isLoggedIn() && $page->requiresSfdcSession) || (isLoggedIn() && $page->title == 'Login') || (!$page->isReadOnly && isReadOnlyMode())) {
+                                                            continue;
+                                                        }
+                                                        
+                                                        print   "<li class=\"slds-dropdown__item\" role=\"presentation\">" .
+                                                                    "<a href=\"$href\" role=\"menuitem\" tabindex=\"0\">" .
+                                                                        "<span class=\"slds-truncate\" title=\"Menu Item One\">$page->title</span>" .
+                                                                    "</a>" .
+                                                                "</li>";
+                                                    }
+                                                }
+                                            ?>
+                                        </ul>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
