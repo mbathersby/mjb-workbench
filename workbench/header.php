@@ -177,7 +177,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                                             continue;
                                                         }
 
-                                                        if(!$menu == "WORKBENCH"){
+                                                        if($menu != "WORKBENCH"){
                                                             print   "<li class=\"slds-dropdown__header slds-truncate\" title=\"$menu\" role=\"separator\">" .
                                                                         "<span>" . $menu . "</span>" .
                                                                     "</li>";   
