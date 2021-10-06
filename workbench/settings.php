@@ -138,15 +138,16 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
         if ($configValue['dataType'] == "boolean") {
             print   "<div class='slds-form-element'>" .
                         "<div class='slds-form-element__control'>" .
-                            "<div class='slds-checkbox'>" .
+                            "<div class='slds-checkbox_toggle slds-grid'>" .
                                 "<input name='$configKey' id='$configKey' type='checkbox' ";
 
             if($configValue['value']) print " checked='true'";
             print "/>";
 
-            print              "<label class='slds-checkbox__label' for='$configKey'>" .
+            print              "<label class='slds-checkbox_faux_container' for='$configKey'>" .
                                     "<span class='slds-checkbox_faux'></span>" .
-                                    "<span class='slds-form-element__label'></span>" .
+                                    "<span class='slds-checkbox_on'></span>" .
+                                    "<span class='slds-checkbox_off'></span>" .
                                 "</label>";
 
             print           "</div>" .
