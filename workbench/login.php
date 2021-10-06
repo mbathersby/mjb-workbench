@@ -58,7 +58,7 @@ require_once "header.php";
                 </div>
             <!--/div>
             <div class="slds-form__row"-->
-                <div class="slds-form__item slds-col slds-size_2-of-12" role="listitem">
+                <div class="slds-form__item slds-col slds-size_1-of-12" role="listitem">
                     <div class="slds-form-element slds-form-element_stacked slds-is-editing">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                         <div class="slds-form-element__control">
