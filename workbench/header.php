@@ -279,7 +279,7 @@ if (!termsOk() && $myPage->requiresSfdcSession) {
 
 print "<table width='100%' border='0'><tr>";
 if ($myPage->showTitle) {
-    print "<td id='pageTitle' class=\"slds-text-heading_small slds-p-bottom_small\">" . $myPage->title . "</td>";
+    print "<td id='pageTitle' class='slds-p-bottom_small slds-m-vertical_medium'><span class='slds-text-heading_large'>" . $myPage->title . "</span></td>";
 }
 if (isLoggedIn() && termsOk()) {
     $userInfo = WorkbenchContext::get()->getUserInfo();
@@ -288,7 +288,7 @@ if (isLoggedIn() && termsOk()) {
                       "Org Id:&nbsp;&nbsp;" . substr($userInfo->organizationId, 0, 15),
                       "User Id:&nbsp;" . substr($userInfo->userId, 0, 15));
 
-    print "<td id='myUserInfo'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
+    print "<td id='myUserInfo' class='slds-text-align_right'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
            htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
 }
 print "</tr></table>";
