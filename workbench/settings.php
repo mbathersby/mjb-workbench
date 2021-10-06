@@ -105,7 +105,7 @@ print getCsrfFormTag();
 print "<table border='0' cellspacing='5' style='border-width-top: 1'>\n";
 
 $buttons = "<tr>" . 
-                "<td colspan='2' class='slds-text-align_center'>" .
+                "<td colspan='3' class='slds-text-align_center'>" .
                     "<input type='submit' name='submitConfigSetter' value='Apply Settings' class='slds-button slds-button_brand'/>&nbsp;" . 
                     "<input type='submit' name='restoreDefaults' value='Restore Defaults' class='slds-button slds-button_brand'/>&nbsp;" . 
                     "<input type='reset' value='Cancel' class='slds-button slds-button_destructive'/>" . 
@@ -121,19 +121,19 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
     }
 
     if (isset($configValue['isHeader']) && $configValue['display']) {
-        print "\t<tr><th align='left' colspan='2'><br/>" . htmlspecialchars($configValue['label'],ENT_QUOTES) . "</th></tr>\n";
+        print "\t<tr><th align='left' colspan='3'><br/>" . htmlspecialchars($configValue['label'],ENT_QUOTES) . "</th></tr>\n";
     } 
     
     else if (isset($configValue['overrideable']) && $configValue['overrideable']==true) {
         $tip = htmlspecialchars(addslashes($configValue['description']),ENT_NOQUOTES);
         $tip .= isset($configValue['minApiVersion']) ? "<br/><br/>Minimum API Version: " . sprintf("%01.1f", $configValue['minApiVersion']) : "";
         print "\t<tr class='slds-p-around_small' onmouseover=\"Tip('$tip')\">\n";
-        print "\t\t<td class='slds-text-align_right slds-p-around_small slds-size_4-of-12'>" . 
+        print "\t\t<td class='slds-text-align_right slds-p-around_small slds-size_3-of-12'>" . 
                 "<label for='$configKey'" . 
                     (isLoggedIn() && isset($configValue['minApiVersion']) && !WorkbenchContext::get()->isApiVersionAtLeast($configValue['minApiVersion']) ? " style='color:orange;'" : "") .
               ">" . htmlspecialchars($configValue['label'],ENT_QUOTES) . "</label></td>\n";
         
-        print "\t\t<td class='slds-text-align_left slds-p-around_x-small slds-size_6-of-12'>";
+        print "\t\t<td class='slds-text-align_left slds-p-around_x-small slds-size_8-of-12'>";
 
         if ($configValue['dataType'] == "boolean") {
             print   "<div class='slds-form-element'>" .
@@ -183,12 +183,13 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
                 }
                 print ">" . $label . "</option>";
             }
-            
+
             print "</select>";
         } 
         
         else {
-            print "</td>\n";
+            print "</td>\n" .
+                "<td class='slds-size_1-of-12'></td>";
         }
         print "\t</tr>\n";
     }
