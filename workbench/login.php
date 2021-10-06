@@ -26,7 +26,7 @@ require_once "header.php";
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
-        <div id="login_type_selection slds-p-around_small" style="text-align: right;">
+        <div id="login_type_selection" class="slds-p-around_small" style="text-align: right;">
             
             <?php if (!$c->isOAuthRequired() !== true) { ?>
                 <input type="radio" id="loginType_std" name="loginType" value="std"/>
@@ -45,7 +45,7 @@ require_once "header.php";
         <div class="slds-form loginType_oauth" role="list">
             <div class="slds-form__row">
                 <div class="slds-form__item" role="listitem">
-                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-size_3-of-4">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
                         <div class="slds-form-element__control">
                             <div class="slds-select_container">
@@ -59,7 +59,7 @@ require_once "header.php";
             <!--/div>
             <div class="slds-form__row"-->
                 <div class="slds-form__item" role="listitem">
-                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing slds-size_1-of-4">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                         <div class="slds-form-element__control">
                             <div class="slds-select_container">
