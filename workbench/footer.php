@@ -4,7 +4,7 @@ include_once 'shared.php';
 </div>
 
 <div class="slds-container_large slds-container_center slds-p-around_small">
-    <div id='disclaimer'><br />
+    <div id="disclaimer" class="slds-text-align_center"><br />
 </div>
 
 <?php
