@@ -24,7 +24,7 @@ if (isset($_POST['select'])) {
                 <div class="slds-form-element__row">
                     <div class="slds-size_2-of-6">
                         <div class="slds-form-element">
-                            <label class='slds-form-element__label' for="actionJump"><strong>Jump to</strong></label>
+                            <label class='slds-form-element__label' for="actionJump">Jump to</label>
                             <div class='slds-select_container'>
                                 <select class='slds-select' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
                                     <option value='select.php'></option>
@@ -42,7 +42,7 @@ if (isset($_POST['select'])) {
                     </div>
                     <div class="slds-size_2-of-6">
                         <div class="slds-form-element">
-                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
+                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">SObject</label>
                             <div class="slds-form-element__control">
                                 <div class='slds-select_container'>
                                     <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
@@ -55,7 +55,7 @@ if (isset($_POST['select'])) {
         </div>
     </p>
     
-    <div class='slds-clearfix slds-p-top_medium slds-text-align_center'>
+    <div class='slds-clearfix slds-p-top_medium '>
         <input type='submit' name='select' value='Select' class='slds-button slds-button_brand slds-float_right' />
     </div>
 </form>
