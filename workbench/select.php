@@ -19,9 +19,9 @@ if (isset($_POST['select'])) {
     <p class='instructions slds-m-bottom_small'>Select an action to perform:</p>
 
     <p>
-        <div class="slds-form-element slds-form-element_compound slds-size_4-of-12' role="list">
+        <div class="slds-form-element' role="list">
         	<label class='slds-form-element__label' for="actionJump"><strong>Jump to</strong></label>
-            <div class='slds-form-element__control'>
+            <div class='slds-form-element__control slds-size_6-of-12'>
                 <div class='slds-select_container'>
                     <select class='slds-select' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
                         <option value='select.php'></option>
@@ -40,9 +40,9 @@ if (isset($_POST['select'])) {
     </p>
 
     <p>
-        <div class="slds-form-element slds-form-element_compound slds-size_4-of-12' role="list">
+        <div class="slds-form-element' role="list">
             <label class='slds-form-element__label' for="default_object"><strong>Object</strong></label>
-            <div class='slds-form-element__control'>
+            <div class='slds-form-element__control slds-size_6-of-12'>
                 <div class='slds-select_container'>
                     <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
                 </div>
@@ -50,7 +50,7 @@ if (isset($_POST['select'])) {
         </div>
     </p>
     
-    <div class='slds-clearfix slds-p-top_medium'>
+    <div class='slds-clearfix slds-p-top_medium slds-text-align_center'>
         <input type='submit' name='select' value='Select' class='slds-button slds-button_brand slds-float_right' />
     </div>
 </form>
