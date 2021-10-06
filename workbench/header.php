@@ -170,32 +170,32 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
             <div class="slds-page-header__col-actions">
                 <div class="slds-page-header__controls">
                     <div class="slds-page-header__control">
+                        <?php
+                            foreach ($GLOBALS["MENUS"] as $menu => $pages) {
+
+                                foreach ($pages as $href => $page) {
+                                    if (!$page->showAsButton){
+                                        continue;
+                                    }
+
+                                    $iconParts = explode(":", $page->iconName);
+                                    $iconFolder = $iconParts[0];
+                                    $icon = $iconParts[1];
+
+                                    print   "<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\">" .
+                                        "<svg class=\"slds-button__icon\" aria-hidden=\"true\">" .
+                                            "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
+                                        "</svg>" .
+                                        "<span class=\"slds-assistive-text\">" . $page->title . "</span>" .
+                                    "</button>";
+
+                                }
+                            }
+                        ?>
+
                         <ul class="slds-button-group-list">
                             <li>
                                 <div class="slds-dropdown-trigger slds-dropdown-trigger_click" id="menu">
-
-                                    <?php
-                                         foreach ($GLOBALS["MENUS"] as $menu => $pages) {
-
-                                            foreach ($pages as $href => $page) {
-                                                if (!$page->showAsButton){
-                                                    continue;
-                                                }
-
-                                                $iconParts = explode(":", $page->iconName);
-                                                $iconFolder = $iconParts[0];
-                                                $icon = $iconParts[1];
-
-                                                print   "<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\">" .
-                                                    "<svg class=\"slds-button__icon\" aria-hidden=\"true\">" .
-                                                        "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
-                                                    "</svg>" .
-                                                    "<span class=\"slds-assistive-text\">" . $page->title . "</span>" .
-                                                "</button>";
-
-                                            }
-                                        }
-                                    ?>
 
                                     <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions" id="menu-btn">
                                         <svg class="slds-button__icon" aria-hidden="true">
