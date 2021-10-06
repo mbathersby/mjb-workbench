@@ -43,6 +43,15 @@
         ?>
         
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
+
+        <script type="text/javascript">
+            document.getElementById("menu-btn").addEventListener("click", toggleMenu);
+
+            function toggleMenu(){
+                let menu = document.getElementById("menu");
+                menu.classList.toggle("slds-is-open");
+            }
+        </script>
     </head>
 <body>
 
@@ -161,8 +170,8 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                     <div class="slds-page-header__control">
                         <ul class="slds-button-group-list">
                             <li>
-                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
-                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" id="menu">
+                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions" id="menu-btn">
                                         <svg class="slds-button__icon" aria-hidden="true">
                                             <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
                                         </svg>
