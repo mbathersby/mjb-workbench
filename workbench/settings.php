@@ -104,12 +104,14 @@ print getCsrfFormTag();
 
 print "<table border='0' cellspacing='5' style='border-width-top: 1'>\n";
 
-print "<tr> <td colspan='3' align='left'>" .
-          "<input type='submit' name='submitConfigSetter' value='Apply Settings'/>&nbsp;" . 
-          "<input type='submit' name='restoreDefaults' value='Restore Defaults'/>&nbsp;" . 
-          "<input type='reset' value='Cancel'/>" . 
+$buttons = "<tr> <td colspan='3' align='left'>" .
+          "<input type='submit' name='submitConfigSetter' value='Apply Settings' class='slds-button slds-button_brand'/>&nbsp;" . 
+          "<input type='submit' name='restoreDefaults' value='Restore Defaults' class='slds-button slds-button_brand'/>&nbsp;" . 
+          "<input type='reset' value='Cancel' class='slds-button slds-button_destructive'/>" . 
           "</td> </tr>\n";
-          
+
+print $buttons;
+
 foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
     // don't even try to deal with complex types
     if (isset($configValue['dataType']) && $configValue['dataType'] == "complex") {
@@ -156,11 +158,7 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
 
 print "<tr> <td></td> <td></td> <td></td> </tr>\n";
 
-print "<tr> <td colspan='3' align='left'>" .
-          "<input type='submit' name='submitConfigSetter' value='Apply Settings'/>&nbsp;" . 
-          "<input type='submit' name='restoreDefaults' value='Restore Defaults'/>&nbsp;" . 
-          "<input type='reset' value='Cancel'/>" . 
-          "</td> </tr>\n";
+print $buttons;
 
 print "</table>\n";
 
