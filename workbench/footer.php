@@ -1,6 +1,8 @@
 <?php
 include_once 'shared.php';
 ?>
+
+</div>
 </div>
 
 <div class="slds-container_large slds-container_center slds-p-around_small">
