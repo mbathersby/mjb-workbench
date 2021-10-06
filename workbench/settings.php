@@ -168,7 +168,11 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
         } 
         
         else if ($configValue['dataType'] == "picklist") {
-            print "<select name='$configKey' id='$configKey'>";
+            print   "<div class='slds-form-element'>" .
+                        "<div class='slds-form-element__control'>" .
+                            "<div class='slds-select_container'>" .
+                                "<select class='slds-select' name='$configKey' id='$configKey'>";
+
             foreach ($configValue['valuesToLabels'] as $value => $label) {
                 if (isset($configValue['labelKey'])) {
                     $label = $label[$configValue['labelKey']]; //if the label is an array, this will pull the nested label out
@@ -179,6 +183,7 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
                 }
                 print ">" . $label . "</option>";
             }
+            
             print "</select>";
         } 
         
