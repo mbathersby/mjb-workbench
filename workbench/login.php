@@ -22,7 +22,7 @@ require_once "header.php";
     <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
 </p>
 
-<div id="loginBlockContainer">
+<div id="loginBlockContainer" class="slds-p-around_small">
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
@@ -42,7 +42,38 @@ require_once "header.php";
             <?php } ?>
         </div>
 
-        <div class="loginType_oauth">
+        <div class="slds-form loginType_oauth" role="list">
+            <div class="slds-form__row">
+                <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                                <select class="slds-select" id="oauth_env" name="oauth_host">
+                                    <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-form__row">
+                <div class="slds-form__item" role="listitem">
+                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                        <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                                <select class="slds-select" id="oauth_env" name="oauth_host">
+                                    <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--div class="loginType_oauth">
             <p>
                 <label for="inst">Environment:</label>
                 <select id="oauth_env" name="oauth_host" style="width: 200px;">
@@ -56,7 +87,7 @@ require_once "header.php";
                     <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
                 </select>
             </p>
-        </div>
+        </div-->
 
         <div class="loginType_std loginType_adv">
             <p>
