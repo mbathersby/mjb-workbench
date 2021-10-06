@@ -45,7 +45,9 @@
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
 
         <script type="text/javascript">
-            document.getElementById("menu-btn").addEventListener("click", toggleMenu);
+            function onLoad(){
+                document.getElementById("menu-btn").addEventListener("click", toggleMenu);
+            }
 
             function toggleMenu(){
                 let menu = document.getElementById("menu");
@@ -53,7 +55,7 @@
             }
         </script>
     </head>
-<body>
+<body onLoad="onLoad();">
 
 <?php
 if (WorkbenchConfig::get()->isConfigured("displayLiveMaintenanceMessage")) {
