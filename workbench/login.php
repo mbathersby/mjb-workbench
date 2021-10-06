@@ -144,9 +144,9 @@ require_once "header.php";
             </div>
             <?php } ?>
 
-            <p>
+            <div class="slds-clearfix">
                 <button class="slds-button slds-button_brand slds-float_right" id="loginBtn" name="uiLogin" value="Login">Login</button>
-            </p>
+            </div>
 
             <p class="slds-m-top_medium">
                 <strong>Workbench is free to use, but is not an official salesforce.com product.</strong> Workbench has not been officially tested or
