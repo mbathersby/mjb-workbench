@@ -5,7 +5,6 @@ include_once 'shared.php';
 
 <div class="slds-container_large slds-container_center slds-p-around_small">
     <div id="disclaimer" class="slds-text-align_center"><br />
-</div>
 
 <?php
 if (WorkbenchConfig::get()->value("checkSSL") && !usingSslEndToEnd()) {
@@ -20,6 +19,7 @@ if (WorkbenchContext::isEstablished() && WorkbenchContext::get()->isRequestStart
 
 print "Workbench " . ($GLOBALS["WORKBENCH_VERSION"] != "trunk" ? $GLOBALS["WORKBENCH_VERSION"] : "") . "<br/>\n";
 ?></div>
+</div>
 
 </body>
 
