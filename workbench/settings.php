@@ -104,11 +104,13 @@ print getCsrfFormTag();
 
 print "<table border='0' cellspacing='5' style='border-width-top: 1'>\n";
 
-$buttons = "<tr> <td colspan='3' align='left'>" .
-          "<input type='submit' name='submitConfigSetter' value='Apply Settings' class='slds-button slds-button_brand'/>&nbsp;" . 
-          "<input type='submit' name='restoreDefaults' value='Restore Defaults' class='slds-button slds-button_brand'/>&nbsp;" . 
-          "<input type='reset' value='Cancel' class='slds-button slds-button_destructive'/>" . 
-          "</td> </tr>\n";
+$buttons = "<tr>" . 
+                "<td colspan='3' class='slds-text-align_right'>" .
+                    "<input type='submit' name='submitConfigSetter' value='Apply Settings' class='slds-button slds-button_brand'/>&nbsp;" . 
+                    "<input type='submit' name='restoreDefaults' value='Restore Defaults' class='slds-button slds-button_brand'/>&nbsp;" . 
+                    "<input type='reset' value='Cancel' class='slds-button slds-button_destructive'/>" . 
+                "</td>" . 
+            "</tr>";
 
 print $buttons;
 
