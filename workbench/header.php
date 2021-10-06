@@ -168,7 +168,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                         </svg>
                                         <span class="slds-assistive-text">More Actions</span>
                                     </button>
-                                    <div class="slds-dropdown slds-dropdown_left">
+                                    <div class="slds-dropdown slds-dropdown_right">
                                         <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
                                             <?php
                                                 foreach ($GLOBALS["MENUS"] as $menu => $pages) {
