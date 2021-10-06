@@ -43,8 +43,8 @@ require_once "header.php";
         </div>
 
         <div class="slds-form loginType_oauth slds-grid slds-gutters" role="list">
-            <div class="slds-form__row">
-                <div class="slds-form__item slds-col slds-size_10-of-12" role="listitem">
+            <div class="slds-form__row slds-col">
+                <div class="slds-form__item  slds-size_10-of-12" role="listitem">
                     <div class="slds-form-element slds-form-element_stacked slds-is-editing ">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
                         <div class="slds-form-element__control">
@@ -146,7 +146,7 @@ require_once "header.php";
 
             <p>
                 <div style="text-align: right;">
-                    <input class="slds-button" type="submit" id="loginBtn" name="uiLogin" value="Login">
+                    <input class="slds-button slds-button_brand" type="submit" id="loginBtn" name="uiLogin" value="Login">
                 </div>
             </p>
 
