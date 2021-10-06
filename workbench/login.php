@@ -145,7 +145,7 @@ require_once "header.php";
             <?php } ?>
 
             <div class="slds-clearfix">
-                <button class="slds-button slds-button_brand slds-float_right" id="loginBtn" name="uiLogin" value="Login">Login</button>
+                <button class="slds-button slds-button_brand slds-float_right" id="loginBtn" name="uiLogin" value="Login">Login to Salesforce</button>
             </div>
 
             <p class="slds-m-top_medium">
