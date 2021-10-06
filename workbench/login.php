@@ -45,7 +45,7 @@ require_once "header.php";
         <div class="slds-form loginType_oauth" role="list">
             <div class="slds-form__row">
                 <div class="slds-form__item slds-col slds-size_6-of-12" role="listitem">
-                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing ">
+                    <div class="slds-form-element slds-form-element_stacked slds-is-editing ">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
                         <div class="slds-form-element__control">
                             <div class="slds-select_container">
@@ -59,7 +59,7 @@ require_once "header.php";
             <!--/div>
             <div class="slds-form__row"-->
                 <div class="slds-form__item slds-col slds-size_2-of-12" role="listitem">
-                    <div class="slds-form-element slds-form-element_horizontal slds-is-editing">
+                    <div class="slds-form-element slds-form-element_stacked slds-is-editing">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                         <div class="slds-form-element__control">
                             <div class="slds-select_container">
