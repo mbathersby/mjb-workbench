@@ -63,7 +63,7 @@ require_once "header.php";
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                         <div class="slds-form-element__control">
                             <div class="slds-select_container">
-                                <select class="slds-select" id="oauth_env" name="oauth_host">
+                                <select class="slds-select" id="oauth_apiVersion" name="oauth_apiVersion">
                                     <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
                                 </select>
                             </div>
