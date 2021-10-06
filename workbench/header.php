@@ -199,13 +199,6 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 
                                     <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions" id="menu-btn">
                                         <svg class="slds-button__icon" aria-hidden="true">
-                                            <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#settings"/>
-                                        </svg>
-                                        <span class="slds-assistive-text">More Actions</span>
-                                    </button>
-
-                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions" id="menu-btn">
-                                        <svg class="slds-button__icon" aria-hidden="true">
                                             <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
                                         </svg>
                                         <span class="slds-assistive-text">More Actions</span>
