@@ -16,20 +16,27 @@ if (isset($_POST['select'])) {
 
 <form method='POST' action=''>
     <?php print getCsrfFormTag(); ?>
-    <p class='instructions'>Select an action to perform:</p>
+    <p class='instructions slds-m-bottom_small'>Select an action to perform:</p>
 
     <p>
-        <label for="actionJump"><strong>Jump to: </strong></label>
-        <select name='actionJump' id='actionJump' style='width: 20em;' onChange='toggleObjectSelectDisabled();'>
-            <option value='select.php'></option>
-            <?php
-            foreach ($GLOBALS["MENUS"] as $menu => $pages) {
-                foreach ($pages as $href => $page) {
-                    if ($page->onMenuSelect) print "<option value='" . $href . "'>" . $page->title . "</option>";
-                }
-            }
-            ?>
-        </select>
+        <div class='slds-form-element'>
+        	<label class='slds-form-element__label' for="actionJump"><strong>Jump to: </strong></label>
+            <div class='slds-form-element__control'>
+                <div class='slds-select_container'>"
+                    <select class='slds-select' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
+                        <option value='select.php'></option>
+            
+                        <?php
+                        foreach ($GLOBALS["MENUS"] as $menu => $pages) {
+                            foreach ($pages as $href => $page) {
+                                if ($page->onMenuSelect) print "<option value='" . $href . "'>" . $page->title . "</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+        </div>
     </p>
 
     <p>
@@ -37,7 +44,7 @@ if (isset($_POST['select'])) {
         <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
     </p>
     
-    <input type='submit' name='select' value='Select'/>
+    <input type='submit' name='select' value='Select' class='slds-button slds-button_brand' />
 </form>
 
 <script type="text/javascript">
