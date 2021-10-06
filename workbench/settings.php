@@ -132,7 +132,8 @@ foreach (WorkbenchConfig::get()->entries() as $configKey => $configValue) {
                 "<label for='$configKey'" . 
                     (isLoggedIn() && isset($configValue['minApiVersion']) && !WorkbenchContext::get()->isApiVersionAtLeast($configValue['minApiVersion']) ? " style='color:orange;'" : "") .
               ">" . htmlspecialchars($configValue['label'],ENT_QUOTES) . "</label></td>\n";
-        print "\t\t<td class='slds-text-align_left slds-p-around_small slds-size_8-of-12>";
+        
+        print "\t\t<td class='slds-text-align_left slds-p-around_small slds-size_8-of-12'>";
 
         if ($configValue['dataType'] == "boolean") {
             print "<input name='$configKey' id='$configKey' type='checkbox' ";
