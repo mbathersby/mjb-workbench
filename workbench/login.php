@@ -145,7 +145,7 @@ require_once "header.php";
             <?php } ?>
 
             <p>
-                <button class="slds-button slds-button_brand" id="loginBtn" name="uiLogin" value="Login">
+                <button class="slds-button slds-button_brand" id="loginBtn" name="uiLogin" value="Login"></button>
             </p>
 
             <p class="slds-m-top_medium">
