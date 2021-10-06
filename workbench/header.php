@@ -139,7 +139,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 ?>
 
 
-    <div class="slds-container_large slds-container_center slds-p-around_small">
+    <div class="slds-container_x-large slds-container_center slds-p-around_small">
 
     <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
