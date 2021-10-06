@@ -558,7 +558,7 @@ function printObjectSelection($defaultObject=false, $nameId='default_object', $w
 
     $describeGlobalResults = describeGlobal($filter1, $filter2);
 
-    print "<select class='slds-select' id='$nameId' name='$nameId' style='width: " . $width. "em;' $extras>\n";
+    print "<select class='slds-select' id='$nameId' name='$nameId' $extras>\n";
 
     print "<option value=''></option>";
 

@@ -19,7 +19,7 @@ if (isset($_POST['select'])) {
     <p class='instructions slds-m-bottom_small'>Select an action to perform:</p>
 
     <p>
-        <div class="slds-form-element slds-form-element_compound slds-size_1-of-4' role="list">
+        <div class="slds-form-element slds-form-element_compound slds-size_4-of-12' role="list">
         	<label class='slds-form-element__label' for="actionJump"><strong>Jump to</strong></label>
             <div class='slds-form-element__control'>
                 <div class='slds-select_container'>
@@ -40,7 +40,7 @@ if (isset($_POST['select'])) {
     </p>
 
     <p>
-        <div class="slds-form-element slds-form-element_compound slds-size_1-of-4' role="list">
+        <div class="slds-form-element slds-form-element_compound slds-size_4-of-12' role="list">
             <label class='slds-form-element__label' for="default_object"><strong>Object</strong></label>
             <div class='slds-form-element__control'>
                 <div class='slds-select_container'>
