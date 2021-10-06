@@ -19,11 +19,11 @@ if (isset($_POST['select'])) {
     <p class='instructions slds-m-bottom_small'>Select an action to perform:</p>
 
     <p>
-        <div class='slds-form-element'>
-        	<label class='slds-form-element__label' for="actionJump"><strong>Jump to: </strong></label>
+        <div class="slds-form-element slds-form-element_compound' role="list">
+        	<label class='slds-form-element__label' for="actionJump"><strong>Jump to</strong></label>
             <div class='slds-form-element__control'>
-                <div class='slds-select_container'>"
-                    <select class='slds-select' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
+                <div class='slds-select_container'>
+                    <select class='slds-select slds-size_1-of-4' name='actionJump' id='actionJump' onChange='toggleObjectSelectDisabled();'>
                         <option value='select.php'></option>
             
                         <?php
@@ -40,8 +40,14 @@ if (isset($_POST['select'])) {
     </p>
 
     <p>
-        <label for="default_object"><strong>Object: &nbsp; </strong></label>
-        <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
+        <div class="slds-form-element slds-form-element_compound' role="list">
+            <label class='slds-form-element__label' for="default_object"><strong>Object</strong></label>
+            <div class='slds-form-element__control'>
+                <div class='slds-select_container'>
+                    <?php printObjectSelection(WorkbenchContext::get()->getDefaultObject(), 'default_object'); ?>
+                </div>
+            </div>
+        </div>
     </p>
     
     <input type='submit' name='select' value='Select' class='slds-button slds-button_brand' />
