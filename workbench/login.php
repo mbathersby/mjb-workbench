@@ -145,12 +145,10 @@ require_once "header.php";
             <?php } ?>
 
             <p>
-                <div style="text-align: right;">
-                    <input class="slds-button slds-button_brand" type="submit" id="loginBtn" name="uiLogin" value="Login">
-                </div>
+                <button class="slds-button slds-button_brand" id="loginBtn" name="uiLogin" value="Login">
             </p>
 
-            <p>
+            <p class="slds-m-top_medium">
                 <strong>Workbench is free to use, but is not an official salesforce.com product.</strong> Workbench has not been officially tested or
                 documented. salesforce.com support is not available for Workbench. Support requests for Workbench should be directed
                 to Stackoverflow at
