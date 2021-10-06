@@ -297,7 +297,7 @@ print "</tr></table>";
 
 if (isset($GLOBALS['MIGRATION_MESSAGE'])) {
 
-    print   "<div class='slds-notify slds-notify_alert slds-alert_warning' role='alert'>" . 
+    print   "<div class='slds-notify slds-notify_alert slds-alert_warning slds-m-vertical_large' role='alert'>" . 
                  "<h2>" . $GLOBALS['MIGRATION_MESSAGE'] . "</h2>" .
             "</div>";
 }
