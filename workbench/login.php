@@ -44,7 +44,7 @@ require_once "header.php";
 
         <div class="slds-form loginType_oauth" role="list">
             <div class="slds-form__row">
-                <div class="slds-form__item slds-col slds-size_6-of-12" role="listitem">
+                <div class="slds-form__item slds-col slds-size_10-of-12" role="listitem">
                     <div class="slds-form-element slds-form-element_stacked slds-is-editing ">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
                         <div class="slds-form-element__control">
@@ -58,7 +58,7 @@ require_once "header.php";
                 </div>
             <!--/div>
             <div class="slds-form__row"-->
-                <div class="slds-form__item slds-col slds-size_1-of-12" role="listitem">
+                <div class="slds-form__item slds-col" role="listitem">
                     <div class="slds-form-element slds-form-element_stacked slds-is-editing">
                         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
                         <div class="slds-form-element__control">
@@ -145,6 +145,12 @@ require_once "header.php";
             <?php } ?>
 
             <p>
+                <div style="text-align: right;">
+                    <input class="slds-button" type="submit" id="loginBtn" name="uiLogin" value="Login">
+                </div>
+            </p>
+
+            <p>
                 <strong>Workbench is free to use, but is not an official salesforce.com product.</strong> Workbench has not been officially tested or
                 documented. salesforce.com support is not available for Workbench. Support requests for Workbench should be directed
                 to Stackoverflow at
@@ -152,12 +158,6 @@ require_once "header.php";
                 Source code for Workbench  can be found at
                 <a href="https://github.com/forceworkbench/forceworkbench">https://github.com/forceworkbench/forceworkbench</a>
                 under separate and different license terms.
-            </p>
-
-            <p>
-                <div style="text-align: right;">
-                    <input class="slds-button" type="submit" id="loginBtn" name="uiLogin" value="Login">
-                </div>
             </p>
         </div>
     </form>
