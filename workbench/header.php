@@ -187,7 +187,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                             "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
                                         "</svg>" .
                                         "<span class=\"slds-assistive-text\">" . $page->title . "</span>" .
-                                    "</button>";
+                                    "</a>";
 
                                 }
                             }
