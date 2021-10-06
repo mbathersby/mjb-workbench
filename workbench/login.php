@@ -148,7 +148,7 @@ require_once "header.php";
                 <button class="slds-button slds-button_brand slds-float_right" id="loginBtn" name="uiLogin" value="Login">Login to Salesforce</button>
             </div>
 
-            <p class="slds-m-top_medium">
+            <!--p class="slds-m-top_medium">
                 <strong>Workbench is free to use, but is not an official salesforce.com product.</strong> Workbench has not been officially tested or
                 documented. salesforce.com support is not available for Workbench. Support requests for Workbench should be directed
                 to Stackoverflow at
@@ -156,7 +156,7 @@ require_once "header.php";
                 Source code for Workbench  can be found at
                 <a href="https://github.com/forceworkbench/forceworkbench">https://github.com/forceworkbench/forceworkbench</a>
                 under separate and different license terms.
-            </p>
+            </p-->
         </div>
     </form>
 </div>
