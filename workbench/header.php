@@ -182,7 +182,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                     $iconFolder = $iconParts[0];
                                     $icon = $iconParts[1];
 
-                                    print   "<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\">" .
+                                    print   "<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\" onclick=\"window.location.assign(\"$href\");\" >" .
                                         "<svg class=\"slds-button__icon\" aria-hidden=\"true\">" .
                                             "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
                                         "</svg>" .
