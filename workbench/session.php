@@ -83,10 +83,6 @@ if (!isLoggedIn() && $myPage->requiresSfdcSession) {
     header('Location: login.php?startUrl=' . urlencode($_SERVER['REQUEST_URI']));
     exit;
 }
-else {
-    header('Location: select.php');
-    exit;
-}
 
 if (!$myPage->isReadOnly && isReadOnlyMode()) {
     throw new WorkbenchHandledException("This page is not accessible in read-only mode");
