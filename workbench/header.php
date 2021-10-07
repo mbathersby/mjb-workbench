@@ -283,7 +283,7 @@ print "<table width='100%' border='0'><tr>";
 if ($myPage->showTitle) {
     print "<td id='pageTitle' class='slds-p-vertical_medium'><span class='slds-text-heading_large'>" . $myPage->title . "</span></td>";
 }
-if (isLoggedIn() && termsOk() && 'login.php'!=basename($_SERVER['PHP_SELF']) {
+if (isLoggedIn() && termsOk()) {
     $userInfo = WorkbenchContext::get()->getUserInfo();
     $infoTips = array("Username: " . $userInfo->userName,
                       "Instance: " . WorkbenchContext::get()->getHost(),
