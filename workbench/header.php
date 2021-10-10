@@ -218,7 +218,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                                 foreach ($GLOBALS["MENUS"] as $menu => $pages) {
 
                                                     if($menu != "WORKBENCH"){
-                                                        print   "<li class=\"slds-dropdown__header slds-truncate\" title=\"$menu\" role=\"separator\">" .
+                                                        print   "<li class='slds-dropdown__header slds-truncate' title='$menu' role='separator'>" .
                                                                     "<span>" . $menu . "</span>" .
                                                                 "</li>";   
                                                     }
@@ -228,9 +228,9 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                                             continue;
                                                         }
                                                         
-                                                        print   "<li class=\"slds-dropdown__item\" role=\"presentation\">" .
-                                                                    "<a href=\"$href\" role=\"menuitem\" tabindex=\"0\">" .
-                                                                        "<span class=\"slds-truncate\" title=\"Menu Item One\">$page->title</span>" .
+                                                        print   "<li class='slds-dropdown__item' role='presentation'>" .
+                                                                    "<a href='$href' role='menuitem' tabindex='0'>" .
+                                                                        "<span class='slds-truncate' title='$page->title'>$page->title</span>" .
                                                                     "</a>" .
                                                                 "</li>";
                                                     }
