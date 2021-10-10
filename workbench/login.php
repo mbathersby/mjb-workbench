@@ -122,23 +122,6 @@ require_once "header.php";
             </p>
         </div-->
 
-        <div id="login_type_selection" class="slds-p-around_small" style="text-align: right; visibility: hidden;">
-            
-            <?php if (!$c->isOAuthRequired() !== true) { ?>
-                <input type="radio" id="loginType_std" name="loginType" value="std"/>
-                <label for="loginType_std">Standard</label>
-
-                <input type="radio" id="loginType_adv" name="loginType" value="adv"/>
-                <label for="loginType_adv">Advanced</label>
-            <?php } ?>
-            
-            <?php if ($c->isOAuthEnabled() === true) { ?>
-                <input type="radio" id="loginType_oauth" name="loginType" value="oauth" disabled />
-                <label for="loginType_oauth">OAuth</label>
-            <?php } ?>
-
-        </div>
-
         <div class="loginType_std loginType_oauth loginType_adv">
             <?php if ($c->getTermsFile()) { ?>
             <div style="margin-left: 95px;">
@@ -149,6 +132,23 @@ require_once "header.php";
 
             <div class="slds-clearfix">
                 <button class="slds-button slds-button_brand slds-float_right" id="loginBtn" name="uiLogin" value="Login">Login to Salesforce</button>
+            </div>
+            
+            <div id="login_type_selection" class="slds-p-around_small" style="text-align: right; visibility: hidden;">
+                
+                <?php if (!$c->isOAuthRequired() !== true) { ?>
+                    <input type="radio" id="loginType_std" name="loginType" value="std"/>
+                    <label for="loginType_std">Standard</label>
+
+                    <input type="radio" id="loginType_adv" name="loginType" value="adv"/>
+                    <label for="loginType_adv">Advanced</label>
+                <?php } ?>
+                
+                <?php if ($c->isOAuthEnabled() === true) { ?>
+                    <input type="radio" id="loginType_oauth" name="loginType" value="oauth" disabled />
+                    <label for="loginType_oauth">OAuth</label>
+                <?php } ?>
+
             </div>
 
             <!--p class="slds-m-top_medium">
