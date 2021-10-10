@@ -38,9 +38,10 @@ require_once "header.php";
             <?php } ?>
             
             <?php if ($c->isOAuthEnabled() === true) { ?>
-                <input type="radio" id="loginType_oauth" name="loginType" value="oauth" disabled />
-                <label for="loginType_oauth">OAuth</label>
+                <input type="radio" id="loginType_oauth" name="loginType" value="oauth" style="visbility: hidden;" disabled />
+                <label for="loginType_oauth" style="visbility: hidden;">OAuth</label>
             <?php } ?>
+
         </div>
 
         <div class="slds-form-element slds-form-element_compound loginType_oauth" role="list">
