@@ -49,7 +49,7 @@ require_once "header.php";
                 <div class="slds-form-element__row">
                     <div class="slds-size_2-of-6">
                         <div class="slds-form-element">
-                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">Environment</label>
+                            <label class="slds-form-element__label" for="oauth_host">Environment</label>
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
                                     <select class="slds-select" id="oauth_env" name="oauth_host">
@@ -61,7 +61,7 @@ require_once "header.php";
                     </div>
                     <div class="slds-size_1-of-6">
                         <div class="slds-form-element">
-                            <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-131">API Version</label>
+                            <label class="slds-form-element__label" for="oauth_apiVersion">API Version</label>
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
                                     <select class="slds-select" id="oauth_apiVersion" name="oauth_apiVersion">
@@ -75,23 +75,45 @@ require_once "header.php";
             </div>
         </div>
 
-        <!--div class="loginType_oauth">
-            <p>
-                <label for="inst">Environment:</label>
-                <select id="oauth_env" name="oauth_host" style="width: 200px;">
-                    <?php printSelectOptions($c->getOauthHostSelectOptions()); ?>
-                </select>
-            </p>
+        <div class="slds-form-element slds-form-element_compound loginType_std loginType_adv" role="list">
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__row">
+                    <div class="slds-size_2-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="un">Username</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="un" name="un" class="slds-input" value="<?php print htmlspecialchars($c->getUsername()); ?>"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-size_2-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="pw">Password</label>
+                            <div class="slds-form-element__control">
+                                <input type="password" id="pw" name="pw" class="slds-input"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-form-element__row">
+                    <div class="slds-size_3-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-checkbox">
+                                    <input type="checkbox" name="options" id="rememberUser" <?php if ($c->isUserRemembered()) print "checked" ?> />
+                                    <label class="slds-checkbox__label" for="rememberUser">
+                                        <span class="slds-checkbox_faux"></span>
+                                        <span class="slds-form-element__label">Remember Username</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <p>
-                <label for="api">API Version:</label>
-                <select id="oauth_apiVersion" name="oauth_apiVersion" style="width: 200px;">
-                    <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
-                </select>
-            </p>
-        </div-->
-
-        <div class="loginType_std loginType_adv">
+        <!--div class="loginType_std loginType_adv">
             <p>
                 <label for="un">Username:</label>
                 <input type="text" id="un" name="un"size="55" value="<?php print htmlspecialchars($c->getUsername()); ?>"/>
@@ -107,7 +129,7 @@ require_once "header.php";
                 <label for="rememberUser">Remember username</label>
                 <span id="pwcaps" style="visibility: hidden; color: red; font-weight: bold; margin-left: 65px;">Caps lock is on!</span>
             </div>
-        </div>
+        </div-->
 
         <div class="loginType_adv">
             <p>
