@@ -25,12 +25,11 @@ class LoginController {
                                 : ""));
         }
 
-        $_REQUEST['loginType'] = 'oauth';
+        //$_REQUEST['loginType'] = 'oauth';
 
-        $this->loginType = 'oauth'; 
-            /*isset($_REQUEST['loginType'])
+        $this->loginType = isset($_REQUEST['loginType'])
                              ? $_REQUEST['loginType']
-                             : WorkbenchConfig::get()->value("defaultLoginType");*/
+                             : WorkbenchConfig::get()->value("defaultLoginType");
 
         $this->username = isset($_REQUEST['un'])
                              ? $_REQUEST['un']
