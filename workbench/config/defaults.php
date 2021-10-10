@@ -940,7 +940,7 @@ $config["header_Performance"] = array(
     $config["oauthEnabled"] = array(
         "label" => "Enable OAuth Login",
         "description" => "Enable OAuth Login",
-        "default" => false,
+        "default" => true,
         "overrideable" => false,
         "dataType" => "boolean"
     );
