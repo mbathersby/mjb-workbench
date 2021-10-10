@@ -38,7 +38,7 @@ require_once "header.php";
             <?php } ?>
             
             <?php if ($c->isOAuthEnabled() === true) { ?>
-                <input type="radio" id="loginType_oauth" name="loginType" value="oauth"disabled />
+                <input type="radio" id="loginType_oauth" name="loginType" value="oauth" disabled />
                 <label for="loginType_oauth">OAuth</label>
             <?php } ?>
 
