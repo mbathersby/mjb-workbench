@@ -18,7 +18,7 @@
 // If connecting to other Salesforce environments, add a new entry to the array:
 //
 $config["oauthEnabled"]["default"] = TRUE;
-$config["oauthRequired"]["default"] = FALSE;
+$config["oauthRequired"]["default"] = TRUE;
 
 $config["oauthConfigs"]["default"] = array(
                                             "login.salesforce.com" => array(
@@ -26,7 +26,9 @@ $config["oauthConfigs"]["default"] = array(
                                             ),
                                             "test.salesforce.com" => array(
                                                 "label" => "Sandbox"
-                                            ),
+                                            )
+                                        );
+                                        /*    
                                             "aware--athenadev1.my.salesforce.com" => array(
                                                 "label" => "ATHENA - DEV1"
                                             ),
@@ -43,6 +45,7 @@ $config["oauthConfigs"]["default"] = array(
                                                 "label" => "SAGE TEST ENV"
                                             )
                                         );
+                                    */
 
 // CSRF SECURITY SETTINGS
 // Uncomment and change the value below to a random, secret value:
