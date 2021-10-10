@@ -143,6 +143,7 @@ require_once "header.php";
         </div-->
 
         <div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
+            <input type="hidden" id="serverUrl" name="serverUrl" />
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
                     <div class="slds-size_4-of-6">
@@ -167,14 +168,6 @@ require_once "header.php";
                             </div>
                         </div>
                     </div>
-                    <!--div class="slds-size_3-of-6">
-                        <div class="slds-form-element">
-                            <label class="slds-form-element__label" for="serverUrl">Server URL</label>
-                            <div class="slds-form-element__control">
-                                <input type="text" id="serverUrl" name="serverUrl" class="slds-input" />
-                            </div>
-                        </div>
-                    </div-->
                     <div class="slds-size_1-of-6">
                         <div class="slds-form-element">
                             <label class="slds-form-element__label" for="sid">API Version</label>
