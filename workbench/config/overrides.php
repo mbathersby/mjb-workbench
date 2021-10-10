@@ -17,8 +17,8 @@
 // Note, Production and Sandbox can have the same key and secret, but it is not required
 // If connecting to other Salesforce environments, add a new entry to the array:
 //
-$config["oauthEnabled"]["default"] = TRUE;
-$config["oauthRequired"]["default"] = TRUE;
+$config["oauthEnabled"]["default"] = FALSE;
+$config["oauthRequired"]["default"] = FALSE;
 
 $config["oauthConfigs"]["default"] = array(
                                             "login.salesforce.com" => array(
