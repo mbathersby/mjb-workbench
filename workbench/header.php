@@ -199,7 +199,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 
                                 <?php
                                 
-                                    print "<button class=\slds-button slds-button_icon slds-button_icon-border-filled\' aria-haspopup=\'true\' title=\'More Actions\' id=\'menu-btn\'";
+                                    print "<button class='slds-button slds-button_icon slds-button_icon-border-filled' aria-haspopup='true' title='More Actions' id='menu-btn'";
                                     
                                     if($myPage->title == 'Login'){
                                         print " disabled ";
