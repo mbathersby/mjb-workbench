@@ -27,7 +27,7 @@ require_once "header.php";
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
 
-        <div class="slds-form-element__control" id="login_type_selection" class="slds-p-around_small" style="text-align: right;">
+        <div class="slds-form-element__control" id="login_type_selection" class="slds-m-vertical_medium" style="text-align: right;">
             <div class="slds-radio_button-group">
                 <?php if ($c->isOAuthEnabled() === true) { ?>
                     <span class="slds-button slds-radio_button">
@@ -86,7 +86,7 @@ require_once "header.php";
             </div>
         </div>
 
-        <div class="slds-form-element slds-form-element_compound loginType_std loginType_adv" role="list">
+        <div class="slds-form-element slds-form-element_compound loginType_std" role="list">
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
                     <div class="slds-size_2-of-6">
@@ -143,9 +143,6 @@ require_once "header.php";
         </div-->
 
         <div class="loginType_adv">
-            <p>
-                <em>- OR -</em>
-            </p>
 
             <p>
                 <label for="sid">Session ID:</label>
