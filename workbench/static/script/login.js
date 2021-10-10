@@ -71,9 +71,11 @@ var WorkbenchLogin = new function() {
         switch (typeElem.id) {
             case "loginType_oauth":
                 form.loginBtn.value = "Login with Salesforce";
+                form.loginBtn.innerText = "Login with Salesforce";
                 break;
             default:
                 form.loginBtn.value = "Login";
+                form.loginBtn.innerText = "Login";
                 setFocus();
                 break;
         }
