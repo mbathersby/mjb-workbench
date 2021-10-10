@@ -142,30 +142,41 @@ require_once "header.php";
             </div>
         </div-->
 
-        <div class="loginType_adv">
-
-            <p>
-                <label for="sid">Session ID:</label>
-                <input type="text" id="sid" name="sid" size="55">
-            </p>
-
-            <p>&nbsp;</p>
-
-            <p>
-                <label for="serverUrl">Server URL:</label>
-                <input type="text" name="serverUrl" id="serverUrl" size="55" />
-            </p>
-
-            <p>
-                <label for="inst">QuickSelect:</label>
-                <select id="inst" name="inst">
-                    <?php printSelectOptions($c->getSubdomainSelectOptions(), $c->getSubdomain()); ?>
-                </select>
-                &nbsp;
-                <select id="api" name="api">
-                    <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
-                </select>
-            </p>
+        <div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
+            <div class="slds-form-element__control">
+                <div class="slds-form-element__row">
+                    <div class="slds-size_4-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="sid">Session ID</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="sid" name="sid" class="slds-input" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-form-element__row">
+                    <div class="slds-size_3-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="serverUrl">Server URL</label>
+                            <div class="slds-form-element__control">
+                                <input type="text" id="serverUrl" name="serverUrl" class="slds-input" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-size_1-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="sid">API Version</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="api" name="api">
+                                        <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="loginType_std loginType_oauth loginType_adv">
