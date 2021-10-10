@@ -142,7 +142,7 @@ require_once "header.php";
             </div>
         </div-->
 
-        <!--div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
+        <div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
                     <div class="slds-size_4-of-6">
@@ -154,15 +154,27 @@ require_once "header.php";
                         </div>
                     </div>
                 </div>
-                <div class="slds-form-element__row">
+                <div class="slds-form-element__row">    
                     <div class="slds-size_3-of-6">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="inst">Server URL</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="inst" name="api">
+                                        <?php printSelectOptions($c->getSubdomainSelectOptions(), $c->getSubdomain()); ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--div class="slds-size_3-of-6">
                         <div class="slds-form-element">
                             <label class="slds-form-element__label" for="serverUrl">Server URL</label>
                             <div class="slds-form-element__control">
                                 <input type="text" id="serverUrl" name="serverUrl" class="slds-input" />
                             </div>
                         </div>
-                    </div>
+                    </div-->
                     <div class="slds-size_1-of-6">
                         <div class="slds-form-element">
                             <label class="slds-form-element__label" for="sid">API Version</label>
@@ -177,7 +189,7 @@ require_once "header.php";
                     </div>
                 </div>
             </div>
-        </div-->
+        </div>
 
         <!--div class="loginType_adv">
 
