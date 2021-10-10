@@ -182,12 +182,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                                     $iconFolder = $iconParts[0];
                                     $icon = $iconParts[1];
 
-                                    print   "<a class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\" href=\"$href\"";
-                                    
-                                    if($page->title == 'login.php'){
-                                        print " disabled ";
-                                    }
-                                    print ">"
+                                    print   "<a class=\"slds-button slds-button_icon slds-button_icon-border-filled\" aria-haspopup=\"true\" title=\"" . $page->title . "\" href=\"$href\">" .
                                         "<svg class=\"slds-button__icon\" aria-hidden=\"true\">" .
                                             "<use href=\"/static/assets/icons/" . $iconFolder . "-sprite/svg/symbols.svg#" . $icon . "\"/>" .
                                         "</svg>" .
@@ -202,7 +197,16 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                             <li>
                                 <div class="slds-dropdown-trigger slds-dropdown-trigger_click" id="menu">
 
-                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions" id="menu-btn">
+                                <?php
+                                
+                                    print "<button class=\slds-button slds-button_icon slds-button_icon-border-filled\' aria-haspopup=\'true\' title=\'More Actions\' id=\'menu-btn\'";
+                                    
+                                    if($myPage->title == 'Login'){
+                                        print " disabled ";
+                                    }
+                                    
+                                    print ">"
+                                ?>
                                         <svg class="slds-button__icon" aria-hidden="true">
                                             <use href="/static/assets/icons/utility-sprite/svg/symbols.svg#down"/>
                                         </svg>
