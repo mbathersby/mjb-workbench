@@ -27,23 +27,7 @@ require_once "header.php";
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
         
-        <div id="login_type_selection" class="slds-p-around_small" style="text-align: right; visibility: hidden;">
-            
-            <?php if (!$c->isOAuthRequired() !== true) { ?>
-                <input type="radio" id="loginType_std" name="loginType" value="std"/>
-                <label for="loginType_std">Standard</label>
-
-                <input type="radio" id="loginType_adv" name="loginType" value="adv"/>
-                <label for="loginType_adv">Advanced</label>
-            <?php } ?>
-            
-            <?php if ($c->isOAuthEnabled() === true) { ?>
-                <input type="radio" id="loginType_oauth" name="loginType" value="oauth" disabled />
-                <label for="loginType_oauth">OAuth</label>
-            <?php } ?>
-
-        </div>
-
+        
         <div class="slds-form-element slds-form-element_compound loginType_oauth" role="list">
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
