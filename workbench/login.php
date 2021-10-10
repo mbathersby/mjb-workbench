@@ -26,6 +26,7 @@ require_once "header.php";
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
+        <input type="hidden" id="serverUrl" name="serverUrl" />
 
         <div class="slds-form-element__control slds-p-bottom_medium" id="login_type_selection"style="text-align: right;">
             <div class="slds-radio_button-group">
@@ -143,7 +144,6 @@ require_once "header.php";
         </div-->
 
         <div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
-            <input type="hidden" id="serverUrl" name="serverUrl" />
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
                     <div class="slds-size_4-of-6">
