@@ -179,6 +179,32 @@ require_once "header.php";
             </div>
         </div>
 
+        <!--div class="loginType_adv">
+
+            <p>
+                <label for="sid">Session ID:</label>
+                <input type="text" id="sid" name="sid" size="55">
+            </p>
+
+            <p>&nbsp;</p>
+
+            <p>
+                <label for="serverUrl">Server URL:</label>
+                <input type="text" name="serverUrl" id="serverUrl" size="55" />
+            </p>
+
+            <p>
+                <label for="inst">QuickSelect:</label>
+                <select id="inst" name="inst">
+                    <?php printSelectOptions($c->getSubdomainSelectOptions(), $c->getSubdomain()); ?>
+                </select>
+                &nbsp;
+                <select id="api" name="api">
+                    <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
+                </select>
+            </p>
+        </div-->
+
         <div class="loginType_std loginType_oauth loginType_adv">
             <?php if ($c->getTermsFile()) { ?>
             <div style="margin-left: 95px;">
