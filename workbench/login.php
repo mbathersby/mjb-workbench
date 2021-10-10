@@ -142,7 +142,7 @@ require_once "header.php";
             </div>
         </div-->
 
-        <div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
+        <!--div class="slds-form-element slds-form-element_compound loginType_adv" role="list">
             <div class="slds-form-element__control">
                 <div class="slds-form-element__row">
                     <div class="slds-size_4-of-6">
@@ -177,7 +177,7 @@ require_once "header.php";
                     </div>
                 </div>
             </div>
-        </div>
+        </div-->
 
         <!--div class="loginType_adv">
 
