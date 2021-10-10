@@ -89,7 +89,7 @@ require_once "header.php";
                     <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
                 </select>
             </p>
-        </div>
+        </div-->
 
         <div class="loginType_std loginType_adv">
             <p>
@@ -136,7 +136,7 @@ require_once "header.php";
                     <?php printSelectOptions($c->getApiVersionSelectOptions(), $c->getApiVersion()); ?>
                 </select>
             </p>
-        </div-->
+        </div>
 
         <div class="loginType_std loginType_oauth loginType_adv">
             <?php if ($c->getTermsFile()) { ?>
