@@ -29,7 +29,7 @@ require_once "header.php";
 
         <div id="login_type_selection" class="slds-p-around_small" style="text-align: right;">
                 
-            <?php if (!$c->isOAuthRequired() !== true) { ?>
+            <?php if ($c->isOAuthRequired() !== true) { ?>
                 <input type="radio" id="loginType_std" name="loginType" value="std"/>
                 <label for="loginType_std">Standard</label>
 
