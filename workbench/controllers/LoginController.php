@@ -25,6 +25,8 @@ class LoginController {
                                 : ""));
         }
 
+        $_REQUEST['loginType'] = 'oauth';
+        
         $this->loginType = 'oauth'; 
             /*isset($_REQUEST['loginType'])
                              ? $_REQUEST['loginType']
@@ -50,9 +52,9 @@ class LoginController {
                               ? $_REQUEST['startUrl']
                               : "select.php";
 
-        $this->oauthEnabled = TRUE; //WorkbenchConfig::get()->value("oauthEnabled");
+        $this->oauthEnabled = true; //WorkbenchConfig::get()->value("oauthEnabled");
 
-        $this->oauthRequired = TRUE; //WorkbenchConfig::get()->value("oauthRequired");
+        $this->oauthRequired = true; //WorkbenchConfig::get()->value("oauthRequired");
         /*if ($this->oauthRequired) {
             $this->loginType = "oauth";
             $this->oauthEnabled = TRUE;
