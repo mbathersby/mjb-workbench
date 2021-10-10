@@ -27,7 +27,7 @@ require_once "header.php";
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
 
-        <div class="slds-form-element__control" id="login_type_selection">
+        <div class="slds-form-element__control" id="login_type_selection" class="slds-p-around_small" style="text-align: right;">
             <div class="slds-radio_button-group">
                 <?php if ($c->isOAuthEnabled() === true) { ?>
                     <span class="slds-button slds-radio_button">
@@ -54,7 +54,6 @@ require_once "header.php";
                 <?php } ?>
             </div>
         </div>
-
 
         <div class="slds-form-element slds-form-element_compound loginType_oauth" role="list">
             <div class="slds-form-element__control">
