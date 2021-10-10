@@ -22,12 +22,12 @@ require_once "header.php";
     <?php if (count($c->getErrors()) > 0) displayError($c->getErrors()) ?>
 </p>
 
-<div id="loginBlockContainer" class="slds-p-around_small">
+<div id="loginBlockContainer">
     <form id="login_form" action="login.php" method="post">
         <?php print getCsrfFormTag(); ?>
         <input type="hidden" id="startUrl" name="startUrl" value="<?php print htmlspecialchars($c->getStartUrl(), ENT_QUOTES); ?>">
 
-        <div class="slds-form-element__control" id="login_type_selection" class="slds-m-vertical_medium" style="text-align: right;">
+        <div class="slds-form-element__control" id="login_type_selection" class="slds-m-bottom_medium" style="text-align: right;">
             <div class="slds-radio_button-group">
                 <?php if ($c->isOAuthEnabled() === true) { ?>
                     <span class="slds-button slds-radio_button">
