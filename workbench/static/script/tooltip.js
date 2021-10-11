@@ -4,9 +4,12 @@ function showToolTip(content, nubPos, event){
     console.log(content);
     console.log(nubPos);
 
+    let elId = event.relatedTarget.id;
+
     let coords = findScreenCoords(event);
 
     const tooltip = document.createElement("div");
+    tooltip.setAttribute('id', elId + '_tooltip');
     tooltip.classList.add('slds-popover');
     tooltip.classList.add('slds-nubbin_' + nubPos);
     tooltip.setAttribute('role', 'dialog');
@@ -20,13 +23,10 @@ function showToolTip(content, nubPos, event){
 
     tooltip.appendChild(body);
     document.body.appendChild(tooltip);
-
-        /*<!-- button class="slds-button" aria-describedby="help" aria-disabled="true">Help Text</button -->
-        <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left" role="tooltip" id="help" style="position:absolute;top:-4px;left:35px">
-            <div class="slds-popover__body">
-                content
-            </div>
-        </div>*/
+    
+    event.target.addEventListener("mouseout", () => {
+        document.body.removeChild(tooltip);
+    })
 }
 
 function findScreenCoords(mouseEvent){
