@@ -443,6 +443,10 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
                 "</div>" .
                 "<div class='slds-media__body'>" .
 
+    if(!is_array($errors)){
+        $errors = array($errors);
+    }
+                
     $errorString = null;
 
     foreach ($errors as $error) {
@@ -451,9 +455,8 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
 
     $errorString = str_replace("\n","<br/>",$errorString);
 
-    print "<p>" . $errorString . "</p>";
-
-    print       "</div>" . 
+    print           "<p>" . $errorString . "</p>" .
+                "</div>" . 
             "</div>";
 
     /*print "<div class='displayErrors'>\n";
