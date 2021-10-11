@@ -450,7 +450,30 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
 }
 
 function displayWarning($warnings) {
-    print "<div class='displayWarning'>\n";
+
+    print   "<div class='slds-notify slds-notify_alert slds-alert_warning' role='alert'>" .
+                "<span class='slds-assistive-text'>warning</span>" .
+                "<span class='slds-icon_container slds-icon-utility-warning slds-m-right_x-small' title='Warning'>" . 
+                    "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" .
+                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#warning'></use>" .
+                    "</svg>" .
+                "</span>" .
+                "<h2>";
+
+    if (is_array($warnings)) {
+        $warningString = "";
+        foreach ($warnings as $warning) {
+            $warningString .= "<p>" . htmlspecialchars($warning) . "</p>";
+        }
+        print $warningString;
+    } else {
+        print htmlspecialchars($warnings);
+    }
+
+    print       "</h2>" . 
+            "</div>";
+
+    /*print "<div class='displayWarning'>\n";
     print "<img src='" . getPathToStaticResource('/images/warning24.png') . "' width='24' height='24' align='middle' border='0' alt='info:' /> <p/>";
     if (is_array($warnings)) {
         $warningString = "";
@@ -461,11 +484,34 @@ function displayWarning($warnings) {
     } else {
         print htmlspecialchars($warnings);
     }
-    print "</div>\n";
+    print "</div>\n";*/
 }
 
 function displayInfo($infos) {
-    print "<div class='displayInfo'>\n";
+
+    print   "<div class='slds-notify slds-notify_alert slds-alert_info' role='alert'>" .
+                "<span class='slds-assistive-text'>warning</span>" .
+                "<span class='slds-icon_container slds-icon-utility-warning slds-m-right_x-small' title='Info'>" . 
+                    "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" .
+                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info'></use>" .
+                    "</svg>" .
+                "</span>" .
+                "<h2>";
+
+    if (is_array($infos)) {
+        $infoString = "";
+        foreach ($infos as $info) {
+            $infoString .= "<p>" . htmlspecialchars($info) . "</p>";
+        }
+        print $infoString;
+    } else {
+        print htmlspecialchars($infos);
+    }
+
+    print       "</h2>" . 
+            "</div>";
+
+    /*print "<div class='displayInfo'>\n";
     print "<img src='" . getPathToStaticResource('/images/info24.png') . "' width='24' height='24' align='middle' border='0' alt='info:' /> <p/>";
     if (is_array($infos)) {
         $infoString = "";
@@ -476,7 +522,7 @@ function displayInfo($infos) {
     } else {
         print htmlspecialchars($infos);
     }
-    print "</div>\n";
+    print "</div>\n";*/
 }
 
 function getWorkbenchUserAgent() {
