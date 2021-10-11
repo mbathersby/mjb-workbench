@@ -432,24 +432,28 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
         print "<p/>";
     }
 
-    print   "<div class='slds-notify slds-notify_alert slds-alert_info' role='alert'>" .
-                "<span class='slds-assistive-text'>warning</span>" .
-                "<span class='slds-icon_container slds-icon-utility-error slds-m-right_x-small' title='Error'>" . 
-                    "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" .
-                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#error'></use>" .
-                    "</svg>" .
-                "</span>" .
-                "<h2>";
+    print   "<div class='slds-scoped-notification slds-media slds-media_center slds-theme_error' role='status'>" .
+                "<div class='slds-media__figure'>" .
+                    "<span class='slds-icon_container slds-icon-utility-error' title='Error'>" . 
+                        "<svg class='slds-icon slds-icon_small slds-icon-text-default' aria-hidden='true'>" .
+                            "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#error'></use>" .
+                        "</svg>" .
+                        "<span class='slds-assistive-text'>error</span>" .
+                    "</span>" .
+                "</div>" .
+                "<div class='slds-media__body'>" .
 
     $errorString = null;
+
     foreach ($errors as $error) {
         $errorString .= "<p>" . htmlspecialchars((string)$error) . "</p>";
-        $errorString = str_replace("\n","<br/>",$errorString);
     }
 
-    print $errorString;
+    $errorString = str_replace("\n","<br/>",$errorString);
 
-    print       "</h2>" . 
+    print "<p>" . $errorString . "</p>";
+
+    print       "</div>" . 
             "</div>";
 
     /*print "<div class='displayErrors'>\n";
