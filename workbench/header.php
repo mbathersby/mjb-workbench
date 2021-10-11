@@ -293,7 +293,7 @@ print "<table width='100%' border='0'><tr>";
 if ($myPage->showTitle) {
     print "<td id='pageTitle' class='slds-p-vertical_medium'><span class='slds-text-heading_large'>" . $myPage->title . "</span></td>";
 }
-if (isLoggedIn() && termsOk() && $myPage->title != 'Login') {
+if (isLoggedIn() && termsOk() $myPage->title != 'Login') {
     $userInfo = WorkbenchContext::get()->getUserInfo();
     $infoTips = array("Username: " . $userInfo->userName,
                       "Instance: " . WorkbenchContext::get()->getHost(),
@@ -302,7 +302,7 @@ if (isLoggedIn() && termsOk() && $myPage->title != 'Login') {
 
     /*onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" */
 
-    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover='showTooltip('" . implode("<br/>", $infoTips) . "') \" >" .
+    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover='showTooltip(\"$infoTips\");\" >" .
            htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
 }
 print "</tr></table>";
