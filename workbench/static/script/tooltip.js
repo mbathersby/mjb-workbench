@@ -15,7 +15,7 @@ function showToolTip(content, nubPos, event){
     tooltip.setAttribute('role', 'dialog');
     tooltip.style.position = 'absolute';
     tooltip.style.left = coords.x + 'px';
-    tooltip.style.top = coords.y + 'px';
+    tooltip.style.top = (coords.y + 10) + 'px';
 
     let body = document.createElement("div");
     body.classList.add('slds-popover__body');
