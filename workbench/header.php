@@ -43,6 +43,7 @@
         ?>
         
 		<script type="text/javascript" src="<?php echo getPathToStaticResource('/script/pro_dropdown.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo getPathToStaticResource('/script/tooltip.js'); ?>"></script>
 
         <script type="text/javascript">
             function onLoad(){
@@ -299,7 +300,9 @@ if (isLoggedIn() && termsOk()) {
                       "Org Id:&nbsp;&nbsp;" . substr($userInfo->organizationId, 0, 15),
                       "User Id:&nbsp;" . substr($userInfo->userId, 0, 15));
 
-    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" .
+    /*onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" */
+
+    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover='showTooltip('". implode("<br/>", $infoTips) ."', 'bottom', event)\" >" .
            htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
 }
 print "</tr></table>";
