@@ -435,7 +435,7 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
     print   "<div class='slds-scoped-notification slds-media slds-media_center slds-theme_error' role='status'>" .
                 "<div class='slds-media__figure'>" .
                     "<span class='slds-icon_container slds-icon-utility-error' title='Error'>" . 
-                        "<svg class='slds-icon slds-icon_small slds-icon-text-default' aria-hidden='true'>" .
+                        "<svg class='slds-icon slds-icon_small' aria-hidden='true'>" .
                             "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#error'></use>" .
                         "</svg>" .
                         "<span class='slds-assistive-text'>error</span>" .
@@ -541,19 +541,6 @@ function displayInfo($infos) {
 
     print       "</div>" . 
             "</div>";
-
-    /*print "<div class='displayInfo'>\n";
-    print "<img src='" . getPathToStaticResource('/images/info24.png') . "' width='24' height='24' align='middle' border='0' alt='info:' /> <p/>";
-    if (is_array($infos)) {
-        $infoString = "";
-        foreach ($infos as $info) {
-            $infoString .= "<p>" . htmlspecialchars($info) . "</p>";
-        }
-        print $infoString;
-    } else {
-        print htmlspecialchars($infos);
-    }
-    print "</div>\n";*/
 }
 
 function getWorkbenchUserAgent() {

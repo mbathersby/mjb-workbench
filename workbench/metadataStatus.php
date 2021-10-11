@@ -51,7 +51,7 @@ if (!isset($asyncProcessId) || (!$isDeployOperation && !$isRetrieveOperation)) {
 }
 
 require_once 'header.php';
-print "<p class='instructions'>A Metadata API operation has been performed, which requires asynchronous processing as resources are available. " .
+print "<p class='instructions slds-text-body_regular slds-p-vertical_small'>A Metadata API operation has been performed, which requires asynchronous processing as resources are available. " .
       "Refresh this page periodically to view the latest status. Results will be available once processing is complete.</p><p/>";
 
 require_once 'soapclient/SforceMetadataClient.php';
