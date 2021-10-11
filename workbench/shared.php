@@ -511,14 +511,16 @@ function displayWarning($warnings) {
 
 function displayInfo($infos) {
 
-    print   "<div class='slds-notify slds-notify_alert slds-alert_info' role='alert'>" .
-                "<span class='slds-assistive-text'>warning</span>" .
-                "<span class='slds-icon_container slds-icon-utility-warning slds-m-right_x-small' title='Info'>" . 
-                    "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" .
-                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info_alt'></use>" .
-                    "</svg>" .
-                "</span>" .
-                "<h2>";
+    print   "<div class='slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light' role='status'>" .
+                "<div class='slds-media__figure'>" .
+                    "<span class='slds-icon_container slds-icon-utility-info' title='Information'>" . 
+                        "<svg class='slds-icon slds-icon_small slds-icon-text-default' aria-hidden='true'>" .
+                            "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info_alt'></use>" .
+                        "</svg>" .
+                        "<span class='slds-assistive-text'>information</span>" .
+                    "</span>" .
+                "</div>" .
+                "<div class='slds-media__body'>" .
 
     if (is_array($infos)) {
         $infoString = "";
@@ -527,10 +529,10 @@ function displayInfo($infos) {
         }
         print $infoString;
     } else {
-        print htmlspecialchars($infos);
+        print "<p>" . htmlspecialchars($infos) . "</p>";
     }
 
-    print       "</h2>" . 
+    print       "</div>" . 
             "</div>";
 
     /*print "<div class='displayInfo'>\n";
