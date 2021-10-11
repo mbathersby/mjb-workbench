@@ -431,7 +431,28 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
         include_once("header.php");
         print "<p/>";
     }
-    print "<div class='displayErrors'>\n";
+
+    print   "<div class='slds-notify slds-notify_alert slds-alert_info' role='alert'>" .
+                "<span class='slds-assistive-text'>warning</span>" .
+                "<span class='slds-icon_container slds-icon-utility-error slds-m-right_x-small' title='Error'>" . 
+                    "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" .
+                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#error'></use>" .
+                    "</svg>" .
+                "</span>" .
+                "<h2>";
+
+    $errorString = null;
+    foreach ($errors as $error) {
+        $errorString .= "<p>" . htmlspecialchars((string)$error) . "</p>";
+        $errorString = str_replace("\n","<br/>",$errorString);
+    }
+
+    print $errorString;
+
+    print       "</h2>" . 
+            "</div>";
+
+    /*print "<div class='displayErrors'>\n";
     print "<img src='" . getPathToStaticResource('/images/error24.png') . "' width='24' height='24' align='middle' border='0' alt='ERROR:' /> <p/>";
     if(!is_array($errors)) $errors = array($errors);
 
@@ -442,7 +463,8 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
     }
 
     print $errorString;
-    print "</div>\n";
+    print "</div>\n";*/
+
     if ($showFooter) {
         include_once("footer.php");
         exit;
@@ -493,7 +515,7 @@ function displayInfo($infos) {
                 "<span class='slds-assistive-text'>warning</span>" .
                 "<span class='slds-icon_container slds-icon-utility-warning slds-m-right_x-small' title='Info'>" . 
                     "<svg class='slds-icon slds-icon_x-small' aria-hidden='true'>" .
-                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info'></use>" .
+                        "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info_alt'></use>" .
                     "</svg>" .
                 "</span>" .
                 "<h2>";
