@@ -153,7 +153,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
                     <div class="slds-media__figure">
                         <span class="slds-icon_container slds-icon-standard-apex">
                             <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
-                                <use href="/static/assets/icons/standard-sprite/svg/symbols.svg#apex"/>
+                                <use href="/static/assets/icons/custom-sprite/svg/symbols.svg#custom57"/>
                             </svg>
                         </span>
                     </div>
