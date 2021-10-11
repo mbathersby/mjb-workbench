@@ -14,8 +14,8 @@ function showToolTip(content, nubPos, event){
     tooltip.classList.add('slds-nubbin_' + nubPos);
     tooltip.setAttribute('role', 'dialog');
     tooltip.style.position = 'absolute';
-    tooltip.style.top = coords.x + 'px';
-    tooltip.style.left = coords.y + 'px';
+    tooltip.style.left = coords.x + 'px';
+    tooltip.style.top = coords.y + 'px';
 
     let body = document.createElement("div");
     body.classList.add('slds-popover__body');
