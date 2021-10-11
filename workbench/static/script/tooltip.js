@@ -1,6 +1,6 @@
-function showToolTip(content, nubPos){
+function showToolTip(content, nubPos, event){
 
-    console.log(this.Event);
+    console.log(event);
     console.log(content);
     console.log(nubPos);
 
