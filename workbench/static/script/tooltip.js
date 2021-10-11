@@ -1,4 +1,4 @@
-function showToolTip(content, nubPos, event){
+function showToolTip(content, size, nubPos, event){
 
     console.log(event);
     console.log(content);
@@ -11,6 +11,7 @@ function showToolTip(content, nubPos, event){
     const tooltip = document.createElement("div");
     tooltip.setAttribute('id', elId + '_tooltip');
     tooltip.classList.add('slds-popover');
+    tooltip.classList.add('slds-popover_' + size);
     tooltip.classList.add('slds-nubbin_' + nubPos);
     tooltip.setAttribute('role', 'dialog');
     tooltip.style.position = 'absolute';
