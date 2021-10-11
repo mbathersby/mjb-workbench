@@ -35,8 +35,8 @@ function findScreenCoords(mouseEvent){
 
   if (mouseEvent){
     //FireFox
-    xpos = mouseEvent.screenX;
-    ypos = mouseEvent.screenY;
+    xpos = mouseEvent.x;
+    ypos = mouseEvent.y;
   } 
   else{
     //IE
