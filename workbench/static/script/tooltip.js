@@ -4,9 +4,10 @@ function init(){
 
 function showToolTip(content, nubPos){
 
-        console.log(this);
-        console.log(content);
-        console.log(nubPos);
+    console.log(EventSource);
+    console.log(this);
+    console.log(content);
+    console.log(nubPos);
 
         /*<!-- button class="slds-button" aria-describedby="help" aria-disabled="true">Help Text</button -->
         <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left" role="tooltip" id="help" style="position:absolute;top:-4px;left:35px">
