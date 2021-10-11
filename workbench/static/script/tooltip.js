@@ -7,7 +7,8 @@ function showToolTip(content, nubPos, event){
     let coords = findScreenCoords(event);
 
     const tooltip = document.createElement("div");
-    tooltip.classList.add('slds-popover slds-nubbin_' + nubPos);
+    tooltip.classList.add('slds-popover');
+    tooltip.classList.add('slds-nubbin_' + nubPos);
     tooltip.setAttribute('role', 'dialog');
     tooltip.style.position = 'absolute';
     tooltip.style.top = coords.x + 'px';
