@@ -302,7 +302,7 @@ if (isLoggedIn() && termsOk() && $myPage->title !== 'Login') {
 
     /*onmouseover=\"Tip('". implode("<br/>", $infoTips) ."')\" >" */
 
-    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover='showToolTip(\"" . implode("<br/>", $infoTips) . "\", \"bottom-left\", event);'>" .
+    print "<td id='myUserInfo' class='slds-p-vertical_medium slds-text-title_caps slds-text-align_right'><a href='sessionInfo.php' onmouseover='showToolTip(\"" . implode("<br/>", $infoTips) . "\", \"top-right\", event);'>" .
            htmlspecialchars($userInfo->userFullName . " at " . $userInfo->organizationName) . " on API " . WorkbenchContext::get()->getApiVersion() . "</a></td>";
 }
 print "</tr></table>";
