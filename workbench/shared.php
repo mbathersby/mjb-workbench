@@ -441,7 +441,7 @@ function displayError($errors, $showHeader=false, $showFooter=false) {
                         "<span class='slds-assistive-text'>error</span>" .
                     "</span>" .
                 "</div>" .
-                "<div class='slds-media__body'>" .
+                "<div class='slds-media__body'>";
 
     if(!is_array($errors)){
         $errors = array($errors);
@@ -527,7 +527,7 @@ function displayInfo($infos) {
                         "<span class='slds-assistive-text'>information</span>" .
                     "</span>" .
                 "</div>" .
-                "<div class='slds-media__body'>" .
+                "<div class='slds-media__body'>";
 
     if (is_array($infos)) {
         $infoString = "";
