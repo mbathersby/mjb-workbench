@@ -40,8 +40,8 @@ function findScreenCoords(mouseEvent){
   } 
   else{
     //IE
-    xpos = window.event.screenX;
-    ypos = window.event.screenY;
+    xpos = window.event.x;
+    ypos = window.event.y;
   }
   
   console.log(xpos + ':' + ypos);
