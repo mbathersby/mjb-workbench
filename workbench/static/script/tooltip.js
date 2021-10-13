@@ -26,7 +26,12 @@ function showToolTip(content, size, nubPos, event){
     document.body.appendChild(tooltip);
     
     event.target.addEventListener("mouseout", () => {
-        document.body.removeChild(tooltip);
+        try{
+          document.body.removeChild(tooltip);
+        }
+        catch(e){
+          
+        }
     });
 }
 
