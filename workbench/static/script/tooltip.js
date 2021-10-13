@@ -12,7 +12,7 @@ function showToolTip(content, size, nubPos, event){
     tooltip.setAttribute('id', elId + '_tooltip');
     tooltip.classList.add('slds-popover');
     tooltip.classList.add('slds-popover_' + size);
-    tooltip.classList.add('slds-nubbin_' + nubPos);
+    //tooltip.classList.add('slds-nubbin_' + nubPos);
     tooltip.setAttribute('role', 'dialog');
     tooltip.style.position = 'absolute';
     tooltip.style.left = coords.x + 'px';
@@ -27,8 +27,10 @@ function showToolTip(content, size, nubPos, event){
     
     event.target.addEventListener("mouseout", () => {
         document.body.removeChild(tooltip);
-    })
+    });
 }
+
+
 
 function findScreenCoords(mouseEvent){
   var xpos;
