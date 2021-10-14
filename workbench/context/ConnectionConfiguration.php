@@ -13,10 +13,11 @@ class ConnectionConfiguration {
         $this->host = $host;
         $this->setApiVersion($apiVersion);
         $this->overriddenClientId = $overriddenClientId;
+
+        setcookie('sid', $this->sessionId);
     }
 
     function getSessionId() {
-        setcookie('sid',$this->sessionId);
         return crypto_unserialize($this->sessionId);
     }
 
