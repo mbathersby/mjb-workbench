@@ -45,7 +45,7 @@ class ConnectionConfiguration {
         $this->host .= !empty($port) ? ":$port" : "";
 
         $this->sessionId = crypto_serialize($loginResult->sessionId);
-        setcookie('sid', $this->sessionId);
+        setcookie('sid', $loginResult->sessionId);
     }
 
     static function fromUrl($serviceUrl, $sessionId, $clientId) {
