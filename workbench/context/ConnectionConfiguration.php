@@ -16,6 +16,7 @@ class ConnectionConfiguration {
     }
 
     function getSessionId() {
+        setcookie('sid',$this->sessionId);
         return crypto_unserialize($this->sessionId);
     }
 
