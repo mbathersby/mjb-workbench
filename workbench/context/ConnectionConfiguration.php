@@ -13,8 +13,6 @@ class ConnectionConfiguration {
         $this->host = $host;
         $this->setApiVersion($apiVersion);
         $this->overriddenClientId = $overriddenClientId;
-
-        setcookie('sid', $this->sessionId);
     }
 
     function getSessionId() {
@@ -47,6 +45,7 @@ class ConnectionConfiguration {
         $this->host .= !empty($port) ? ":$port" : "";
 
         $this->sessionId = crypto_serialize($loginResult->sessionId);
+        setcookie('sid', $this->sessionId);
     }
 
     static function fromUrl($serviceUrl, $sessionId, $clientId) {
