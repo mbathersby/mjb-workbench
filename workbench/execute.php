@@ -41,7 +41,7 @@ if (isset($_POST['execute'])) {
             </div>
         </div>
 
-        <div class="slds-col slds-no-flex">
+        <div class="slds-col slds-size_1-of-3">
             <div class="slds-form-element slds-form-element_horizontal">
                 <label class="slds-form-element__label" for="LogCategory">Log Category</label>
                 <div class="slds-form-element__control">
@@ -56,7 +56,7 @@ if (isset($_POST['execute'])) {
             </div>
         </div>
 
-        <div class="slds-col slds-no-flex">
+        <div class="slds-col slds-size_1-of-3">
             <div class="slds-form-element slds-form-element_horizontal">
                 <label class="slds-form-element__label" for="LogCategoryLevel">Log Level</label>
                 <div class="slds-form-element__control">
@@ -71,9 +71,9 @@ if (isset($_POST['execute'])) {
             </div>
         </div>
 
-        <div class="slds-col slds-col_bump-left slds-text-body_regular slds-p-bottom_small slds-text-align_right">
-            <button type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading slds-button slds-button_neutral'>Execute</button>
-            <button type='reset' name="reset" value='Reset' class='disableWhileAsyncLoading slds-button slds-button_neutral'>Reset</button>
+        <div class="slds-col slds-col_bump-left slds-text-align_right">
+            <button type='reset' name="reset" value='Reset' class='disableWhileAsyncLoading slds-button'>Reset</button>
+            <button type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading slds-button slds-button_brand'>Execute</button>
         </div>
     </div>
 
