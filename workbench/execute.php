@@ -32,7 +32,7 @@ if (isset($_POST['execute'])) {
             Enter Apex code to be executed as an anonymous block:
         </div>
 
-        <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
+        <div class="slds-col slds-size_1-of-1">
             <div class="slds-form-element">
                 <div class="slds-form-element__control">
                     <textarea id="scriptInput" name="scriptInput" class="slds-textarea" rows="20"
@@ -41,8 +41,8 @@ if (isset($_POST['execute'])) {
             </div>
         </div>
 
-        <div class="slds-col slds-no-flex slds-text-body_regular slds-p-bottom_small">
-            <div class="slds-form-element">
+        <div class="slds-col slds-no-flex">
+            <div class="slds-form-element slds-form-element_horizontal">
                 <label class="slds-form-element__label" for="LogCategory">Log Category</label>
                 <div class="slds-form-element__control">
                     <div class="slds-select_container">
@@ -56,8 +56,8 @@ if (isset($_POST['execute'])) {
             </div>
         </div>
 
-        <div class="slds-col slds-no-flex slds-text-body_regular slds-p-bottom_small">
-            <div class="slds-form-element">
+        <div class="slds-col slds-no-flex">
+            <div class="slds-form-element slds-form-element_horizontal">
                 <label class="slds-form-element__label" for="LogCategoryLevel">Log Level</label>
                 <div class="slds-form-element__control">
                     <div class="slds-select_container">
