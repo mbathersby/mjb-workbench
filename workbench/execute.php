@@ -25,36 +25,43 @@ if (isset($_POST['execute'])) {
 
 ?>
 <form id="executeForm" action="" method="POST">
-<?php print getCsrfFormTag(); ?>
-<table border="0">
-    <tr>
-        <td>
-        <p class='instructions'>Enter Apex code to be executed as an anonymous block:</p>
-        </td>
-    </tr>
-    <tr>
-        <td align="right">Log Category: <select id="LogCategory"
-            name="LogCategory">
-            <?php
-            printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategory'),$_SESSION['LogCategory']);
-            ?>
-        </select> &nbsp; Log Level: <select id="LogCategoryLevel"
-            name="LogCategoryLevel">
-            <?php
-            printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategoryLevel'),$_SESSION['LogCategoryLevel']);
-            ?>
-        </select></td>
-    </tr>
-    <tr>
-        <td colspan="2"><textarea id='scriptInput' name='scriptInput'
-            cols='100'
-            rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
-            style='overflow: auto; font-family: monospace, courier;'><?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?></textarea>
-        <p />
-        <input type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading' /> <input
-            type='reset' value='Reset' class='disableWhileAsyncLoading' /></td>
-    </tr>
-</table>
+    <?php print getCsrfFormTag(); ?>
+    <table border="0">
+        <tr>
+            <td>
+            <p class='instructions slds-text-body_regular slds-p-bottom_small'>Enter Apex code to be executed as an anonymous block:</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><textarea id='scriptInput' name='scriptInput'
+                cols='100'
+                rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
+                style='overflow: auto; font-family: monospace, courier;'><?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?></textarea>
+            <p />
+        </tr>
+        <tr>
+            <td align="right">
+                Log Category: 
+                <select id="LogCategory" name="LogCategory">
+                <?php
+                    printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategory'),$_SESSION['LogCategory']);
+                ?>
+                </select>
+            </td>
+            <td>
+                Log Level: <select id="LogCategoryLevel"
+                    name="LogCategoryLevel">
+                    <?php
+                    printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategoryLevel'),$_SESSION['LogCategoryLevel']);
+                    ?>
+                </select>
+            </td>
+            <td>
+                <input type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading' /> 
+                <input type='reset' value='Reset' class='disableWhileAsyncLoading' />
+            </td>
+        </tr>
+    </table>
 </form>
 
 
