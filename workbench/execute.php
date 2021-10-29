@@ -35,7 +35,7 @@ if (isset($_POST['execute'])) {
         <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
             <div class="slds-form-element">
                 <div class="slds-form-element__control">
-                    <textarea id="scriptInput" name="scriptInput" class="slds-textarea"
+                    <textarea id="scriptInput" name="scriptInput" class="slds-textarea" rows="20"
                         style='overflow: auto; font-family: monospace, courier; width: 100%;'></textarea>
                 </div>
             </div>
@@ -72,8 +72,8 @@ if (isset($_POST['execute'])) {
         </div>
 
         <div class="slds-col slds-col_bump-left slds-text-body_regular slds-p-bottom_small slds-text-align_right">
-            <button type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading slds-button' /> 
-            <button type='reset' value='Reset' class='disableWhileAsyncLoading slds-button' />
+            <button type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading slds-button slds-button_neutral'>Execute</button>
+            <button type='reset' name="reset" value='Reset' class='disableWhileAsyncLoading slds-button slds-button_neutral'>Reset</button>
         </div>
     </div>
 
