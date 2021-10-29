@@ -78,7 +78,7 @@ require_once 'header.php';
 if (isset($errors)) {
     displayError($errors);
 } else if (isset($_GET['saved'])) {
-    displayInfo(($_GET['saved'] == "D" ? "Defaults restored" : "Settings saved") . " successfully.");
+    displaySuccess(($_GET['saved'] == "D" ? "Defaults restored" : "Settings saved") . " successfully.");
 }
 
 if (isLoggedIn()) {

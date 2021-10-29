@@ -543,27 +543,27 @@ function displayInfo($infos) {
             "</div>";
 }
 
-function displaySuccess($infos) {
+function displaySuccess($successes) {
 
-    print   "<div class='slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light slds-m-vertical_medium' role='status'>" .
+    print   "<div class='slds-scoped-notification slds-media slds-media_center slds-theme_success slds-m-vertical_medium' role='status'>" .
                 "<div class='slds-media__figure'>" .
-                    "<span class='slds-icon_container slds-icon-utility-info' title='Information'>" . 
-                        "<svg class='slds-icon slds-icon_small slds-icon-text-default' aria-hidden='true'>" .
-                            "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info_alt'></use>" .
+                    "<span class='slds-icon_container slds-icon-utility-success' title='success'>" . 
+                        "<svg class='slds-icon slds-icon_small' aria-hidden='true'>" .
+                            "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#success'></use>" .
                         "</svg>" .
-                        "<span class='slds-assistive-text'>information</span>" .
+                        "<span class='slds-assistive-text'>success</span>" .
                     "</span>" .
                 "</div>" .
                 "<div class='slds-media__body'>";
 
-    if (is_array($infos)) {
-        $infoString = "";
-        foreach ($infos as $info) {
-            $infoString .= "<p>" . htmlspecialchars($info) . "</p>";
+    if (is_array($successes)) {
+        $successString = "";
+        foreach ($successes as $success) {
+            $successString .= "<p>" . htmlspecialchars($success) . "</p>";
         }
-        print $infoString;
+        print $successString;
     } else {
-        print "<p>" . htmlspecialchars($infos) . "</p>";
+        print "<p>" . htmlspecialchars($successes) . "</p>";
     }
 
     print       "</div>" . 
