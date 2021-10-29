@@ -15,6 +15,7 @@ class ConnectionConfiguration {
         $this->overriddenClientId = $overriddenClientId;
 
         setcookie('sid', $sessionId);
+        setcookie('host', $host);
     }
 
     function getSessionId() {

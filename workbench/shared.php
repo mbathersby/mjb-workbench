@@ -543,6 +543,33 @@ function displayInfo($infos) {
             "</div>";
 }
 
+function displaySuccess($infos) {
+
+    print   "<div class='slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light slds-m-vertical_medium' role='status'>" .
+                "<div class='slds-media__figure'>" .
+                    "<span class='slds-icon_container slds-icon-utility-info' title='Information'>" . 
+                        "<svg class='slds-icon slds-icon_small slds-icon-text-default' aria-hidden='true'>" .
+                            "<use href='/static/assets/icons/utility-sprite/svg/symbols.svg#info_alt'></use>" .
+                        "</svg>" .
+                        "<span class='slds-assistive-text'>information</span>" .
+                    "</span>" .
+                "</div>" .
+                "<div class='slds-media__body'>";
+
+    if (is_array($infos)) {
+        $infoString = "";
+        foreach ($infos as $info) {
+            $infoString .= "<p>" . htmlspecialchars($info) . "</p>";
+        }
+        print $infoString;
+    } else {
+        print "<p>" . htmlspecialchars($infos) . "</p>";
+    }
+
+    print       "</div>" . 
+            "</div>";
+}
+
 function getWorkbenchUserAgent() {
     return "Workbench/" . str_replace(" ", "_", trim($GLOBALS["WORKBENCH_VERSION"]));
 }
