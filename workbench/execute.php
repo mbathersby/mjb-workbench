@@ -26,18 +26,57 @@ if (isset($_POST['execute'])) {
 ?>
 <form id="executeForm" action="" method="POST">
     <?php print getCsrfFormTag(); ?>
-    <table border="0">
+
+    <div class="slds-grid"slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
+            Enter Apex code to be executed as an anonymous block:
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
+            <textarea id='scriptInput' name='scriptInput'
+                rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
+                style='overflow: auto; font-family: monospace, courier; wisth: 100%;'>
+                    <?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?>
+            </textarea>
+        </div>
+
+        <div class="slds-col slds-size_1-of-6 slds-text-body_regular slds-p-bottom_small">
+            Log Category: 
+            <select id="LogCategory" name="LogCategory">
+            <?php
+                printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategory'),$_SESSION['LogCategory']);
+            ?>
+            </select>
+        </div>
+
+        <div class="slds-col slds-size_1-of-6 slds-text-body_regular slds-p-bottom_small">
+            Log Level: 
+            <select id="LogCategoryLevel"
+                name="LogCategoryLevel">
+                <?php
+                printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategoryLevel'),$_SESSION['LogCategoryLevel']);
+                ?>
+            </select>
+        </div>
+
+        <div class="slds-col slds-size_4-of-6 slds-text-body_regular slds-p-bottom_small slds-text-align_right">
+            <input type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading' /> 
+            <input type='reset' value='Reset' class='disableWhileAsyncLoading' />
+        </div>
+    </div>
+
+    <!--table border="0">
         <tr>
-            <td>
-            <p class='instructions slds-text-body_regular slds-p-bottom_small'>Enter Apex code to be executed as an anonymous block:</p>
+            <td colspan="3">
+                <p class='instructions slds-text-body_regular slds-p-bottom_small'>Enter Apex code to be executed as an anonymous block:</p>
             </td>
         </tr>
         <tr>
-            <td colspan="2"><textarea id='scriptInput' name='scriptInput'
-                cols='100'
-                rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
-                style='overflow: auto; font-family: monospace, courier;'><?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?></textarea>
-            <p />
+            <td colspan="3">
+                <textarea id='scriptInput' name='scriptInput'
+                    cols='100'
+                    rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
+                    style='overflow: auto; font-family: monospace, courier;'><?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?></textarea>
         </tr>
         <tr>
             <td align="right">
@@ -61,7 +100,7 @@ if (isset($_POST['execute'])) {
                 <input type='reset' value='Reset' class='disableWhileAsyncLoading' />
             </td>
         </tr>
-    </table>
+    </table-->
 </form>
 
 
