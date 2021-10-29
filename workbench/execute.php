@@ -27,7 +27,7 @@ if (isset($_POST['execute'])) {
 <form id="executeForm" action="" method="POST">
     <?php print getCsrfFormTag(); ?>
 
-    <div class="slds-grid"slds-gutters">
+    <div class="slds-grid slds-wrap slds-gutters">
         <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
             Enter Apex code to be executed as an anonymous block:
         </div>
@@ -35,12 +35,12 @@ if (isset($_POST['execute'])) {
         <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
             <textarea id='scriptInput' name='scriptInput'
                 rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
-                style='overflow: auto; font-family: monospace, courier; wisth: 100%;'>
+                style='overflow: auto; font-family: monospace, courier; width: 100%;'>
                     <?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?>
             </textarea>
         </div>
 
-        <div class="slds-col slds-size_1-of-6 slds-text-body_regular slds-p-bottom_small">
+        <div class="slds-col slds-no-flex slds-text-body_regular slds-p-bottom_small">
             Log Category: 
             <select id="LogCategory" name="LogCategory">
             <?php
@@ -49,7 +49,7 @@ if (isset($_POST['execute'])) {
             </select>
         </div>
 
-        <div class="slds-col slds-size_1-of-6 slds-text-body_regular slds-p-bottom_small">
+        <div class="slds-col slds-no-flex slds-text-body_regular slds-p-bottom_small">
             Log Level: 
             <select id="LogCategoryLevel"
                 name="LogCategoryLevel">
@@ -59,7 +59,7 @@ if (isset($_POST['execute'])) {
             </select>
         </div>
 
-        <div class="slds-col slds-size_4-of-6 slds-text-body_regular slds-p-bottom_small slds-text-align_right">
+        <div class="slds-col slds-col_bump-left slds-text-body_regular slds-p-bottom_small slds-text-align_right">
             <input type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading' /> 
             <input type='reset' value='Reset' class='disableWhileAsyncLoading' />
         </div>
