@@ -33,35 +33,47 @@ if (isset($_POST['execute'])) {
         </div>
 
         <div class="slds-col slds-size_1-of-1 slds-text-body_regular slds-p-bottom_small">
-            <textarea id='scriptInput' name='scriptInput'
-                rows='<?php print WorkbenchConfig::get()->value("textareaRows") ?>'
-                style='overflow: auto; font-family: monospace, courier; width: 100%;'>
-                    <?php echo htmlspecialchars(isset($_SESSION['scriptInput'])?$_SESSION['scriptInput']:null,ENT_QUOTES); ?>
-            </textarea>
+            <div class="slds-form-element">
+                <div class="slds-form-element__control">
+                    <textarea id="scriptInput" name="scriptInput" class="slds-textarea"
+                        style='overflow: auto; font-family: monospace, courier; width: 100%;'></textarea>
+                </div>
+            </div>
         </div>
 
         <div class="slds-col slds-no-flex slds-text-body_regular slds-p-bottom_small">
-            Log Category: 
-            <select id="LogCategory" name="LogCategory">
-            <?php
-                printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategory'),$_SESSION['LogCategory']);
-            ?>
-            </select>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="LogCategory">Log Category</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                        <select class="slds-select" id="LogCategory" name="LogCategory">
+                            <?php
+                                printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategory'),$_SESSION['LogCategory']);
+                            ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="slds-col slds-no-flex slds-text-body_regular slds-p-bottom_small">
-            Log Level: 
-            <select id="LogCategoryLevel"
-                name="LogCategoryLevel">
-                <?php
-                printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategoryLevel'),$_SESSION['LogCategoryLevel']);
-                ?>
-            </select>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="LogCategoryLevel">Log Level</label>
+                <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                        <select class="slds-select" id="LogCategoryLevel" name="LogCategoryLevel">
+                            <?php
+                                printSelectOptions(WorkbenchConfig::get()->valuesToLabels('defaultLogCategoryLevel'),$_SESSION['LogCategoryLevel']);
+                            ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="slds-col slds-col_bump-left slds-text-body_regular slds-p-bottom_small slds-text-align_right">
-            <input type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading' /> 
-            <input type='reset' value='Reset' class='disableWhileAsyncLoading' />
+            <button type='submit' name="execute" value='Execute' class='disableWhileAsyncLoading slds-button' /> 
+            <button type='reset' value='Reset' class='disableWhileAsyncLoading slds-button' />
         </div>
     </div>
 
