@@ -1,5 +1,7 @@
 {
-    "routes": [
-        { src: "/(.*)", dest: "/workbench/index.php" }
-    ]
+  "functions": {
+    "workbench/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  }
 }
